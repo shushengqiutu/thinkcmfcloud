@@ -1,0 +1,279 @@
+
+/* #home header*/
+
+#bgbanner{
+   /* background: none;*/
+    background-size: cover;
+}
+
+
+.footer-wrapper .active{
+    color: #E23938;
+}
+
+#home{
+    height: 450px;
+}
+
+#home .home-wrapper{
+    top: 35%;
+}
+
+#home .footer-wrapper{
+    height: 11%;
+    background: rgba(255,255,255,0.3);
+}
+/* 
+.side_imgs{
+    display: none;
+} */
+
+/* #dowhat */
+.md-padding{
+    padding-top: 44px;
+    padding-bottom: 10px;
+}
+
+#dowhat{
+    /* text-align: center; */
+    text-align: left;
+}
+
+#dowhat h2{
+    color: #333333;
+    font-size: 22px;
+}
+
+.sub_item .centerImg{
+    display: block;
+    max-height: 60px;
+    cursor: default;
+    margin:0 auto 21px;
+}
+.sub_item h3{
+    font-size: 18px;
+    color: #333333;
+    cursor: default;
+    text-align: center;
+    line-height: 24px;
+    margin-bottom: 0;
+}
+.sub_item h3:hover{
+    color: #D8162A;
+}
+.sub_item{
+    height: 265px;
+}
+.sub_item.Perception{
+    height: 360px;
+}
+.sub_item .item{
+    width: 80%;
+    margin: 0 auto 10px;
+
+}
+.sub_item .subList{
+    
+    padding-top: 12px;
+    padding-bottom: 20px
+}
+.sub_item .subList li{
+    list-style-type:disc;
+    font-size: 14px;
+    color: #666666;
+    line-height: 20px;
+    text-align: justify;
+}
+.sub_item .subList li:hover{
+
+    color: #D8162A;
+}
+.panel-default>.panel-heading{
+    /* height: 75px; */
+    background-color: #F4F4F4;
+    border-color: #F4F4F4;
+}
+
+.panel-title{
+    margin-top: 5px;
+}
+
+.panel-title a{
+    display: inline-block;
+    color: #888888;
+    word-spacing: 10px;
+    width: 100%;
+}
+
+.panel-title a div{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.panel-default>.collapseActive{
+    background-color: #E23938;
+    border-color: #E23938;
+}
+
+.panel-default>.collapseActive span{
+    color: #FFFFFF;
+}
+
+.panel-default>.collapseActive span:nth-child(1){
+    color: #FFFFFF;
+}
+
+.panel-default>.collapseActive{
+    background-color: #E23938;
+    border-color: #E23938;
+}
+
+
+
+.panel-title a div>span{
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.panel-title a div>span:nth-child(1){
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #666666;
+}
+
+.panel-default{
+    border: none;
+}
+
+.panel-body{
+    padding-bottom: 50px;
+    padding-top: 9px;
+}
+
+.industrial .work-font span{
+    color : red;
+}
+
+.work>img{
+    max-height: 60px;
+    cursor: default;
+}
+
+.product-feature img{
+    max-height: 50px;
+}
+
+/*begin add by zhangyuqing*/
+
+.networkSecDefense>.panel-default>.panel-heading{
+    /* height: 100px; */
+}
+
+.addWorkTip .appContent{
+    background: #ffffff;
+    padding-top: 30px;
+}
+
+.appContent h2{
+    font-size: 16px;
+    color: #666666;
+}
+
+.appContent p{
+    font-size: 14px;
+    color: #333333;
+}
+
+.panel-default{
+    /* min-width: 1170px; */
+}
+
+.panel-default .panel-heading{
+    padding: 17px 15px;
+}
+.productLine.sub_mean{
+    margin-bottom: 60px;
+}
+@media only screen and (min-width:1000px) and (max-width:1180px) {
+    body{
+        overflow-x: auto;
+    }
+
+}
+
+@media only screen and (max-width: 500px){
+    .product-feature img{
+        margin-bottom: 20px;
+        display: block;
+        
+    }
+    .panel-title {
+        font-size: 14px;
+        margin-left: 10px;
+    }
+    .work-font span {
+        font-size: 14px;
+    }
+    #home .footNavAi{
+        height: 50px;
+    }
+    #bigBanner .sketch{
+        font-size: 30px;
+    }
+    #bigBanner .link_info{
+        font-size: 18px;
+    }
+}
+
+/* banner */
+#bigBanner{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  
+    /* background-image: url(../img/index.gif); */
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #F3F3F3;
+    background-attachment: fixed;
+    color: #fff;
+    width: 100%;
+    
+}
+#bigBanner .sketch{
+    position:absolute;
+    margin:auto;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    color: #fff;
+     /* height: 200px;
+     width: 300px; */
+    
+   
+    
+}
+#bigBanner .link_info{
+    position: absolute;
+    top:60%; 
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    height: 20px;
+    width: 100%;
+}
+#bigBanner img{
+    height: 450px;
+    width: 100%;
+}
+/*end add by zhangyuqing*/
+
+
+

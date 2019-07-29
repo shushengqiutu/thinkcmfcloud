@@ -1,0 +1,295 @@
+
+/*.blog{
+    height: 726px;
+}*/
+
+
+/*-----------------------------*
+/           company             /
+ -------------------------------*/
+.company .blog-content p{
+    text-indent: 2em;
+}
+
+
+/*-----------------------------*
+/   recruitment(career)         /
+ -------------------------------*/
+
+.recruitment,.schoolfind{
+    min-height: 726px;
+}
+
+.p_padding{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.activeTitle{
+    padding: 5px 20px;
+    border: 1px solid #E23938;
+    color: #E23938;
+}
+
+.careerNav .glyphicon{
+    display: none;
+}
+
+.schoolNav .glyphicon{
+    display: none;
+}
+
+
+.activeTitle .glyphicon{
+    display: inline-block;
+}
+
+.recruitment{
+    display: none;
+}
+
+.careerNav{
+    line-height: 57px;
+    font-size: 16px;
+    /*cursor: pointer;*/
+    text-align: left;
+}
+.schoolNav{
+    line-height: 57px;
+    font-size: 16px;
+    /*cursor: pointer;*/
+    text-align: left;
+}
+
+
+.careerNav span{
+    cursor: pointer;
+}
+.schoolNav span{
+    cursor: pointer;
+}
+
+.careerNav .activeCareer{
+    border: 1px solid ;
+}
+
+.schoolNav .activeCareer{
+    border: 1px solid ;
+}
+
+.careerContainer{
+    text-align: left;
+    color: #333333;
+    font-size: 14px;
+}
+
+.careerContainer .careerTitle{
+    font-size: 22px;
+}
+
+.careerContainer .careerBody>p{
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.careerContainer .careerTitle{
+    line-height: 57px;
+}
+
+.careerBody .circle{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color:#E23938;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#career2,#career3,#career4,#career5,#career6{
+    display: none;
+}
+
+#school2,#school3,#school4,#school5,#school6,#school7,#school8{
+    display: none;
+}
+
+.sixCloud p{
+    color: #666666;
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.sixTitle{
+   padding-top: 37px;
+}
+
+
+.sixCloud img{
+    width: 100%;
+}
+.introduce p{
+    line-height: 24px;
+}
+
+/*-----------------------------*
+/         contactUs            /
+ -------------------------------*/
+
+.contactUs{
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #FFF;
+    margin: 15px 0px;
+    display: none;
+}
+
+.contactUs .blog-content{
+    font-size: 20px;
+    color: #666666;
+}
+
+/*-----------------------------*
+/         cv            /
+ -------------------------------*/
+
+.cv{
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #FFF;
+    margin: 15px 0px;
+    display: none;
+}
+
+.cv .blog-content{
+    font-size: 20px;
+    color: #666666;
+}
+
+.blog-content>div{
+    margin-top: 5px;
+    margin-bottom: 38px;
+}
+
+.blog-content span:nth-of-type(1){
+    text-align: right;
+}
+
+.blog-content span:nth-of-type(2){
+    padding-left: 25px;
+    display: inline-block;
+    text-align: left;
+}
+
+.blog-content span:nth-of-type(2) a{
+    color: #666666;
+}
+
+#map{
+    margin-top: 10px;
+    /*width: 700px;*/
+    width: 747px;
+    height: 364px;
+    border: 1px solid rgb(204, 204, 204);
+    font-size: 12px;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    background-color: rgb(243, 241, 236);
+    color: rgb(0, 0, 0);
+    text-align: left;
+}
+
+.form-group label{
+    font-weight: 100;
+}
+
+.divPadding{
+    padding-left: 30px;
+}
+
+
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="url"], input[type="tel"], textarea {
+    height: 35px;
+    width: 100%;
+    border: 1px solid #D2D2D2;
+    background: #FFFFFF;
+    color: #354052;
+    padding: 0px 10px;
+    opacity: 1;
+    -webkit-transition: none;
+    transition: none;
+}
+
+.btn{
+    padding: 6px 34px;
+}
+
+.btn-default{
+    margin-top: 24px;
+    margin-left: -28px;
+    font-size: 16px;
+    color: #ffffff;
+    background: #E23938;
+    font-family: "MicrosoftYaHei";
+
+}
+
+.btn:hover{
+    background: #E23938;
+    color: #ffffff;
+    box-shadow: 0px 0px 3px 2px #E23938;
+    border: 1px solid #E23938
+}
+
+.btn[type='submit']:focus{
+    background: #E23938;
+    color: #ffffff;
+    outline: none;
+    border: none;
+}
+
+.blog-content form .starClass{
+    color: red;
+    margin-left: -50px;
+    line-height: 37px;
+}
+
+.footer-wrapper .active{
+    color: #E23938;
+}
+
+/*上传*/
+.a-upload {
+    width: 100%;
+    padding: 0px 10px;
+    height: 35px;
+    position: relative;
+    cursor: pointer;
+    color: #888;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+
+.a-upload  input {
+    position: absolute;
+    /*font-size: 100px;*/
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+
+.a-upload:hover {
+    color: #444;
+    background: #eee;
+    border-color: #ccc;
+    text-decoration: none
+}

@@ -1,0 +1,112 @@
+
+
+/*-----------------------------*
+/   industrialControl-lights     /
+ -------------------------------*/
+
+.industrialControl-lights {
+    padding-bottom: 40px;
+}
+
+.industrialControl-lights .work-font .active{
+    color: #D8162A;
+}
+
+.industrialControl-lights .work-font span{
+    font-size: 18px;
+    color: #333333;
+    cursor: default;
+}
+
+.industrialControl-lights .work-font span:hover{
+    color: #D8162A;
+}
+
+.industrialControl-lights .work-font p{
+    font-size: 14px;
+    color: #666666;
+    padding-top: 12px;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+    /*text-align: left;
+    padding-left: 50px;*/
+    padding-right: 0px;
+}
+
+.industrialControl-lights .work-font .p_padding{
+    padding-left: 130px
+}
+
+.industrialControl-lights .work-font p span{
+    font-size: 14px;
+    color: #666666;
+    display: inline-block;
+    text-align: left;
+}
+
+/*-----------------------------*
+/   product-feature             /
+ -------------------------------*/
+.product-feature{
+    padding-bottom: 100px;
+}
+
+/*-----------------------------*
+/   application-scenario         /
+ -------------------------------*/
+.application-scenario{
+    padding-bottom: 58px;
+}
+
+.application-scenario .addWorkTip{
+    /*background: #FFFFFF;*/
+    text-align: left;
+    margin-top: 27.5px;
+    padding: 0px 30px 15px;
+    padding: 0px 0px 15px;
+}
+
+.addWorkTip .triangle .glyphicon{
+    color: #FFFFFF;
+}
+
+.application-scenario #industrialTip .triangle {
+    left: 15%;
+}
+
+.application-scenario #cloudTip .triangle {
+    left: 83%;
+}
+
+.application-scenario #networkTip .triangle {
+    left: 49%;
+}
+
+.application-scenario .addWorkTip img{
+   /* margin-top: 13px;*/
+    margin-top: -30px;
+}
+
+.appContent .detailPadding{
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 15px;
+}
+
+.appContent .detailPadding>div:nth-child(1){
+    border-bottom: 1px solid #EEEEEE;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.appContent>div:nth-child(2)>div:nth-child(1)>p{
+    text-indent: 2em;
+}
+
+.scenarioFont{
+    font-size: 14px;
+    color: #666666;
+    line-height: 23px;
+    padding-top: 68px;
+}
+

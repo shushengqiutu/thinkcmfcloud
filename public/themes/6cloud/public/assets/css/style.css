@@ -2019,29 +2019,37 @@ header {
 .footer-middleCon dl {
     padding: 0px;
 }
-
-.footer-middleCon dt a {
-    font-family: 'Adobe Heiti Std R';
-    font-size: 16px;
-    line-height: 35px;
-    color: #888888;
-    font-weight: normal;
+.footer-middleCon li{
+    list-style: none;
 }
-
-.footer-middleCon a:hover, a:focus {
-    text-decoration: none;
-    outline: none;
-    opacity: 0.8;
-    color: #FFF;
-}
-
-.footer-middleCon dd a {
+.footer-middleCon  .custom-level-1 li{
     font-family: 'Adobe Heiti Std R';
     line-height: 35px;
     font-size: 14px;
     color: #888888;
     font-weight: normal;
 }
+.footer-middleCon  .custom-level-1 li a{
+    color: #888888;
+}
+.footer-middleCon h3 {
+    font-family: 'Adobe Heiti Std R';
+    font-size: 16px;
+    line-height: 35px;
+    color: #888888;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.footer-middleCon> .custom-level-1 ul li a:hover {
+    text-decoration: none;
+    outline: none;
+    opacity: 0.8;
+    color: #FFF;
+   
+}
+
+
 
 .footer-copyright p {
     text-align: center;

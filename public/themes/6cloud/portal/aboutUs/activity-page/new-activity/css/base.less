@@ -1,0 +1,1793 @@
+/**
+  Author: duanyc
+*/
+
+/*
+
+  stylesheet z-index map
+
+  顶部背景      ： none
+  导航          : 1
+  logo气泡      : 1
+  两侧渐变      ： 1
+  左、右气泡    ： 5;
+
+*/
+
+body, html {
+  width: 100%;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #0D0137;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.background-size() {
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+
+@font-color: #00ffe4;
+
+@phoneSize: 12rem;
+
+// 主容器 布局使用
+.container-fluid {
+  width: 100%;
+  //height: 100%;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  //min-height: 2000px; // 测试使用
+  //padding-bottom: 400px; // 测试使用
+
+  //background-color: #0D0137;
+  position: relative;
+
+  .w {
+    width: 63%;
+    //height: 200px;
+    margin: 0 auto;
+    padding: 0 !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    //background-color: #2b542c;
+  }
+
+  // 顶部背景 波浪
+  .top-bg {
+    //z-index: 0;
+    width: 100%;
+    //height: 2590px;
+    //width: 1921px;
+    //height: 2130px;
+    //margin-top: -50px;
+    //transform: scale(1);
+    //background: url("../images/top-bg.png") 0 0 no-repeat;
+
+    .background-size();
+
+    @position-top: 1160px;
+    @position-left: 100px;
+
+    //position: absolute;
+    //margin-top: -@position-top;
+    //margin-left: -@position-left;
+
+    // 高度补偿
+    //padding: @position-top 0 0 @position-left;
+
+    // 背景
+    .canvas {
+      width: 100%;
+      height: 947/@phoneSize;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  // nav
+  .banner-nav {
+    z-index: 1;
+    width: 100%;
+    height: 78/@phoneSize;
+    //background-color: firebrick;
+
+    .logo {
+      height: 100%;
+      //background-color: goldenrod;
+      position: relative;
+
+      // 点击logo
+      a {
+        cursor: pointer;
+        display: block;
+        width: 180/@phoneSize;
+        height: 100/@phoneSize;
+        padding: 0;
+        text-indent: -9999rem;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        background: url("../images/logo.png") 0 0 no-repeat;
+
+        .background-size();
+
+        //background-color: mediumvioletred;
+      }
+
+      // logo 气泡
+      .logo-bubble {
+        z-index: 1;
+        width: 385/@phoneSize;
+        height: 349/@phoneSize;
+        position: absolute;
+        top: -200/@phoneSize;
+        left: 115/@phoneSize;
+
+        opacity: .7;
+
+        animation: bubbleFloat ease-in-out infinite 3s;
+
+        animation-delay: 1s;
+
+        background: url("../images/fade-logo-bubble.png") 0 0 no-repeat;
+
+        .background-size();
+      }
+
+      // 电路板
+      .bg-circuit {
+        width: 718/@phoneSize;
+        height: 751/@phoneSize;
+
+        position: absolute;
+        top: -94/@phoneSize;
+        right: -606/@phoneSize;
+
+        animation: pageInitCircuit ease-in-out 1s;
+
+        background: url("../images/bg-circuit.png") 0 0 no-repeat;
+
+        .background-size();
+      }
+    }
+
+    // 导航条
+    .nav-list {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      height: 100%;
+      position: relative;
+
+      ul {
+        float: right;
+        display: inline-block;
+        height: 100%;
+        padding-top: 49px;
+
+        li {
+          line-height: 1.45;
+          float: left;
+          padding: 5px 3px;
+          margin-left: 10px;
+          margin-right: 10px;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          border-radius: 3px;
+          //background-color: #fff;
+
+          a {
+            font-weight: 500;
+            font-size: 14px;
+            color: #fff;
+          }
+        }
+
+        li:last-child {
+          background-color: rgba(255, 255, 255, .8);
+
+          a {
+            color: #0D0137;
+          }
+
+          &:hover {
+            background-color: #fff;
+          }
+        }
+
+      }
+
+      // 大脑
+      .bg-head {
+        width: 480/@phoneSize;
+        height: 526/@phoneSize;
+        position: absolute;
+        top: (500/3.6)/@phoneSize;
+        right: 0;
+        //transform: translateY(-50px);
+        background: url("../images/bg-head.png") 0 0 no-repeat;
+        animation: pageInitHeader ease-in-out 1s;
+
+        .background-size();
+      }
+    }
+  }
+
+  // banner text 容器
+  .banner-text-content {
+    height: 500px;
+    position: relative;
+    //background-color: rgba(255, 66, 77, .5);
+
+    .text-rowImg {
+      width: 100%;
+      padding-top: 150px;
+      //position: absolute;
+      //top: 0;
+      //left: 0;
+
+      .page-banner-imp {
+        display: block;
+        width: 665px;
+        height: 214px;
+        float: left;
+        //margin-left: 13%;
+        background: url("../images/page-banner-imp.png") 0 0 no-repeat;
+        .background-size();
+      }
+
+      .clickDetail {
+        float: left;
+        display: inline-block;
+        width: 174/@phoneSize;
+        height: 40/@phoneSize;
+
+        //text-align: center;
+        padding-left: 25px;
+
+        line-height: 38px;
+        margin-top: 79/@phoneSize;
+        margin-left: 17/@phoneSize;
+        font-size: 20px;
+        color: #fff;
+        border: 1px solid #ffff;
+        position: relative;
+
+        i {
+          display: inline-block;
+          width: 24/@phoneSize;
+          height: 24/@phoneSize;
+          margin-left: 5px;
+          background: url("../images/click-in.png") 0 0 no-repeat;
+          .background-size();
+
+          position: absolute;
+          top: 7px;
+          right: 13px;
+        }
+
+        &:hover {
+          background-color: #fff;
+          color: rgba(13, 1, 55, 1);
+
+          i {
+            background: url("../images/black-click.png") 0 0 no-repeat;
+          }
+        }
+      }
+
+    }
+  }
+
+  // 横向气泡
+  .row-bubble-container {
+    height: 100/@phoneSize;
+    position: relative;
+    //background-color: rgba(34, 53, 53, .8);
+
+    .row-bubble {
+      width: 301/@phoneSize;
+      height: 228/@phoneSize;
+      background: url("../images/fade-row-bubble.png") 0 0 no-repeat;
+
+      animation: bubbleFloat ease-in-out infinite 3s;
+      animation-delay: 1.5s;
+
+      .background-size();
+
+      position: absolute;
+      right: 0;
+      bottom: -400px;
+    }
+  }
+
+  // 手机 banner
+  .position-container {
+    position: relative;
+
+    .phone-banner {
+      z-index: 10;
+      width: 100%;
+      height: 500/@phoneSize;
+      position: relative;
+      background: url("../images/phone-banner.png") 0 0 no-repeat;
+      .background-size();
+    }
+
+    // link
+    a {
+      z-index: 10;
+      width: (189/2)/@phoneSize;
+      height: (46/2)/@phoneSize;
+      //height: 26.5px;
+
+      background: url("../images/phone-button.png") 0 0 no-repeat;
+      .background-size();
+
+      position: absolute;
+
+      left: 13%;
+      bottom: 24%;
+
+    }
+
+  }
+
+  // 页面中心内容
+  .item-content {
+    //height: 500px;
+    margin-bottom: 100/@phoneSize;
+    padding-bottom: 100/@phoneSize;
+    //background-color: rgba(255, 255, 255, .4);
+    position: relative;
+
+    .item-content-h1, .item-content-h2 {
+      text-align: center;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    // h1
+    .item-content-h1 {
+      font-weight: 500;
+      font-size: 40/@phoneSize;
+      margin-bottom: 14/@phoneSize;
+      color: #fff;
+    }
+
+    // h2
+    .item-content-h2 {
+      font-size: 20/@phoneSize;
+      color: @font-color;
+      margin-bottom: 52/@phoneSize;
+    }
+
+    // end
+    &:before {
+      content: '';
+      width: 243/@phoneSize;
+      height: 30/@phoneSize;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      margin-left: -243/2/@phoneSize;
+      background: url("../images/item-end.png") 0 0 no-repeat;
+      .background-size();
+    }
+
+    // --------------- 以下为单独item样式 ---------------
+
+    // 产品家族
+    .cp-family {
+      width: 95%;
+      height: 340/@phoneSize;
+      margin: 0 auto;
+      background: url("../images/item-cp-family.png") 0 0 no-repeat;
+      .background-size();
+    }
+
+    // 产品 气泡
+    .cp-icon-bubble {
+      width: 186/@phoneSize;
+      height: 251/@phoneSize;
+      background: url("../images/bubble-icon-cp.png") 0 0 no-repeat;
+
+      animation: bubbleFloat ease-in-out infinite 3s;
+      animation-delay: 1.5s;
+
+      position: absolute;
+      right: -37%;
+      bottom: 19%;
+    }
+
+    // linsec 系列
+    .linsec-title {
+      display: inline-block;
+      width: 122/@phoneSize;
+      height: 20/@phoneSize;
+      position: relative;
+
+      &:before {
+        margin-top: 5px;
+        content: '';
+        display: inline-block;
+        width: 172/@phoneSize;
+        height: 49/@phoneSize;
+        background: url("../images/linsec-ai.png") 0 0 no-repeat;
+        .background-size();
+        position: absolute;
+        left: 0;
+        top: -29/@phoneSize;
+
+      }
+    }
+
+    // linsec 气泡
+    .linsec-icon-bubble {
+      width: 292/@phoneSize;
+      height: 228/@phoneSize;
+      background: url("../images/linsec-bubble.png") 0 0 no-repeat;
+
+      animation: bubbleFloat ease-in-out infinite 3s;
+      animation-delay: 1.8s;
+
+      position: absolute;
+      left: -37%;
+      top: 15%;
+    }
+
+    // linsec 气泡
+    .linsec-icon-right-bubble {
+      width: 201/@phoneSize;
+      height: 210/@phoneSize;
+      background: url("../images/linsec-bubble-right.png") 0 0 no-repeat;
+      position: absolute;
+      right: -25%;
+      bottom: -18%;
+    }
+
+    // linsec tab 切换
+    .linsec-content {
+      width: 100%;
+      //height: 535/@phoneSize;
+      //padding-bottom: 100/@phoneSize;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+
+      // view
+      .linsec-content-view {
+        width: 100%;
+        margin-top: 35/@phoneSize;
+
+        .item-view {
+          display: none;
+          width: 100%;
+          height: 420/@phoneSize;
+
+          // 视图左右两侧
+          .left, .right {
+            float: left;
+            //width: 50%;
+            height: 91%;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+          }
+
+          // 左侧服务器
+          .left {
+            width: 37.2%;
+            //background-color: mediumvioletred;
+
+            i {
+              display: block;
+              //width: 520/@phoneSize;
+              //height: 500/@phoneSize;
+              //margin: 20/@phoneSize auto 0;
+              margin: 0 auto 0;
+              background: url("../images/linsec-view-icon.png") 0 0 no-repeat;
+            }
+
+          }
+
+          .right {
+            width: 62.8%;
+            //padding-top: 40/@phoneSize;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .item-card {
+              float: left;
+              //width: 30.33333%;
+              width: 210/@phoneSize;
+              margin-right: 3%;
+              padding-top: 100/@phoneSize;
+              //width: 50%;
+              height: 100%;
+
+              .icon {
+                display: block;
+                width: 70px;
+                height: 70px;
+                margin: 0 auto 17/@phoneSize;
+                background-color: lavender;
+              }
+
+              .icon-title {
+                display: block;
+                font-size: 14px;
+                text-align: center;
+                margin-bottom: 13/@phoneSize;
+                color: @font-color;
+              }
+
+              .icon-txt {
+                display: block;
+                font-size: 12px;
+                color: #fff;
+              }
+
+              &:nth-child(1) .icon {
+                background: url("../images/linsec-tab-view.png") 0 0 no-repeat;
+              }
+
+              &:nth-child(2) .icon {
+                background: url("../images/linsec-tab-view-tzk.png") 0 0 no-repeat;
+              }
+
+              &:nth-child(3) .icon {
+                background: url("../images/linsec-view-tab-app.png") 0 0 no-repeat;
+              }
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+          }
+
+        }
+
+        // 工业卫士
+        & .item-view:last-child {
+
+          .right {
+
+            .item-card {
+
+              &:nth-child(1) .icon {
+                background: url("../images/gyws-1.png") 0 0 no-repeat;
+              }
+
+              &:nth-child(2) .icon {
+                background: url("../images/gyws-2.png") 0 0 no-repeat;
+              }
+
+              &:nth-child(3) .icon {
+                background: url("../images/gyws-3.png") 0 0 no-repeat;
+              }
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+          }
+        }
+
+        .active {
+          display: block;
+        }
+
+      }
+
+      // 独立更换
+      .linsec-view-server {
+        width: 100%;
+        height: 100%;
+        //width: 520/@phoneSize;
+        //height: 500/@phoneSize;
+        //margin: 20/@phoneSize auto 0;
+        background: url("../images/linsec-sercer-view.png") 0 0 no-repeat !important;
+      }
+
+      .linsec-view-ws {
+        width: 610/@phoneSize;
+        height: 500/@phoneSize;
+        margin: 20/@phoneSize auto 0;
+        margin-top: -47px !important;
+        margin-left: -48px !important;
+        background: url("../images/linsec-ws-view.png") 0 0 no-repeat !important;
+      }
+
+    }
+
+    // 公用
+    .linsec-content-tab {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 47/@phoneSize;
+      margin-bottom: 52/@phoneSize;
+
+      span {
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        display: inline-block;
+        width: 33.3333%;
+        height: 100%;
+        font-size: 16px;
+
+        color: rgba(0, 255, 228, .7);
+        //border: 1px solid rgba(0, 255, 228, .7);
+
+        border-right: 1px solid rgba(0, 255, 228, .7);
+        border-bottom: 1px solid rgba(0, 255, 228, .7);
+        border-top: 1px solid rgba(0, 255, 228, .7);
+        border-bottom: 1px solid rgba(0, 255, 228, .7);
+
+        line-height: 47/@phoneSize;
+        text-align: center;
+
+        //margin-right: 35/@phoneSize;
+
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      & span:first-child {
+        border-left: 1px solid rgba(0, 255, 228, .7);
+      }
+
+      .active {
+        color: @font-color;
+        border: 1px solid @font-color;
+      }
+
+    }
+
+    // 云安全-CSec系列
+    .csec-content {
+      width: 100%;
+      height: 582/@phoneSize;
+      //padding-top: 20/@phoneSize;
+
+      .left, .right {
+        float: left;
+        height: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      .left {
+        width: 30%;
+
+        .left-item {
+          width: 100%;
+          height: 33.33333%;
+
+          .icon {
+            display: block;
+            width: 70/@phoneSize;
+            height: 70/@phoneSize;
+            margin: 0 auto;
+            .background-size();
+          }
+
+          .icon-title {
+            display: block;
+            height: 18 @phoneSize;
+            font-size: 16px;
+            text-align: center;
+            margin-top: 22/@phoneSize;
+            margin-bottom: 11/@phoneSize;
+            color: @font-color;
+          }
+
+          .content {
+            color: #fff;
+            font-size: 12px;
+          }
+
+          // icon
+          &:nth-child(1) .icon {
+            background: url("../images/icon-ks.png") 0 0 no-repeat;
+          }
+
+          &:nth-child(2) .icon {
+            background: url("../images/icon-kg.png") 0 0 no-repeat;
+          }
+
+          &:nth-child(3) .icon {
+            background: url("../images/icon-kk.png") 0 0 no-repeat;
+          }
+
+        }
+      }
+
+      .right {
+        width: 70%;
+        padding-left: 40/@phoneSize;
+
+        i {
+          float: right;
+          display: block;
+          //width: 700/@phoneSize;
+
+          width: 83%;
+          height: 600/@phoneSize;
+
+          margin: 0 auto;
+          .background-size();
+          background: url("../images/csec-cp.png") 0 0 no-repeat;
+
+        }
+      }
+    }
+
+    // CSec 气泡
+    .csec-bubble-icon {
+      width: 219/@phoneSize;
+      height: 259/@phoneSize;
+      background: url("../images/csec-bubble-icon.png") 0 0 no-repeat;
+
+      animation: bubbleFloat ease-in-out infinite 2s;
+      //animation-delay: 1.5s;
+
+      position: absolute;
+      left: -37%;
+      top: 15%;
+    }
+
+    // 大数据安全-SSA系列
+    .ssa-content {
+      margin-top: 20/@phoneSize;
+      height: 730/@phoneSize;
+
+      .top, .bottom {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      .top {
+        height: 390/@phoneSize;
+        margin-bottom: 62/@phoneSize;
+        background: url("../images/SSA.png") 0 0 no-repeat;
+        .background-size();
+      }
+
+      .bottom {
+        height: 146/@phoneSize;
+
+        .bottom-item {
+          float: left;
+          width: 33.3333%;
+          height: 100%;
+
+          .icon {
+            display: block;
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 34/@phoneSize;
+            .background-size();
+          }
+
+          .icon-h1 {
+            display: block;
+            text-align: center;
+            font-style: normal;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: @font-color;
+          }
+
+          .icon-span {
+            display: block;
+            text-align: center;
+            color: #fff;
+            font-size: 12px;
+          }
+
+          &:nth-child(1) .icon {
+            background: url("../images/ssa-gj.png") 0 0 no-repeat;
+          }
+
+          &:nth-child(2) .icon {
+            background: url("../images/ssa-jc.png") 0 0 no-repeat;
+          }
+
+          &:nth-child(3) .icon {
+            background: url("../images/ssa-sp.png") 0 0 no-repeat;
+          }
+        }
+
+      }
+
+    }
+
+    // 网络安全-NSec系列
+    .nsec-content {
+      margin-top: 20/@phoneSize;
+      //height: 510/@phoneSize;
+
+      .top, .bottom {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      .top {
+        width: 600/@phoneSize;
+        height: 300/@phoneSize;
+        margin: 70/@phoneSize auto 62/@phoneSize;
+        background: url("../images/nsec-server.png") 0 0 no-repeat;
+        .background-size();
+      }
+
+      .bottom {
+        height: 146/@phoneSize;
+
+        .bottom-item {
+          float: left;
+          width: 33.3333%;
+          height: 100%;
+
+          .icon {
+            display: block;
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 34/@phoneSize;
+            .background-size();
+          }
+
+          .icon-h1 {
+            display: block;
+            text-align: center;
+            font-style: normal;
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: @font-color;
+          }
+
+          .icon-span {
+            display: block;
+            text-align: center;
+            color: #fff;
+            font-size: 12px;
+          }
+
+          &:nth-child(1) .icon {
+            background: url("../images/ssa-jc.png") 0 0 no-repeat;
+          }
+
+          &:nth-child(2) .icon {
+            background: url("../images/nsec-icon-server.png") 0 0 no-repeat;
+          }
+
+          &:nth-child(3) .icon {
+            background: url("../images/nsec-icon-jc.png") 0 0 no-repeat;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+  // 预留区域
+  .page-content-txt {
+    padding-top: 100/@phoneSize;
+    margin-bottom: 50/@phoneSize;
+
+    //&:before {
+    //  display: none;
+    //}
+
+    // bubble
+    .fade-cp-bg {
+      width: 201px;
+      height: 210px;
+      background: url("../images/fade-cp-bg.png") 0 0 no-repeat;
+      .background-size();
+      position: absolute;
+      left: 8%;
+      bottom: -100/@phoneSize;
+    }
+
+    p {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      width: 100%;
+      color: #fff;
+
+      font-size: 18px;
+      margin: 0 auto;
+      text-indent: 20/@phoneSize;
+      line-height: 70/@phoneSize;
+    }
+  }
+
+  // 取消结尾
+  .hidden-item-end {
+    margin-bottom: 20px;
+    &:before {
+      display: none;
+    }
+  }
+
+  // end
+  .page-end {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    span {
+      color: #888;
+      font-size: 12px;
+      position: relative;
+
+      &:before, &:after {
+        content: '';
+        width: 223/@phoneSize;
+        height: 1/@phoneSize;
+        background-color: #888;
+        position: absolute;
+        top: 9/@phoneSize;
+      }
+
+      &:before {
+        left: -234/@phoneSize;
+      }
+
+      &:after {
+        right: -234/@phoneSize;
+      }
+
+    }
+  }
+
+  // --------------- 以下为装饰 ----------------
+
+  // 两侧渐变
+  .left-fade, .right-fade {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    width: 15%;
+    height: 100%;
+    background: url("../images/fade-bg.png") 0 0 repeat-y;
+  }
+
+  // 左渐变
+  .left-fade {
+    left: 0;
+  }
+
+  // 右渐变
+  .right-fade {
+    right: 0;
+    transform: rotate(180deg);
+  }
+
+  // 两侧气泡
+  .left-bubble, .right-bubble {
+    z-index: 5;
+    position: absolute;
+  }
+
+  // 左气泡
+  .left-bubble {
+    width: 298px;
+    height: 202px;
+    //width: 241/@phoneSize;
+    //height: 202/@phoneSize;
+
+    background: url("../images/left-bubble.png") 0 0 no-repeat;
+
+    animation: bubbleFloat ease-in-out infinite 3s;
+
+    .background-size();
+
+    //top: 39rem;
+    top: 953/@phoneSize;
+    left: -6rem;
+  }
+
+  // 右气泡
+  .right-bubble {
+    width: 207/@phoneSize;
+    height: 200/@phoneSize;
+    background: url("../images/right-bubble.png") 0 0 no-repeat;
+
+    animation: bubbleFloat ease-in-out infinite 3s;
+
+    .background-size();
+
+    right: -35/@phoneSize;
+    //right: -9rem;
+    top: 527/@phoneSize;
+
+  }
+
+}
+
+// 手机兼容
+@media only screen and (max-width: 767px) {
+
+  .container-fluid {
+
+    .w {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 15px 0 !important;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      //background-color: #2b542c;
+    }
+
+    // 手机导航
+    .navbar {
+      z-index: 15;
+      width: 100%;
+      border-color: transparent;
+      background-color: rgba(13, 1, 55, .9);
+      position: fixed;
+      top: 0;
+      left: 0;
+      //margin: 0;
+
+      .container-fluid {
+
+        .navbar-header {
+          margin: 0;
+
+          // logo
+          .navbar-brand {
+            //width: 97px;
+            //height: 39px;
+
+            width: 170/2px;
+            height: 53/2px;
+
+            margin-top: 10/@phoneSize;
+            margin-left: 15/@phoneSize;
+
+            text-indent: -999999px;
+            background: url("../images/phone-logo.png") 0 0 no-repeat;
+            .background-size();
+          }
+
+          .navbar-toggle {
+            border-color: transparent;
+
+            .icon-bar {
+              background-color: #fff;
+            }
+
+          }
+
+        }
+
+        .navbar-collapse {
+          width: 100%;
+          margin: 0;
+          border-color: transparent;
+
+          .navbar-nav {
+            li {
+              text-align: center;
+
+              a {
+                color: #fff;
+              }
+            }
+          }
+
+        }
+      }
+
+      .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+        background-color: transparent !important;
+      }
+
+    }
+
+    // 预留区域
+    .page-content-txt {
+      //margin-bottom: 50/@phoneSize;
+
+      // bubble
+      .fade-cp-bg {
+        width: 201px;
+        height: 210px;
+        background: url("../images/fade-cp-bg.png") 0 0 no-repeat;
+        .background-size();
+        position: absolute;
+        left: 8%;
+        bottom: -100/@phoneSize;
+      }
+
+      p {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 100%;
+        color: #fff;
+
+        padding: 0 15/@phoneSize;
+
+        font-size: 14px;
+        text-indent: 20/@phoneSize;
+        line-height: 3rem;
+      }
+    }
+
+    // 页面中心内容
+    .item-content {
+      //height: 500px;
+      margin-bottom: 50/@phoneSize;
+      padding-bottom: 50/@phoneSize;
+      //background-color: rgba(255, 255, 255, .4);
+      position: relative;
+
+      .item-content-h1, .item-content-h2 {
+        text-align: center;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      // h1
+      .item-content-h1 {
+        font-weight: 500;
+        font-size: 20/@phoneSize;
+        margin-bottom: 14/@phoneSize;
+        color: #fff;
+      }
+
+      // h2
+      .item-content-h2 {
+        font-size: 20/@phoneSize;
+        color: @font-color;
+        margin-bottom: 52/@phoneSize;
+      }
+
+      // end
+      &:before {
+        content: '';
+        width: 243/@phoneSize;
+        height: 30/@phoneSize;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        margin-left: -243/2/@phoneSize;
+        background: url("../images/item-end.png") 0 0 no-repeat;
+        .background-size();
+      }
+
+      // --------------- 以下为单独item样式 ---------------
+
+      // 产品家族
+      .cp-family {
+        width: 95%;
+        height: 340/@phoneSize;
+        margin: 0 auto;
+        background: url("../images/item-cp-family.png") 0 0 no-repeat;
+        .background-size();
+      }
+
+      // 产品 气泡
+      .cp-icon-bubble {
+        width: 186/@phoneSize;
+        height: 251/@phoneSize;
+        background: url("../images/bubble-icon-cp.png") 0 0 no-repeat;
+
+        animation: bubbleFloat ease-in-out infinite 3s;
+        animation-delay: 1.5s;
+
+        position: absolute;
+        right: -37%;
+        bottom: 19%;
+      }
+
+      // linsec 系列
+      .linsec-title {
+        display: inline-block;
+        width: 122/@phoneSize;
+        height: 20/@phoneSize;
+        position: relative;
+
+        &:before {
+          margin-top: 5px;
+          content: '';
+          display: inline-block;
+          width: 172/2/@phoneSize;
+          height: 49/2/@phoneSize;
+          background: url("../images/linsec-ai.png") 0 0 no-repeat;
+          .background-size();
+          position: absolute;
+          top: -10/@phoneSize;
+          left: 0;
+          bottom: 0;
+        }
+      }
+
+      // linsec 气泡
+      .linsec-icon-bubble {
+        width: 292/@phoneSize;
+        height: 228/@phoneSize;
+        background: url("../images/linsec-bubble.png") 0 0 no-repeat;
+
+        animation: bubbleFloat ease-in-out infinite 3s;
+        animation-delay: 1.8s;
+
+        position: absolute;
+        left: -37%;
+        top: 15%;
+      }
+
+      // linsec 气泡
+      .linsec-icon-right-bubble {
+        width: 201/@phoneSize;
+        height: 210/@phoneSize;
+        background: url("../images/linsec-bubble-right.png") 0 0 no-repeat;
+        position: absolute;
+        right: -25%;
+        bottom: -18%;
+      }
+
+      // linsec tab 切换
+      .linsec-content {
+        width: 100%;
+        //height: 535/@phoneSize;
+        //padding-bottom: 100/@phoneSize;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+        // tab
+        .linsec-content-tab {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 47/@phoneSize;
+
+          span {
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            display: inline-block;
+            width: 286/@phoneSize;
+            height: 100%;
+            font-size: 15px;
+
+            color: rgba(0, 255, 228, .7);
+            //border: 1px solid rgba(0, 255, 228, .7);
+
+            border-right: 1px solid rgba(0, 255, 228, .7);
+            border-bottom: 1px solid rgba(0, 255, 228, .7);
+            border-top: 1px solid rgba(0, 255, 228, .7);
+            border-bottom: 1px solid rgba(0, 255, 228, .7);
+
+            line-height: 47/@phoneSize;
+            text-align: center;
+
+            //margin-right: 35/@phoneSize;
+
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+          }
+
+          & span:first-child {
+            border-left: 1px solid rgba(0, 255, 228, .7);
+          }
+
+          .active {
+            color: @font-color;
+            border: 1px solid @font-color;
+          }
+
+        }
+
+        // view
+        .linsec-content-view {
+          width: 100%;
+          margin-top: 35/@phoneSize;
+
+          .item-view {
+            display: none;
+            width: 100%;
+            height: 880/@phoneSize;
+            padding-top: 20/@phoneSize;
+
+            // 视图左右两侧
+            .left, .right {
+              float: left;
+              //width: 50%;
+              height: auto;
+              -webkit-box-sizing: border-box;
+              -moz-box-sizing: border-box;
+              box-sizing: border-box;
+            }
+
+            // 左侧服务器
+            .left {
+              display: block;
+              width: 100% !important;
+              height: 280/@phoneSize;
+              margin-bottom: 20/@phoneSize;
+              //background-color: mediumvioletred;
+
+              i {
+                display: block;
+                //width: 520/@phoneSize;
+                //height: 500/@phoneSize;
+                //margin: 20/@phoneSize auto 0;
+                margin: 0 auto 0;
+                background: url("../images/linsec-view-icon.png") 0 0 no-repeat;
+              }
+
+            }
+
+            .right {
+              //padding-top: 40/@phoneSize;
+              display: block;
+              width: 100% !important;
+              align-items: inherit;
+              justify-content: inherit;
+
+              .item-card {
+                float: none;
+                display: block;
+                //width: 30.33333%;
+                //width: 200/@phoneSize;
+                margin-right: 0;
+                padding: 0;
+                width: 100%;
+                height: 200/@phoneSize;
+
+                //padding-top: 100/@phoneSize;
+                //width: 50%;
+
+                min-width: 100%;
+
+                .icon {
+                  display: block;
+                  width: 70px;
+                  height: 70px;
+                  margin: 0 auto 17/@phoneSize;
+                  background-color: lavender;
+                }
+
+                .icon-title {
+                  display: block;
+                  font-size: 14px;
+                  text-align: center;
+                  margin-bottom: 13/@phoneSize;
+                  color: @font-color;
+                }
+
+                .icon-txt {
+                  display: block;
+                  font-size: 12px;
+                  color: #fff;
+                  text-align: center;
+                }
+
+                &:nth-child(1) .icon {
+                  background: url("../images/linsec-tab-view.png") 0 0 no-repeat;
+                }
+
+                &:nth-child(2) .icon {
+                  background: url("../images/linsec-tab-view-tzk.png") 0 0 no-repeat;
+                }
+
+                &:nth-child(3) .icon {
+                  background: url("../images/linsec-view-tab-app.png") 0 0 no-repeat;
+                }
+              }
+
+              &:last-child {
+                margin-right: 0;
+              }
+
+            }
+
+          }
+
+          .active {
+            display: block;
+          }
+
+        }
+
+        // 独立更换
+        .linsec-view-server {
+          width: 100%;
+          height: 100%;
+          //width: 520/@phoneSize;
+          //height: 500/@phoneSize;
+          //margin: 20/@phoneSize auto 0;
+          background: url("../images/linsec-sercer-view.png") 0 0 no-repeat !important;
+        }
+
+        .linsec-view-ws {
+          width: 610/@phoneSize;
+          height: 500/@phoneSize;
+          margin: 20/@phoneSize auto 0;
+          margin-top: -47px !important;
+          margin-left: -48px !important;
+          background: url("../images/linsec-ws-view.png") 0 0 no-repeat !important;
+        }
+
+      }
+
+      // 云安全-CSec系列
+      .csec-content {
+        width: 100%;
+        height: 1130/@phoneSize;
+        //padding-top: 20/@phoneSize;
+
+        .left, .right {
+          float: inherit;
+          height: auto;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+        }
+
+        .left {
+          display: block;
+          width: 100%;
+
+          .left-item {
+            width: 100%;
+            height: 200/@phoneSize;
+            margin-bottom: 40/@phoneSize;
+
+            .icon {
+              display: block;
+              width: 70/@phoneSize;
+              height: 70/@phoneSize;
+              margin: 0 auto;
+              .background-size();
+            }
+
+            .icon-title {
+              display: block;
+              height: 18 @phoneSize;
+              font-size: 16px;
+              text-align: center;
+              margin-top: 22/@phoneSize;
+              margin-bottom: 11/@phoneSize;
+              color: @font-color;
+            }
+
+            .content {
+              display: block;
+              width: 100%;
+              color: #fff;
+              font-size: 12px;
+              text-align: center;
+            }
+
+            // icon
+            &:nth-child(1) .icon {
+              background: url("../images/icon-ks.png") 0 0 no-repeat;
+            }
+
+            &:nth-child(2) .icon {
+              background: url("../images/icon-kg.png") 0 0 no-repeat;
+            }
+
+            &:nth-child(3) .icon {
+              background: url("../images/icon-kk.png") 0 0 no-repeat;
+            }
+
+          }
+        }
+
+        .right {
+          width: 100%;
+          height: 275/@phoneSize;
+          padding: 0;
+          padding-left: 25/@phoneSize;
+
+          i {
+            float: right;
+            display: block;
+            //width: 700/@phoneSize;
+
+            width: 100%;
+            height: 600/@phoneSize;
+
+            margin: 0 auto;
+            .background-size();
+            background: url("../images/csec-cp.png") 0 0 no-repeat;
+
+          }
+
+          img {
+            margin: 0 auto;
+          }
+        }
+      }
+
+      // CSec 气泡
+      .csec-bubble-icon {
+        width: 219/@phoneSize;
+        height: 259/@phoneSize;
+        background: url("../images/csec-bubble-icon.png") 0 0 no-repeat;
+
+        animation: bubbleFloat ease-in-out infinite 2s;
+        //animation-delay: 1.5s;
+
+        position: absolute;
+        left: -37%;
+        top: 15%;
+      }
+
+      // 大数据安全-SSA系列
+      .ssa-content {
+        margin-top: 20/@phoneSize;
+        height: 940/@phoneSize;
+
+        .top, .bottom {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+        }
+
+        .top {
+          height: 390/2/@phoneSize;
+          margin-bottom: 62/@phoneSize;
+          background: url("../images/SSA.png") 0 0 no-repeat;
+          .background-size();
+        }
+
+        .bottom {
+          height: auto;
+
+          .bottom-item {
+            float: inherit;
+            width: 100%;
+            height: 200px;
+
+            .icon {
+              display: block;
+              width: 70px;
+              height: 70px;
+              margin: 0 auto 34/@phoneSize;
+              .background-size();
+            }
+
+            .icon-h1 {
+              display: block;
+              text-align: center;
+              font-style: normal;
+              font-size: 16px;
+              color: @font-color;
+            }
+
+            .icon-span {
+              display: block;
+              text-align: center;
+              color: #fff;
+              font-size: 12px;
+            }
+
+            &:nth-child(1) .icon {
+              background: url("../images/ssa-gj.png") 0 0 no-repeat;
+            }
+
+            &:nth-child(2) .icon {
+              background: url("../images/ssa-jc.png") 0 0 no-repeat;
+            }
+
+            &:nth-child(3) .icon {
+              background: url("../images/ssa-sp.png") 0 0 no-repeat;
+            }
+          }
+
+        }
+
+      }
+
+      // 网络安全-NSec系列
+      .nsec-content {
+        margin-top: 20/@phoneSize;
+        //height: 510/@phoneSize;
+
+        .top, .bottom {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+        }
+
+        .top {
+          width: 600/2/@phoneSize;
+          height: 300/2/@phoneSize;
+          margin: 70/@phoneSize auto 62/@phoneSize;
+          background: url("../images/nsec-server.png") 0 0 no-repeat;
+          .background-size();
+        }
+
+        .bottom {
+          height: auto;
+
+          .bottom-item {
+            float: inherit;
+            width: 100%;
+            height: 200px;
+
+            .icon {
+              display: block;
+              width: 70px;
+              height: 70px;
+              margin: 0 auto 34/@phoneSize;
+              .background-size();
+            }
+
+            .icon-h1 {
+              display: block;
+              text-align: center;
+              font-style: normal;
+              font-size: 16px;
+              color: @font-color;
+            }
+
+            .icon-span {
+              display: block;
+              text-align: center;
+              color: #fff;
+              font-size: 12px;
+            }
+
+            &:nth-child(1) .icon {
+              background: url("../images/ssa-jc.png") 0 0 no-repeat;
+            }
+
+            &:nth-child(2) .icon {
+              background: url("../images/nsec-icon-server.png") 0 0 no-repeat;
+            }
+
+            &:nth-child(3) .icon {
+              background: url("../images/nsec-icon-jc.png") 0 0 no-repeat;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+    // end
+    .page-end {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      span {
+        color: #888;
+        font-size: 12px;
+        position: relative;
+
+        &:before, &:after {
+          content: '';
+          width: 223/@phoneSize;
+          height: 1/@phoneSize;
+          background-color: #888;
+          position: absolute;
+          top: 9/@phoneSize;
+        }
+
+        &:before {
+          left: -234/@phoneSize;
+        }
+
+        &:after {
+          right: -234/@phoneSize;
+        }
+
+      }
+    }
+
+  }
+
+}
+
+// 脑袋
+@keyframes pageInitHeader {
+
+  0% {
+    transform: translateY(-50px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+
+}
+
+// 电路板
+@keyframes pageInitCircuit {
+
+  0% {
+    transform: translateY(50px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+
+}
+
+// 气泡浮动
+@keyframes bubbleFloat {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+
+}
+
+//
+//from {
+//  transform: translate(0, 0)
+//}
+//to {
+//  transform: translate(0, 6px)
+//}

@@ -24,30 +24,31 @@
 
 
                     <span class="glyphicon glyphicon-triangle-top custom-glyphicon triangleTwo"></span>
-                  
+
                 </navigationMenu>
 
                 <elseif condition="$menu.href eq 'call_icon'">
                     <navigationMenu root="li" class="{$menu._level}">
 
-                        <a href="javascript:void(0)" >
+                        <a href="javascript:void(0)">
                             <i class="phone-icon">
                             </i>
                             {$menu.name|default=''}
                         </a>
-                    
-                        
+
+
                     </navigationMenu>
 
-                <else />
-                <navigationMenu root="li" class="{$menu._level}">
+                    <else />
+                    <navigationMenu root="li" class="{$menu._level}">
+                        
+                        <!-- <a class="outline-btn red-btn"  href="{:url('portal/Index/aboutUs',array('pagename'=>'cooperation'))}">项目咨询</a> -->
+                        <a href="{:url('portal/Index/'.$menu.icon,array('pagename'=>$menu.href))}" >{$menu.name|default=''}</a>
 
-                    <a href="{$menu.href|default=''}" target="{$menu.target|default=''}">{$menu.name|default=''}</a>
-                    
-                    <if condition="$menu['_level'] ===2">
+                        <if condition="$menu['_level'] ===2">
                             <div class="oneline"></div>
-                    </if>
-                </navigationMenu>
+                        </if>
+                    </navigationMenu>
             </if>
 
 
@@ -62,7 +63,8 @@
 
                     </navigationFolder>
                     <else />
-                    <navigationFolder root="li" class="has-dropdown {$menu._level} {$menu.href}" dropdown="ul" dropdown-class="my_dropdown ">
+                    <navigationFolder root="li" class="has-dropdown {$menu._level} {$menu.href}" dropdown="ul"
+                        dropdown-class="my_dropdown ">
                         <h3 class="tit">{$menu.name|default=''}</h3>
                         <div class="oneline"></div>
                     </navigationFolder>
@@ -75,11 +77,12 @@
                         <a href="javascript:void(0)" class="aa">{$menu.name|default=''}</a>
                     </navigationFolder>
 
-                   
+
 
                     <else />
 
-                    <navigationFolder root="li" class="has-dropdown" dropdown="ul" dropdown-class="dropdown dropdownList">
+                    <navigationFolder root="li" class="has-dropdown" dropdown="ul"
+                        dropdown-class="dropdown dropdownList">
                         <a href="#" class="aa">{$menu.name|default=''}</a>
                     </navigationFolder>
             </if>
@@ -87,10 +90,11 @@
 
 
         </navigation>
-        <!--  Main navigation  -->
+</nav>
+<!--  Main navigation  -->
 
 
 
-        <!--  Main navigation  -->
+<!--  Main navigation  -->
 
-        <!-- /Main navigation -->
+<!-- /Main navigation -->

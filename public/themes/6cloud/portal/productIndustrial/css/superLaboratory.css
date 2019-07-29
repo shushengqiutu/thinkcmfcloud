@@ -1,0 +1,26 @@
+#dowhat{
+    text-align: left;
+}
+
+.panel-title a div>span:nth-child(1){
+    margin-bottom: 0px;
+}
+
+#accordion{
+    font-size: 14px;
+}
+
+#accordion p:nth-child(1){
+    text-indent: 2em;
+}
+
+/*手机端适配*/
+@media only screen and (max-width: 480px) {
+    #home {
+        height: 250px;
+    }
+    #bgbanner{
+    	background-size: auto;
+    }
+}
+

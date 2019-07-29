@@ -1,0 +1,36 @@
+ .md-padding{
+    padding-bottom: 75px;
+}
+.textInfo{
+    font-size: 14px;
+    color: #666666;
+    line-height: 23px;
+}
+.picInfo img{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+.textInfo >p{
+    text-indent: 2em;
+}
+.work-font>p{
+    font-size:18px;
+    margin: 0;
+    line-height: 18px;
+    color: #333333;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+}
+.work-font>p:nth-of-type(1){
+    margin-bottom: 16px;
+}
+.industrialTipImg>img{
+    display: block;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.product-feature{
+    padding-bottom: 15px;
+}

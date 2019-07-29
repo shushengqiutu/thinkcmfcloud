@@ -1,59 +1,5 @@
 (function ($) {
-    //  右侧微信的显示隐藏和移动速度
-
-    var sideMove = function () {
-        var timer = null;
-        var scrollsidebar = document.getElementsByClassName("side_imgs")[0];
-        
-        //悬浮QQ匀速移动
-        var startMove = function (argument) {
-            clearInterval(timer);
-            timer = setInterval(function () {
-                var speed = (argument - scrollsidebar.offsetTop) / 4;
-                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
-                if (argument == scrollsidebar.offsetTop) {
-                    clearInterval(timer);
-                } else {
-                    scrollsidebar.style.top = scrollsidebar.offsetTop + speed + "px";
-                }
-            }, 20);
-        };
-
-        //鼠标移动
-        var scrollMove = function () {
-            var backToTop = document.getElementById('back-to-top');
-            window.onscroll = window.onload = function () {
-                var scrolltop =
-                    document.body.scrollTop || document.documentElement.scrollTop;
-                startMove(
-                    parseInt(
-                        (document.documentElement.clientHeight -
-                            scrollsidebar.offsetHeight - backToTop.offsetHeight - 50) + scrolltop
-                    )
-                );
-            };
-        };
-        $('.telephohe_chat').mouseover(function () {
-            $('.telTip').show(200);
-        });
-        $('.telephohe_chat').mouseout(function () {
-            $('.telTip').hide(200);
-        });
-        $('.weixin_chat').mouseover(function () {
-            $('.chatTip').show(200);
-        });
-        $('.weixin_chat').mouseout(function () {
-            $('.chatTip').hide(200);
-        });
-        return {
-            init: function () {
-                scrollMove();
-            }
-        }
-    }
-    setTimeout(() => {
-        sideMove().init();
-    }, 1000);
+    
 
 
 
@@ -163,5 +109,5 @@
         nextButton: '.swiper-button-next'
 
     })
-   console.log(2222)
+  
 })(jQuery)
