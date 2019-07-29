@@ -1,0 +1,96 @@
+<nav id="nav" class="navbar nav-transparent">
+    <div class="container-fluid ">
+
+        <div class="navbar-header">
+            <!-- Logo -->
+            <div class="navbar-brand navbar-left">
+                <a href="/">
+                    <img class="logo" src="__TMPL__/public/assets/img/logo.png" alt="logo">
+                    <img class="logo-alt" src="__TMPL__/public/assets/img/logo-alt.png" alt="logo">
+                </a>
+            </div>
+            <!-- /Logo -->
+
+            <!-- Collapse nav button -->
+            <div class="nav-collapse">
+                <span></span>
+            </div>
+            <!-- /Collapse nav button -->
+        </div>
+
+        <navigation nav-id="3" root="ul" id="uass" class="main-nav nav navbar-nav navbar-right">
+            <if condition="$menu['href'] =='triangle_sign'">
+                <navigationMenu root="li" class="triangle-con {$menu._level}">
+
+
+                    <span class="glyphicon glyphicon-triangle-top custom-glyphicon triangleTwo"></span>
+                  
+                </navigationMenu>
+
+                <elseif condition="$menu.href eq 'call_icon'">
+                    <navigationMenu root="li" class="{$menu._level}">
+
+                        <a href="javascript:void(0)" >
+                            <i class="phone-icon">
+                            </i>
+                            {$menu.name|default=''}
+                        </a>
+                    
+                        
+                    </navigationMenu>
+
+                <else />
+                <navigationMenu root="li" class="{$menu._level}">
+
+                    <a href="{$menu.href|default=''}" target="{$menu.target|default=''}">{$menu.name|default=''}</a>
+                    
+                    <if condition="$menu['_level'] ===2">
+                            <div class="oneline"></div>
+                    </if>
+                </navigationMenu>
+            </if>
+
+
+
+            <if condition="$menu['_level'] ===2">
+
+                <if condition="$menu['href'] =='triangle_sign'">
+
+                    <navigationFolder root="li" class="triangle-con {$menu._level}">
+
+                        <span class="glyphicon glyphicon-triangle-top custom-glyphicon triangleOne"></span>
+
+                    </navigationFolder>
+                    <else />
+                    <navigationFolder root="li" class="has-dropdown {$menu._level} {$menu.href}" dropdown="ul" dropdown-class="my_dropdown ">
+                        <h3 class="tit">{$menu.name|default=''}</h3>
+                        <div class="oneline"></div>
+                    </navigationFolder>
+                </if>
+
+                <elseif condition="$menu.href eq 'product'">
+                    <navigationFolder root="li" class="has-dropdown" dropdown="ul"
+                        dropdown-class="dropdown solutionListFullScreen">
+
+                        <a href="javascript:void(0)" class="aa">{$menu.name|default=''}</a>
+                    </navigationFolder>
+
+                   
+
+                    <else />
+
+                    <navigationFolder root="li" class="has-dropdown" dropdown="ul" dropdown-class="dropdown dropdownList">
+                        <a href="#" class="aa">{$menu.name|default=''}</a>
+                    </navigationFolder>
+            </if>
+
+
+
+        </navigation>
+        <!--  Main navigation  -->
+
+
+
+        <!--  Main navigation  -->
+
+        <!-- /Main navigation -->
