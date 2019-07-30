@@ -128,7 +128,15 @@
     border-color: #E23938;
 }
 
-
+.showImg{
+    display: none;
+}
+.collapseActive .hideImg{
+    display: none;
+}
+.collapseActive .showImg{
+    display: inline-block;
+}
 
 .panel-title a div>span{
     display: inline-block;

@@ -1,0 +1,49 @@
+<div class="swiper-container newBanner" id="banner">
+    <div class="swiper-wrapper">
+        <slides id="$id">
+            <div class="swiper-slide item">
+              
+                <img src="{$vo.image|cmf_get_image_url}" alt="" width:auto; height:650px;>
+                <p class="ani sketch" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s"
+                    swiper-animate-delay="0.3s">
+                    {$vo.title}</p>
+                <a href="#" class="link_info ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s"
+                    swiper-animate-delay="0.9s">
+                    {$vo.description} </a>
+            </div>
+
+        </slides>
+
+
+
+
+
+
+    </div>
+    <!-- 轮播图分页指示器-->
+    <div class="swiper-pagination"></div>
+    <!-- 轮播图左右按钮 -->
+    <div class="swiper-button-next swiper-button-white butSize"></div>
+    <div class="swiper-button-prev swiper-button-white butSize "></div>
+</div>
+
+<!-- Background Image -->
+<div id="navWrapper"></div>
+<div class="swiper-container newBanner" id="bigBanner">
+    <div class="swiper-wrapper">
+        <slides id="$id">
+            <div class="swiper-slide item" style="overflow: hidden">
+                <img src="./img/IndustrialControlbg.png">
+                <h1 class="ani sketch" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s"
+                    swiper-animate-delay="0.3s">
+                    {$vo.title} </h1>
+                <p href="#" class="link_info ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s"
+                    swiper-animate-delay="1s">
+                    工控网络 · 机器学习建模 · 网络入侵检测</p>
+            </div>
+        </slides>
+    </div>
+
+
+</div>
+<!-- /Background Image -->

@@ -5,14 +5,94 @@
     "order": 5.0,
     "more": {
         "vars": {
-            "name": {
-                "title": "姓名",
-                "value": "",
+            "swiper": {
+                "title": "轮播图",
+                "value": "1",
                 "type": "text",
-                "placeholder": "请填写用户姓名",
-                "tip": "设置后您的姓名将会显示在首页",
+                "tip": "请选择首页轮播图",
+                "dataSource": {
+                    "api": "admin/Slide/index",
+                    "multi": true
+                },
                 "rule": {
                     "require": true
+                },
+                "message": {
+                    "require": "不能为空"
+                }
+            }
+        },
+        "widgets": {
+            "ai": {
+                "title": "AI威胁免疫体系",
+                "name": "all_widget",
+                "display": "1",
+                "vars": {
+                    "tit": {
+                        "title": "中文标题",
+                        "value": "AI威胁免疫体系",
+                        "type": "text",
+                        "tip": "请输入AI威胁免疫体系模块标题",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "tit_english": {
+                        "title": "英文标题",
+                        "value": "AI ACTIVE DEFENSE SYSTEM",
+                        "type": "text",
+                        "tip": "请输入AI威胁免疫体系英文标题",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "ai_img": {
+                        "title": "AI威胁免疫体系图片",
+                        "value": "__TMPL__/public/assets/img/ai_bg.png",
+                        "type": "image",
+                        "tip": "请选择AI威胁免疫体系图片",
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            },
+            "apply": {
+                "title": "典型应用",
+                "name": "典型应用",
+                "display": "1",
+                "vars": {
+                    "tit": {
+                        "title": "中文标题",
+                        "value": "典型应用",
+                        "type": "text",
+                        "tip": "请输入典型应用模块标题",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "tit_english": {
+                        "title": "英文标题",
+                        "value": "CLASSIC CASE",
+                        "type": "text",
+                        "tip": "请输入典型应用英文标题",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "swiper_apply": {
+                        "title": "典型应用轮播图",
+                        "value": "",
+                        "type": "text",
+                        "tip": "请选择典型应用轮播图",
+                        "dataSource": {
+                            "api": "admin/Slide/index",
+                            "multi": true
+                        },
+                        "rule": {
+                            "require": true
+                        }
+                    }
                 }
             }
         }

@@ -1,0 +1,30 @@
+<!-- 典型应用 -->
+<div id="apply_wrap " class="bg-black">
+    <div class="container apply  ">
+        <include file="public@line" />
+
+        <div class=" showListApply row ">
+               
+            <div class="swiper-container" id="apply">
+                <div class="swiper-wrapper">
+                    
+                  
+                    <slides id="$swper_apply_id">
+                        <div class="swiper-slide flexCenter "> <img class="wp100"
+                                src="{$vo.image|cmf_get_image_url} " width="" alt=" ">
+                            <p class="applyItemText ">{$vo.title}</p>
+                        </div>
+                    </slides>
+
+                </div>
+
+                <div class="swiper-button-next "></div>
+                <div class="swiper-button-prev "></div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>

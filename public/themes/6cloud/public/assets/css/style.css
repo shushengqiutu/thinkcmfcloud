@@ -2301,10 +2301,7 @@ header {
     cursor: pointer;
 }
 
-#back-to-top:after {
-    content: "\f106";
-    font-family: 'FontAwesome';
-}
+
 
 #back-to-top:hover {
     opacity: 0.8;
@@ -2556,7 +2553,7 @@ header {
   
     /* height: 650px; */
    
-    background: url(../img/ai_bg.png) no-repeat;
+  
     background-size: 100%; 
 
    /* background-position-x: -100px; */

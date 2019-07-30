@@ -3,14 +3,21 @@
 
 <head>
 	<include file="public@head" />
+
 </head>
 
 <body>
 
 	<header id="home">
-		<include file="public@banner" />
-
-
+	<!-- 从index.josn配置文件中获取轮播图id -->
+		<php>
+			$swper_banner_id=empty($theme_vars['swiper'])?1:$theme_vars['swiper'];
+		
+		</php>
+			<!-- 引入轮播图 -->
+		<include file="public/index@banner"/>
+			<!-- 引入轮播图 -->
+	
 		<!-- 导航条遮罩层开始 -->
 		<div class="mask container-fluid"> </div>
 		<!-- 导航条遮罩层结束 -->
@@ -20,81 +27,30 @@
 		<!-- /Nav结束 -->
 
 		<!--最新播报开始 -->
-		<include file="public@head_footer" />
+		<include file="public/index@horn" />
 		<!--最新播报结束 -->
 
 		<!-- 轮播图底部锚点导航开始 -->
-		<include file="public@horn" />
+		<include file="public@head_footer" />
 		<!-- 轮播图底部锚点导航结束 -->
 	</header>
 	<!-- AI威胁免疫体系开始 -->
-	<div id="dowhat" class="  bg-white ">
-		<div class="container ai_pic_wrap">
-			<!-- 导航和线条 -->
-			<div class="row">
-				<div class=" sub_mean">
-					<h2> AI威胁免疫体系 </h2>
-					<p>AI ACTIVE DEFENSE SYSTEM
-					</p>
-					<div class="line">
-						<div class="line_red"></div>
-					</div>
-				</div>
-			</div>
+	<widget name="ai">
 
-			<div class="row ">
-				<div class="ai_pic_bg  col-md-12  col-sm-12 ">
-				</div>
-			</div>
-		</div>
-	</div>
+			<include file="public/index@ai" />
+	</widget>
+	
 	<!-- AI威胁免疫体系结束 -->
 	<!-- 典型应用 开始-->
-	<div id="apply_wrap " class="bg-black">
-		<div class="container apply  ">
-			<div class="row">
-				<div class=" sub_mean ">
-					<h2> 典型应用 </h2>
-					<p>CLASSIC CASE
-					</p>
-					<div class=" line">
-						<div class="line_red"></div>
-					</div>
-				</div>
-			</div>
-			<div class=" showListApply row ">
-
-				<div class="swiper-container" id="apply">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide flexCenter "> <img class="wp100"
-								src="__TMPL__/public/assets/img/7.png " width="" alt=" ">
-							<p class="applyItemText "> 供热管网</p>
-						</div>
-						<div class="swiper-slide flexCenter"> <img class="wp100" src="__TMPL__/public/assets/img/8.png"
-								width="" alt="">
-							<p class="applyItemText"> 供热管网</p>
-						</div>
-						<div class="swiper-slide flexCenter"> <img class="wp100" src="__TMPL__/public/assets/img/9.png"
-								width="" alt="">
-							<p class="applyItemText"> 供热管网</p>
-						</div>
-						<div class="swiper-slide flexCenter"> <img class="wp100" src="__TMPL__/public/assets/img/10.png"
-								width="" alt="">
-							<p class="applyItemText"> 供热管网</p>
-						</div>
-
-					</div>
-
-					<div class="swiper-button-next "></div>
-					<div class="swiper-button-prev "></div>
-				</div>
-
-
-			</div>
-		</div>
-
-
-	</div>
+	<widget name="apply">
+			
+			<php>
+					$swper_apply_id=empty($widget["vars"]["swiper_apply"])?3:$widget["vars"]["swiper_apply"];
+				
+				</php>
+		
+			<include file="public/index@apply" />
+	</widget>
 	<!-- 典型应用 结束-->
 
 	<!-- 新闻开始 -->
@@ -243,21 +199,30 @@
 	<!-- 合作伙伴 结束-->
 
 
-    <!-- 让万物安全互联 开始-->
+	<!-- 让万物安全互联 开始-->
 	<include file="public@link" />
-	 <!-- 让万物安全互联 结束 -->
+	<!-- 让万物安全互联 结束 -->
 
-	 
-    <!-- footer 开始-->
+
+	<!-- footer 开始-->
 	<include file="public@footer" />
 	<!-- footer 结束 -->
 
 	<!-- 微信开始 -->
 	<include file="public@weixin" />
 	<!-- 微信结束 -->
+
 	<!-- 返回首页开始 -->
-	<div id="back-to-top"></div>
+	<div id="back-to-top">
+		<i class="glyphicon glyphicon-chevron-up"></i>
+	</div>
 	<!-- 返回首页结束 -->
+
+	<!-- Preloader -->
+	<include file="public@Preloader" />
+	<!-- /Preloader -->
+
+
 	<include file="public@scripts" />
 	<script src="__TMPL__/public/assets/js/index.js"></script>
 </body>

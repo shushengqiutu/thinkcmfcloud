@@ -2,93 +2,112 @@
 <html lang="en">
 
 <head>
-		<include file="public@head" />
+	<include file="public@head" />
+
+	<link rel="stylesheet" type="text/css" href="__TMPL__/portal/productIndustrial/css/industrialProductCommon.css">
+	<link rel="stylesheet" type="text/css" href="__TMPL__/portal/productIndustrial/css/industrialProduct.css">
+	<link rel="stylesheet" type="text/css" href="__TMPL__/portal/productIndustrial/css/productScenarioTwoPic.css">
 </head>
 
 <body>
-		<header id="home">
-				<include file="public@banner" />
-		
-		
-				<!-- 导航条遮罩层开始 -->
-				<div class="mask container-fluid"> </div>
-				<!-- 导航条遮罩层结束 -->
-		
-				<!-- Nav导航开始 -->
-				<include file="public@nav" />
-				<!-- /Nav结束 -->
-		
-				<!--最新播报开始 -->
-				<include file="public@head_footer" />
-				<!--最新播报结束 -->
-		
-				<!-- 轮播图底部锚点导航开始 -->
-				<include file="public@horn" />
-				<!-- 轮播图底部锚点导航结束 -->
-			</header>
-
-	<!-- Header -->
-
-	<!-- 导航条遮罩层开始 -->
-	<div class="mask container-fluid"> </div>
-	<!-- 导航条遮罩层结束 -->
-
-		<!-- /Background Image -->
+	<header id="home">
+		<include file="public@banner" />
 
 
+		<!-- 导航条遮罩层开始 -->
+		<div class="mask container-fluid"> </div>
+		<!-- 导航条遮罩层结束 -->
 
-		<!-- footer-wrapper 显示屏>500px-->
-		<div class="footer-wrapper md_pc">
-			<span>
-				<a href="#dowhat">
-					产品亮点
-				</a>
-			</span>
-			<span>|</span>
-			<span>
-				<a href="#starProducts">
-					产品功能
-				</a>
-			</span>
-			<span>|</span>
-			<span>
-				<a href="#solution">
-					应用场景
-				</a>
-			</span>
-			<!--<span>|</span>
-			<span>
-				<a href="#">
-					解决方案
-				</a>
-			</span>-->
-		</div>
+		<!-- Nav导航开始 -->
+		<include file="public@nav" />
+		<!-- /Nav结束 -->
 
-		<!-- footer-wrapper 显示屏<500px-->
-		<div class="footer-wrapper md_sm">
-			<span>
-				<a href="#dowhat">
-					产品亮点
-				</a>
-			</span>
-			<span>
-				<a href="#starProducts">
-					产品功能
-				</a>
-			</span>
-			<span>
-				<a href="#solution">
-					应用场景
-				</a>
-			</span>
-			<span>
-				<a href="#">
-					解决方案
-				</a>
-			</span>
-		</div>
-		<!-- footer-wrapper -->
+		<!--最新播报开始 -->
+		<include file="public@head_footer" />
+		<!--最新播报结束 -->
+
+		<!-- 轮播图底部锚点导航开始 -->
+		<include file="public@horn" />
+		<!-- 轮播图底部锚点导航结束 -->
 	</header>
+
+	<header id="home">
+			<!-- Background Image -->
+			<div id="navWrapper"></div>
+			<div class="swiper-container newBanner" id="bigBanner">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide item" style="overflow: hidden">
+						<img src="./img/IndustrialControlbg.png">
+						<h1 class="ani sketch" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s"
+							swiper-animate-delay="0.3s">
+							工业审计 </h1>
+						<p href="#" class="link_info ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s"
+							swiper-animate-delay="1s">
+							工控网络 · 机器学习建模 · 网络入侵检测</p>
+					</div>
+	
+				</div>
+	
+	
+			</div>
+			<!-- /Background Image -->
+	
+	
+	
+			<!-- footer-wrapper 显示屏>500px-->
+			<div class="footer-wrapper md_pc">
+				<span>
+					<a href="#dowhat">
+						产品亮点
+					</a>
+				</span>
+				<span>|</span>
+				<span>
+					<a href="#starProducts">
+						产品功能
+					</a>
+				</span>
+				<span>|</span>
+				<span>
+					<a href="#solution">
+						应用场景
+					</a>
+				</span>
+				<!--<span>|</span>
+				<span>
+					<a href="#">
+						解决方案
+					</a>
+				</span>-->
+			</div>
+	
+			<!-- footer-wrapper 显示屏<500px-->
+			<div class="footer-wrapper md_sm">
+				<span>
+					<a href="#dowhat">
+						产品亮点
+					</a>
+				</span>
+				<span>
+					<a href="#starProducts">
+						产品功能
+					</a>
+				</span>
+				<span>
+					<a href="#solution">
+						应用场景
+					</a>
+				</span>
+				<span>
+					<a href="#">
+						解决方案
+					</a>
+				</span>
+			</div>
+			<!-- footer-wrapper -->
+		</header>
+
+
 	<!-- /Header -->
 
 
@@ -113,7 +132,8 @@
 				<!-- Work -->
 				<div class="col-md-4 col-xs-12  sub_item">
 					<div class="item">
-						<img class="centerImg" src="img/industrialAudit1-1.png" alt="">
+						<img class="centerImg" src="__TMPL__/portal/productIndustrial/img/industrialAudit1-1.png"
+							alt="">
 						<h3 class="theme"> 无扰部署</h3>
 						<ul class="subList">
 							<li>
@@ -133,7 +153,8 @@
 
 				<div class="col-md-4 col-xs-12  sub_item">
 					<div class="item">
-						<img class="centerImg" src="img/industrialAudit1-2.png" alt="">
+						<img class="centerImg" src="__TMPL__/portal/productIndustrial/img/industrialAudit1-2.png"
+							alt="">
 						<h3 class="theme"> 工业漏洞库</h3>
 						<ul class="subList">
 							<li>
@@ -154,7 +175,8 @@
 
 				<div class="col-md-4 col-xs-12  sub_item">
 					<div class="item">
-						<img class="centerImg" src="img/industrialAudit1-3.png" alt="">
+						<img class="centerImg" src="__TMPL__/portal/productIndustrial/img/industrialAudit1-3.png"
+							alt="">
 						<h3 class="theme"> 丰富的报表与告警方式</h3>
 						<ul class="subList">
 							<li>
@@ -174,7 +196,8 @@
 
 				<div class="col-md-4 col-xs-12  sub_item">
 					<div class="item">
-						<img class="centerImg" src="img/industrialAudit1-4.png" alt="">
+						<img class="centerImg" src="__TMPL__/portal/productIndustrial/img/industrialAudit1-4.png"
+							alt="">
 						<h3 class="theme"> 机器学习建模</h3>
 						<ul class="subList">
 							<li>
@@ -195,7 +218,8 @@
 
 				<div class="col-md-4 col-xs-12 sub_item">
 					<div class="item">
-						<img class="centerImg" src="img/industrialAudit1-5.png" alt="">
+						<img class="centerImg" src="__TMPL__/portal/productIndustrial/img/industrialAudit1-5.png"
+							alt="">
 						<h3 class="theme"> 多层次深度检测</h3>
 						<ul class="subList">
 							<li>
@@ -213,7 +237,8 @@
 
 				<div class="col-md-4 col-xs-12  sub_item">
 					<div class="item">
-						<img class="centerImg" src="img/industrialAudit1-6.png" alt="">
+						<img class="centerImg" src="__TMPL__/portal/productIndustrial/img/industrialAudit1-6.png"
+							alt="">
 						<h3 class="theme"> 多协议深度解析</h3>
 						<ul class="subList">
 							<li>
@@ -261,11 +286,15 @@
 
 				<!-- Section content -->
 				<div class="panel-group networkSecDefense" id="accordion">
-					<div class="panel panel-default">
+					<div class="panel panel-default ">
 						<div class="panel-heading collapseActive">
 							<h4 class="panel-title">
 								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-									<img data-src='industrialAudit2-1-1.png' src="img/industrialAudit2-1-1.png">
+									<img class="showImg"
+										src="__TMPL__/portal/productIndustrial/img/industrialAudit2-1-1.png" alt="">
+									<img class="hideImg"
+										src='__TMPL__/portal/productIndustrial/img/industrialAudit2-1-2.png' src="">
+
 									<div>
 										<span>网络病毒检测</span><br>
 										<span>根据网络病毒的关键字、特征程序段内容、病毒特征及传染方式、文件长度的变化，在特征分类的基础上建立的病毒检测引擎内含海量的病毒，</span><br>
@@ -285,7 +314,11 @@
 						<div class="panel-heading">
 							<h4 class="panel-title">
 								<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-									<img data-src='industrialAudit2-2-1.png' src="img/industrialAudit2-2-2.png">
+									<img class="showImg"
+										src="__TMPL__/portal/productIndustrial/img/industrialAudit2-2-1.png">
+									<img class="hideImg"
+										src="__TMPL__/portal/productIndustrial/img/industrialAudit2-2-2.png">
+
 									<div>
 										<span>网络风暴检测</span><br>
 										<span>根据工业控制网络正常数据基线，甄别网络数据中的组播、多播、连接请求、重传请求、同步请求的异常情况，实时展示网络风暴的现象，协助</span><br>
@@ -305,7 +338,11 @@
 						<div class="panel-heading">
 							<h4 class="panel-title">
 								<a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-									<img data-src='industrialAudit2-3-1.png' src="img/industrialAudit2-3-2.png">
+									<img class="showImg"
+										src="__TMPL__/portal/productIndustrial/img/industrialAudit2-3-1.png">
+									<img class="hideImg"
+										src="__TMPL__/portal/productIndustrial/img/industrialAudit2-3-2.png">
+
 									<div>
 										<span>日志审计与报表</span><br>
 										<span>日志审计包括安全审计、操作记录、协议审计、流量审计等内容。协议审计与流量审计是工业控制网络的主要审计功能，将工业网络数据中的</span><br>
@@ -315,17 +352,17 @@
 								</a>
 							</h4>
 						</div>
-						<!--<div id="collapse3" class="panel-collapse collapse">
-							<div class="panel-body">
-								通过设备集中管理功能，包括设备状态监控、拓扑管理、系统配置管理、日志管理等。根据所监控到的设备状态和收集的流量数据，对整个网络状态进行分析，对终端设备进行策略下发。
-							</div>
-						</div>-->
+
 					</div>
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h4 class="panel-title">
 								<a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-									<img data-src='industrialAudit2-4-1.png' src="img/industrialAudit2-4-2.png">
+
+									<img class="showImg"
+										src="__TMPL__/portal/productIndustrial/img/industrialAudit2-4-1.png">
+									<img class="hideImg"
+										src="__TMPL__/portal/productIndustrial/img/industrialAudit2-4-2.png">
 									<div>
 										<span>网络异常流量检测</span><br>
 										<span>统计每个主机或者协议的流量趋势，并算成流量曲线，匹配工业控制网络正常数据流量模型，一旦检测到某个主机或者协议流量在短时间内表现</span><br>
@@ -335,17 +372,17 @@
 								</a>
 							</h4>
 						</div>
-						<!--<div id="collapse4" class="panel-collapse collapse">
-							<div class="panel-body">
-								通过设备集中管理功能，包括设备状态监控、拓扑管理、系统配置管理、日志管理等。根据所监控到的设备状态和收集的流量数据，对整个网络状态进行分析，对终端设备进行策略下发。
-							</div>
-						</div>-->
+
 					</div>
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h4 class="panel-title">
 								<a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
-									<img data-src='industrialAudit2-5-1.png' src="img/industrialAudit2-5-2.png">
+
+									<img class="showImg"
+										src="__TMPL__/portal/productIndustrial/img/industrialAudit2-5-1.png">
+									<img class="hideImg"
+										src="__TMPL__/portal/productIndustrial/img/industrialAudit2-5-2.png">
 									<div>
 										<span>异常行为检测</span><br>
 										<span>通过不断地收集历史流量数据，建立流量和行为基准模型，有别于基于特征检测的防火墙只能检测到库文件中已有威胁的“静态检测”。对于发现</span></br>
@@ -365,7 +402,11 @@
 						<div class="panel-heading">
 							<h4 class="panel-title">
 								<a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
-									<img data-src='industrialAudit2-6-1.png' src="img/industrialAudit2-6-2.png">
+
+									<img class="showImg"
+										src="__TMPL__/portal/productIndustrial/img/industrialAudit2-6-1.png">
+									<img class="hideImg"
+										src="__TMPL__/portal/productIndustrial/img/industrialAudit2-6-2.png">
 									<div>
 										<span>协同防护</span><br>
 										<span>随着网络攻击的复杂性与专业性不断提高，单种安全设备的防护能力受到强力挑战，协同防护方式显得更有效。工业审计在检测到异常事件和攻击</span><br>
@@ -385,7 +426,11 @@
 						<div class="panel-heading">
 							<h4 class="panel-title">
 								<a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
-									<img data-src='industrialAudit2-7-1.png' src="img/industrialAudit2-7-2.png">
+
+									<img class="showImg"
+										src="__TMPL__/portal/productIndustrial/img/industrialAudit2-7-1.png">
+									<img class="hideImg"
+										src="__TMPL__/portal/productIndustrial/img/industrialAudit2-7-2.png">
 									<div>
 										<span>网络取证</span><br>
 										<span>记录工业控制网络的所有活动，提供网络行为审计、内容审计，生成完整的事件记录、操作记录、告警日志等，保存对应事件时产生的原始数据包，</span><br>
@@ -395,11 +440,7 @@
 								</a>
 							</h4>
 						</div>
-						<!--<div id="collapse7" class="panel-collapse collapse">
-							<div class="panel-body">
-								通过设备集中管理功能，包括设备状态监控、拓扑管理、系统配置管理、日志管理等。根据所监控到的设备状态和收集的流量数据，对整个网络状态进行分析，对终端设备进行策略下发。
-							</div>
-						</div>-->
+
 					</div>
 
 				</div>
@@ -434,7 +475,7 @@
 
 				<!-- Work -->
 				<div class="col-md-4 col-md-offset-2 col-xs-6  work industrial">
-					<img src="img/industrialAudit3-1.png" alt="现场控制层审计">
+					<img src="__TMPL__/portal/productIndustrial/img/industrialAudit3-1.png" alt="现场控制层审计">
 					<div class="work-font">
 						<span>
 							现场控制层审计
@@ -445,7 +486,7 @@
 
 				<!-- Work -->
 				<div class="col-md-4 col-xs-6 work network">
-					<img src="img/industrialAudit3-2.png" alt="通讯服务器审计">
+					<img src="__TMPL__/portal/productIndustrial/img/industrialAudit3-2.png" alt="通讯服务器审计">
 					<div class="work-font">
 						<span>
 							通讯服务器审计
@@ -466,7 +507,8 @@
 				<div class="col-md-12 col-xs-12 appContent">
 
 					<div class="col-md-7 col-xs-12">
-						<img class="col-md-12 col-xs-12" src="img/industrialAudit1.png" />
+						<img class="col-md-12 col-xs-12"
+							src="__TMPL__/portal/productIndustrial/img/industrialAudit1.png" />
 					</div>
 					<div class="col-md-5 col-xs-12 detailPadding">
 						<div>
@@ -499,7 +541,8 @@
 				<div class="col-md-12 col-xs-12 appContent">
 
 					<div class="col-md-7 col-xs-7">
-						<img class="col-md-12 col-xs-12" src="img/industrialAudit2.png" />
+						<img class="col-md-12 col-xs-12"
+							src="__TMPL__/portal/productIndustrial/img/industrialAudit2.png" />
 					</div>
 					<div class="col-md-5 col-xs-5 detailPadding">
 						<div>
@@ -529,45 +572,31 @@
 	</div>
 	<!-- /应用场景 -->
 
-	<!-- 互联 -->
+	<!-- 让万物安全互联 开始-->
+	<include file="public@link" />
+	<!-- 让万物安全互联 结束 -->
 
 
+	<!-- footer 开始-->
+	<include file="public@footer" />
+	<!-- footer 结束 -->
 
-	<!-- /互联 -->
-	<!-- Footer -->
-	<div id="footWrapper"></div>
-	<!-- /Footer -->
+	<!-- 微信开始 -->
+	<include file="public@weixin" />
+	<!-- 微信结束 -->
 
-	<!-- Back to top -->
-	<div id="back-to-top"></div>
-	<!-- /Back to top -->
+	<!-- 返回首页开始 -->
+	<div id="back-to-top">
+		<i class="glyphicon glyphicon-chevron-up"></i>
+	</div>
+	<!-- 返回首页结束 -->
 
 	<!-- Preloader -->
-	<div id="preloader" style="display: none">
-		<div class="preloader">
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
-	</div>
+	<include file="public@Preloader" />
 	<!-- /Preloader -->
 
-	<!-- jQuery Plugins -->
-	<!-- <script src="../js/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-	<script type="text/javascript"
-		src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="../js/jquery.magnific-popup.js"></script>
-	<script type="text/javascript" src="../js/main.js"></script>
-	
-	<script type="text/javascript" src="../js/jquery.fittext.js"></script>
-	<script type="text/javascript" src="../js/jquery.lettering.js"></script>
-	<script type="text/javascript" src="../js/jquery.textillate.js"></script>
-	<script type="text/javascript" src="js/industrialProductCommon.js"></script>
-	<script type="text/javascript" src="js/IndustrialProduct.js"></script> -->
 	<include file="public@scripts" />
-	<!-- <script src="__TMPL__/public/assets/js/index.js"></script> -->
+	<script src="__TMPL__/portal/productIndustrial/js/IndustrialProduct1.js"></script>
 </body>
 
 </html>
