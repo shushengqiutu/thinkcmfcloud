@@ -1,15 +1,21 @@
+
+<!-- 从index.josn配置文件中获取轮播图id -->
+<php>
+    $swper_banner_id=empty($theme_vars['swiper'])?1:$theme_vars['swiper'];
+
+</php>
 <div class="swiper-container newBanner" id="banner">
         <div class="swiper-wrapper">
-            <slides id="$swper_banner_id">
-                <div class="swiper-slide item">
+            <slides id="$swper_banner_id" item="v" >
+                <div class="swiper-slide item" >
 
-                    <img src="{$vo.image|cmf_get_image_url}" alt="" width:auto; height:650px;>
+                    <img src="{$v.image|cmf_get_image_url}" alt="" width:auto; height:650px;>
                     <p class="ani sketch" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s"
                         swiper-animate-delay="0.3s">
-                        {$vo.title} </p>
+                        {$v.title}  </p>
                     <a href="#" class="link_info ani" swiper-animate-effect="fadeInUp"
                         swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
-                        {$vo.description} </a>
+                        {$v.description} </a>
                 </div>
             </slides>
 

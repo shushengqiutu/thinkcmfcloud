@@ -18,6 +18,17 @@
         set_ai_height()// 背景图动态高度
 
     });
+    //新闻hover事件content_right_list
+    var newsHover = function () {
+        $('.content_right_list').hover(  
+            function () {
+                $(this).addClass('active').siblings().removeClass('active');
+             
+            }
+        )
+
+    }
+    newsHover()
 
     //所有轮播图采用swiper3版本
     //  首页banner轮播图

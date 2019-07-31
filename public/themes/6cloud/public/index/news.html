@@ -1,0 +1,58 @@
+<php>
+
+    $news_left_id=empty($widget["vars"]["news_left"])?3:$widget["vars"]["news_left"];
+    $news_right_id=empty($widget["vars"]["news_right"])?3:$widget["vars"]["news_right"];
+
+</php>
+<div id="new_wrap bg-white ">
+    <div class=" container news">
+        <include file="public@line" />
+
+
+        <div class="row ">
+
+            <portal:articles limit="1" order="post.published_time DESC" categoryIds="$news_left_id">
+
+        
+                <div class="col-md-6 col-sm-12 pd3px">
+
+                    <div class="content_left ">
+                        <img class="pic" src="__TMPL__/public/assets/img/apply_1.png" alt="">
+                        <h3 class="new_tit">{$vo.post_title} </h3>
+                        <div class="content_info">
+                            {$vo.post_excerpt}
+                        </div>
+                        <a class="link_info" href="{:cmf_url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo.category_id))}"">查看详情</a>
+                    </div>
+                </div>
+
+            </portal:articles>
+
+
+
+            <div class="col-md-6 col-sm-12  pd3px">
+
+                <portal:articles limit="4" order="post.published_time DESC" categoryIds="$news_right_id">
+                    
+                    <div class="content_right_list {$i===1?'active':''}">
+                        <a href="{:cmf_url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo.category_id))}"">
+                        <div class="data">
+                            <span>23 </span>
+                            <p>2019-06</p>
+                        </div>
+                        <div class="content">
+                            <h3 class="tit"> {$vo.post_title} </h3>
+                            <div class="comtent_info">
+                                    {$vo.post_excerpt}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                </portal:articles>
+
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -94,7 +94,88 @@
                         }
                     }
                 }
+            },
+            "news": {
+                "title":"近期新闻",
+                "name":"近期新闻",
+                "display": "1",
+                "vars": {
+                    "tit": {
+                        "title": "中文标题",
+                        "value": "近期新闻",
+                        "type": "text",
+                        "tip": "请输入典型应用模块标题",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "tit_english": {
+                        "title": "英文标题",
+                        "value": "CRECENT NEWS",
+                        "type": "text",
+                        "tip": "请输入典型应用英文标题",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "news_left": {
+                        "title": "左侧近期新闻分类",
+                        "value": "1,2,3",
+                        
+                        "type": "text",
+                        "tip": "请选择近期新闻所展示的文章分类id",
+                        "dataSource": {
+                            "api": "portal/Category/index",
+                            "multi": true
+                        },
+                        "rule": {
+                            "require": true
+                        }
+                    }, 
+                    "news_right": {
+                        "title": "左侧近期新闻列表展示",
+                        "value": "1,2,3",
+                        
+                        "type": "text",
+                        "tip": "请选择近期新闻列表展示的文章分类id",
+                        "dataSource": {
+                            "api": "portal/Category/index",
+                            "multi": true
+                        },
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            },
+            "partner": {
+                "title":"合作伙伴",
+                "name":"合作伙伴",
+                "display": "1",
+                "vars": {
+                    "tit": {
+                        "title": "中文标题",
+                        "value": "合作伙伴",
+                        "type": "text",
+                        "tip": "请输入典型应用模块标题",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "tit_english": {
+                        "title": "英文标题",
+                        "value": "COOPERATIVE PARTNER",
+                        "type": "text",
+                        "tip": "请输入合作伙伴英文标题",
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                    
+                }
             }
+            
         }
+        
     }
 }

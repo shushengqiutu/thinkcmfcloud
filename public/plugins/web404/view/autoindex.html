@@ -1,0 +1,18 @@
+<script>
+    var time = 5;
+    function timeDown(){
+        //document.getElementsByTagName('i')[0].innerHTML = time;
+        var autotime =  document.getElementById('autotime');
+        console.log(autotime);
+
+        if (autotime!=null){
+            autotime.innerHTML = time +"s后跳转到首页";
+        }
+
+        if(--time==0){
+            window.location.href = '/';
+        }
+        setTimeout(timeDown,1000);
+    }
+    timeDown();
+</script>

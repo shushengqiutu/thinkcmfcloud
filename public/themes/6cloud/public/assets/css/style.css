@@ -2623,7 +2623,7 @@ header {
 .content_left{
     box-shadow:0px 1px 3px 0px rgba(0, 0, 0, 0.15);
     padding-bottom: 20px;
-    /* height: 440px; */
+    height: 440px;
 }
 .content_left .pic{
       display: block;
@@ -2722,29 +2722,44 @@ header {
     padding-right: 2%;
     border-bottom:1px solid rgba(238,238,238,1);
     background: #ffffff;
+    color: #666666;
 }
-.content_right_list .content .tit{
+.content .tit{
    color: #333333;
 }
 
-.content_right_list:nth-of-type(1) {
+.content_right_list a{
+    display: block;
+    color: #666;
+}
+
+
+.content_right_list.active {
     background: #D8162A;
     border-bottom:  1px solid #D8162A;
     /* padding-right: 10% */
-   
+   color: #fff;
 }
-.content_right_list:nth-of-type(1) .data span{
+.content_right_list.active a{
     color: #fff;
 }
-.content_right_list:nth-of-type(1) .tit {
-    color: #fff;
+.content_right_list.active .data span{
+    color: #ffffff;
 }
-.content_right_list:nth-of-type(1) p {
-    color: #fff;
+.content_right_list.active .data p{
+    color: #ffffff;
 }
-.content_right_list:nth-of-type(1) .content .comtent_info {
-    color: #fff;
+.content_right_list.active .content .tit{
+    color: #ffffff;
 }
+
+.content_right_list a:hover .content .tit{
+    color: #ffffff;
+}
+.content_right_list a:hover{
+    color: #ffffff;
+}
+
 
 .content_right_list .content{
     /* float: left; */
@@ -2774,7 +2789,7 @@ header {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
-    color: #666666;
+    
 }
 
 /* 合作伙伴 */
