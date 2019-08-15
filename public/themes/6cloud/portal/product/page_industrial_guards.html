@@ -1,0 +1,166 @@
+<extend name="public/product@productBase" />
+<block name="body">
+	<!-- 产品亮点 -->
+	<widget name="product_highlights">
+		<div id="dowhat" class="section md-padding bg-grey">
+			<!-- Container -->
+			<div class="container">
+				<include file="public@line" />
+				<!-- Row -->
+				<div class="row industrialControl-lights">
+
+					<php>
+						$commtents_id=empty($widget["vars"]["commtents_id"])?4:$widget["vars"]["commtents_id"];
+					</php>
+
+					<slides id="15">
+						<div class="col-md-4 col-xs-12  sub_item">
+							<div class="item">
+								<img class="centerImg" src="{$vo.image|cmf_get_image_url}" alt="">
+								<h3 class="theme"> {$vo.title}</h3>
+
+								<php>
+									$actice_list=explode('；',$vo['content']);
+									$len=count($actice_list);
+								</php>
+
+								<ul class="subList">
+									<volist name="$actice_list" id="item">
+
+										<if condition="$len===$i">
+											<li>{$item}</li>
+											<else>
+												<li>{$item};</li>
+										</if>
+
+									</volist>
+
+
+								</ul>
+
+							</div>
+						</div>
+
+					</slides>
+
+				</div>
+				<!-- /Row -->
+
+
+			</div>
+			<!-- /Container -->
+		</div>
+
+	</widget>
+	<!-- 产品功能 -->
+	<widget name="product_function">
+		<div id="starProducts" class="section md-padding bg-white">
+
+
+			<div class="container">
+				<include file="public@line" />
+
+				<div class="row product-feature">
+
+
+					<div class="panel-group networkSecDefense" id="accordion">
+						<slides id="16">
+							<div class="panel panel-default ">
+								<div class="panel-heading  {$i===1?'collapseActive':''}">
+									<h4 class="panel-title">
+										<div data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+											class="warp_function">
+
+											<div class="sprites bg-industrialAudit{$i}"
+												style="background-image: url('__TMPL__/portal/product/img/css_sprites_guards.png');">
+
+											</div>
+
+											<div class="content_r">
+												<h2>{$vo.title}</h2>
+												<p>{$vo.content}</p>
+											</div>
+
+										</div>
+									</h4>
+								</div>
+
+							</div>
+						</slides>
+					</div>
+
+
+				</div>
+
+			</div>
+			<!-- /Container -->
+
+		</div>
+	</widget>
+	<!-- 应用场景 -->
+	<widget name="application_scenarios">
+
+		<div id="solution" class="section md-padding">
+
+			<!-- Container -->
+			<div class="container application-scenario">
+				<!-- Row -->
+				<include file="public@line" />
+				<!-- Row -->
+				<div class="row">
+					<!-- Work -->
+					<div class="col-md-4 col-md-offset-4 col-xs-12 work network">
+						<img src="__TMPL__/portal/product/img/industrialGuards3-1.png" alt="">
+						<div class="work-font">
+							<span style="color: red">
+								操作上位机及生产管理服务器防护
+							</span>
+						</div>
+					</div>
+					<!-- /Work -->
+				</div>
+				<!-- /Row -->
+
+				<!-- Row2 networkTip-->
+				<div id='networkTip' class="row addWorkTip" style="display: block">
+					<div class="triangle">
+						<span class="glyphicon glyphicon-triangle-top"></span>
+					</div>
+					<div class="col-md-12 col-xs-12 appContent">
+
+						<div class="col-md-7 col-xs-12">
+							<img class="col-md-12 col-xs-12" src="__TMPL__/portal/product/img/industrialGuards1.png" />
+						</div>
+						<div class="col-md-5 col-xs-12 detailPadding">
+							<div>
+								<h2>场景描述：</h2>
+								<p>
+									工业卫士软件目前运用于各行业的主机操作系统中，其优良的用户体验效果和兼容性使得工业卫士软件在众多工控企业广泛使用，管理粒度更是深入到主机硬件驱动层，强有力保护主机安全。
+									目前运用的行业场景包括：
+									电力行业、石油化工、煤矿综合开采及煤化工、烟草行业、冶金行业、制药行业、智能制造、市政行业、智能制造、半导体生产企业、轨道交通、水处理。<br>
+								</p>
+							</div>
+							<div>
+								<h2>产品作用：</h2>
+								<p>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>
+									工业卫士库管理工具软件(server）部署在过程监控层、生产管理层的工程师站（或操作员站、服务器）或独立工作站 。工业卫士终端软件(agent)部署在过程监控层、生产管理层的每个工程师站、操作员站、服务器 。工业卫士库管理工具软件统一配置并将完整、可用、可信白名单安全策略统一下发至每个工程师站、操作员站、服务器；
+									<br>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>
+									工业卫士终端软件(agent)不但可以和工业卫士库管理工具软件(server）协调工作，还可以在单台工作站上独立工作运行，可以对网络相对独立的工作站进行防护； <br>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>
+									通过部署工业卫士产品实现对主机应用软件和操作行为的监控和分析，应用软件和操作行为的访问控制，应用软件和操作行为完整、可信、可用白名单特征库的建立。 <br>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row2 -->
+
+			</div>
+			<!-- /Container -->
+
+		</div>
+	</widget>
+
+</block>

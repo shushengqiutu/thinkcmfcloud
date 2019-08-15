@@ -38,455 +38,381 @@
     var delay = 300;
 
     // 新闻与活动容器
-    var $news_content = $('.newsAndActivity-container');
-
-    var addTopClickEvent = function () {
-
-        $(".footer-wrapper a[href^='#']").off('click');
-
-        var $wrapper_nav = $('.footer-wrapper a');
-
-        $wrapper_nav.each(function (index, item) {
-
-            $(item).click(function (event) {
-
-                $wrapper_nav.removeClass('active');
-
-                $(this).addClass('active');
-
-                if (event.target.id == 'companyProfile') {
-                    $('.company').show(delay);
-                    $('.recruitment').hide(delay);
-                    $('.contactUs').hide(delay);
-                    $('.schoolfind').hide(delay);
-                    $('.cv').hide(delay);
-
-                    /*$(this).addClass('active');*/
-
-                } else if (event.target.id == 'recruitment') {
-                    $('.company').hide(delay);
-                    $('.recruitment').show(delay);
-                    $('.contactUs').hide(delay);
-                    $('.schoolfind').hide(delay);
-                    $('.cv').hide(delay);
-
-                } else if (event.target.id == 'schoolfind') {
-                    $('.company').hide(delay);
-                    $('.schoolfind').show(delay);
-                    $('.contactUs').hide(delay);
-                    $('.recruitment').hide(delay);
-                    $('.cv').hide(delay);
-
-                } else if ($(this).prop('id') == 'newsAndActivity') {
-                    var href = "/portal/list/news.html";
-                    if($(this).prop('type') == 'lib'){
-                        href = "/portal/list/weekly.html";
-                    }else if($(this).prop('type') == 'down'){
-                        href = "/portal/list/down.html";
-                    }else if($(this).prop('type') == 'up'){
-                        href = "/portal/list/up.html";
-                    }
-                    window.location.href = href;
-                    return false;
-                    $news_content.show(delay);
-
-                    $('.company').hide(delay);
-                    $('.recruitment').hide(delay);
-                    $('.contactUs').hide(delay);
-                    $('.schoolfind').hide(delay);
-                    $('.cv').hide(delay);
-
-                } else if (event.target.id == 'cv') {
-                    $('.company').hide(delay);
-                    $('.schoolfind').hide(delay);
-                    $('.contactUs').hide(delay);
-                    $('.recruitment').hide(delay);
-                    $('.cv').show(delay);
-
-                } else {
-                    $('.company').hide(delay);
-                    $('.recruitment').hide(delay);
-                    $('.contactUs').show(delay);
-                    $('.schoolfind').hide(delay);
-                     $('.cv').hide(delay);
-                    companyMap();
-                }
-
-                // addClassOfA();
-
-            })
-
-        });
-
-        var addClassOfA = function () {
-            var time = null
-            clearTimeout(time);
-            time = setTimeout(function () {
-                if ($('.company').is(':hidden')) {
-                    $('#companyProfile').removeClass('active');
-                } else {
-                    $('#companyProfile').addClass('active');
-                }
-
-                if ($('.recruitment').is(':hidden')) {
-                    $('#recruitment').removeClass('active');
-                } else {
-                    $('#recruitment').addClass('active');
-                }
-
-                if ($('.schoolfind').is(':hidden')) {
-                    $('#schoolfind').removeClass('active');
-                } else {
-                    $('#schoolfind').addClass('active');
-                }
-
-                if ($('.contactUs').is(':hidden')) {
-                    $('#contactUs').removeClass('active');
-                } else {
-                    $('#contactUs').addClass('active');
-                }
-
-                if ($('.cv').is(':hidden')) {
-                    $('#cv').removeClass('active');
-                } else {
-                    $('#cv').addClass('active');
-                }
-            }, 400)
-        }
-
-    };
-
-    var addClickCareerNav = function () {
-        $('.careerNav').on('click', function (event) {
-
-            if ($(event.target).hasClass('career1')) {
-
-                $('#career1').show(delay);
-                $('#career2').hide(delay);
-                $('#career3').hide(delay);
-                $('#career4').hide(delay);
-                $('#career5').hide(delay);
-                $('#career6').hide(delay);
-
-            } else if ($(event.target).hasClass('career2')) {
-
-                $('#career1').hide(delay);
-                $('#career2').show(delay);
-                $('#career3').hide(delay);
-                $('#career4').hide(delay);
-                $('#career5').hide(delay);
-                $('#career6').hide(delay);
-
-            } else if ($(event.target).hasClass('career3')) {
-
-                $('#career1').hide(delay);
-                $('#career2').hide(delay);
-                $('#career3').show(delay);
-                $('#career4').hide(delay);
-                $('#career5').hide(delay);
-                $('#career6').hide(delay);
-
-            } else if ($(event.target).hasClass('career4')) {
-
-                $('#career1').hide(delay);
-                $('#career2').hide(delay);
-                $('#career3').hide(delay);
-                $('#career4').show(delay);
-                $('#career5').hide(delay);
-                $('#career6').hide(delay);
-
-            } else if ($(event.target).hasClass('career5')) {
-
-                $('#career1').hide(delay);
-                $('#career2').hide(delay);
-                $('#career3').hide(delay);
-                $('#career4').hide(delay);
-                $('#career5').show(delay);
-                $('#career6').hide(delay);
-
-            } else if ($(event.target).hasClass('career6')) {
-                $('#career1').hide(delay);
-                $('#career2').hide(delay);
-                $('#career3').hide(delay);
-                $('#career4').hide(delay);
-                $('#career5').hide(delay);
-                $('#career6').show(delay);
-            }
-
-            addActiveTitleClass();
-        });
-
-        var addActiveTitleClass = function () {
-            var timer = null;
-            clearTimeout(timer);
-            timer = setTimeout(function () {
-
-                if ($('#career1').is(':hidden')) {
-                    $('.career1').removeClass('activeTitle');
-                } else {
-                    $('.career1').addClass('activeTitle');
-                }
-
-                if ($('#career2').is(':hidden')) {
-                    $('.career2').removeClass('activeTitle');
-                } else {
-                    $('.career2').addClass('activeTitle');
-                }
-
-                if ($('#career3').is(':hidden')) {
-                    $('.career3').removeClass('activeTitle');
-                } else {
-                    $('.career3').addClass('activeTitle');
-                }
-
-                if ($('#career4').is(':hidden')) {
-                    $('.career4').removeClass('activeTitle');
-                } else {
-                    $('.career4').addClass('activeTitle');
-                }
-
-                if ($('#career5').is(':hidden')) {
-                    $('.career5').removeClass('activeTitle');
-                } else {
-                    $('.career5').addClass('activeTitle');
-                }
-
-                if ($('#career6').is(':hidden')) {
-                    $('.career6').removeClass('activeTitle');
-                } else {
-                    $('.career6').addClass('activeTitle');
-                }
-
-            }, 400);
-        }
-    }
-
-    var addClickSchoolNav = function () {
-        $('.schoolNav').on('click', function (event) {
-
-            if ($(event.target).hasClass('school1')) {
-
-                $('#school1').show(delay);
-                $('#school2').hide(delay);
-                $('#school3').hide(delay);
-                $('#school4').hide(delay);
-                $('#school5').hide(delay);
-                $('#school6').hide(delay);
-                $('#school7').hide(delay);
-                $('#school8').hide(delay);
-
-            } else if ($(event.target).hasClass('school2')) {
-
-                $('#school1').hide(delay);
-                $('#school2').show(delay);
-                $('#school3').hide(delay);
-                $('#school4').hide(delay);
-                $('#school5').hide(delay);
-                $('#school6').hide(delay);
-                $('#school7').hide(delay);
-                $('#school8').hide(delay);
-
-            } else if ($(event.target).hasClass('school3')) {
-
-                $('#school1').hide(delay);
-                $('#school2').hide(delay);
-                $('#school3').show(delay);
-                $('#school4').hide(delay);
-                $('#school5').hide(delay);
-                $('#school6').hide(delay);
-                $('#school7').hide(delay);
-                $('#school8').hide(delay);
-
-            } else if ($(event.target).hasClass('school4')) {
-
-                $('#school1').hide(delay);
-                $('#school2').hide(delay);
-                $('#school3').hide(delay);
-                $('#school4').show(delay);
-                $('#school5').hide(delay);
-                $('#school6').hide(delay);
-                $('#school7').hide(delay);
-                $('#school8').hide(delay);
-
-            } else if ($(event.target).hasClass('school5')) {
-
-                $('#school1').hide(delay);
-                $('#school2').hide(delay);
-                $('#school3').hide(delay);
-                $('#school4').hide(delay);
-                $('#school5').show(delay);
-                $('#school6').hide(delay);
-                $('#school7').hide(delay);
-                $('#school8').hide(delay);
-
-            } else if ($(event.target).hasClass('school6')) {
-
-                $('#school1').hide(delay);
-                $('#school2').hide(delay);
-                $('#school3').hide(delay);
-                $('#school4').hide(delay);
-                $('#school5').hide(delay);
-                $('#school6').show(delay);
-                $('#school7').hide(delay);
-                $('#school8').hide(delay);
-
-            } else if ($(event.target).hasClass('school7')) {
-
-                $('#school1').hide(delay);
-                $('#school2').hide(delay);
-                $('#school3').hide(delay);
-                $('#school4').hide(delay);
-                $('#school5').hide(delay);
-                $('#school6').hide(delay);
-                $('#school7').show(delay);
-                $('#school8').hide(delay);
-
-            } else if ($(event.target).hasClass('school8')) {
-                $('#school1').hide(delay);
-                $('#school2').hide(delay);
-                $('#school3').hide(delay);
-                $('#school4').hide(delay);
-                $('#school5').hide(delay);
-                $('#school6').hide(delay);
-                $('#school7').hide(delay);
-                $('#school8').show(delay);
-            }
-
-            addActiveTitleClassSchool();
-        });
-
-        var addActiveTitleClassSchool = function () {
-            var timer = null;
-            clearTimeout(timer);
-            timer = setTimeout(function () {
-
-                if ($('#school1').is(':hidden')) {
-                    $('.school1').removeClass('activeTitle');
-                } else {
-                    $('.school1').addClass('activeTitle');
-                }
-
-                if ($('#school2').is(':hidden')) {
-                    $('.school2').removeClass('activeTitle');
-                } else {
-                    $('.school2').addClass('activeTitle');
-                }
-
-                if ($('#school3').is(':hidden')) {
-                    $('.school3').removeClass('activeTitle');
-                } else {
-                    $('.school3').addClass('activeTitle');
-                }
-
-                if ($('#school4').is(':hidden')) {
-                    $('.school4').removeClass('activeTitle');
-                } else {
-                    $('.school4').addClass('activeTitle');
-                }
-
-                if ($('#school5').is(':hidden')) {
-                    $('.school5').removeClass('activeTitle');
-                } else {
-                    $('.school5').addClass('activeTitle');
-                }
-
-                if ($('#school6').is(':hidden')) {
-                    $('.school6').removeClass('activeTitle');
-                } else {
-                    $('.school6').addClass('activeTitle');
-                }
-
-                if ($('#school7').is(':hidden')) {
-                    $('.school7').removeClass('activeTitle');
-                } else {
-                    $('.school7').addClass('activeTitle');
-                }
-
-                if ($('#school8').is(':hidden')) {
-                    $('.school8').removeClass('activeTitle');
-                } else {
-                    $('.school8').addClass('activeTitle');
-                }
-
-            }, 400);
-        }
-    }
-
-    var companyMap = function () {
-        //创建和初始化地图函数：
-        function initMap() {
-            createMap();//创建地图
-            setMapEvent();//设置地图事件
-            addMapControl();//向地图添加控件
-            addMapOverlay();//向地图添加覆盖物
-        }
-
-        function createMap() {
-            map = new BMap.Map("map");
-            map.centerAndZoom(new BMap.Point(116.314403, 40.049811), 16);
-        }
-
-        function setMapEvent() {
-            map.enableScrollWheelZoom();
-            map.enableKeyboard();
-            map.enableDragging();
-            map.enableDoubleClickZoom()
-        }
-
-        function addClickHandler(target, window) {
-            target.addEventListener("click", function () {
-                target.openInfoWindow(window);
-            });
-        }
-
-        function addMapOverlay() {
-            var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
-                '地址：北京海淀区信息路12号中关村发展大厦C座2层<br/>电话：(010)86469302' +
-                '</div>';
-            var title = '<span style="color: orangered;font-size: 14px;font-weight: bold">北京六方云科技有限公司</span>';
-            var markers = [
-                {
-                    content: content,
-                    title: title,
-                    imageOffset: {width: -46, height: -21, display: "block"},
-                    position: {lat: 40.04663, lng: 116.315782}
-                }
-            ];
-            for (var index = 0; index < markers.length; index++) {
-                var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
-                var marker = new BMap.Marker(point);
-                var opts = {
-                    width: 200,
-                    title: markers[index].title,
-                    enableMessage: false
-                };
-
-                var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
-
-                map.openInfoWindow(infoWindow, point); //开启信息窗口
-                addClickHandler(marker, infoWindow);
-                map.addOverlay(marker);
-            }
-            ;
-        }
-
-        //向地图添加控件
-        function addMapControl() {
-            var scaleControl = new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT});
-            scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
-            map.addControl(scaleControl);
-            var navControl = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: 3});
-            map.addControl(navControl);
-            var overviewControl = new BMap.OverviewMapControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: false});
-            map.addControl(overviewControl);
-        }
-
-        var map;
-        initMap();
-    }
-    addTopClickEvent();
-    addClickCareerNav();
-    addClickSchoolNav();
+    // var $news_content = $('.newsAndActivity-container');
+
+    // var addTopClickEvent = function () {
+
+    //     $(".footer-wrapper a[href^='#']").off('click');
+
+    //     var $wrapper_nav = $('.footer-wrapper a');
+
+    //     $wrapper_nav.each(function (index, item) {
+
+    //         $(item).click(function (event) {
+
+    //             $wrapper_nav.removeClass('active');
+
+    //             $(this).addClass('active');
+
+    //             if (event.target.id == 'companyProfile') {
+    //                 $('.company').show(delay);
+    //                 $('.recruitment').hide(delay);
+    //                 $('.contactUs').hide(delay);
+    //                 $('.schoolfind').hide(delay);
+    //                 $('.cv').hide(delay);
+
+    //                 /*$(this).addClass('active');*/
+
+    //             } else if (event.target.id == 'recruitment') {
+    //                 $('.company').hide(delay);
+    //                 $('.recruitment').show(delay);
+    //                 $('.contactUs').hide(delay);
+    //                 $('.schoolfind').hide(delay);
+    //                 $('.cv').hide(delay);
+
+    //             } else if (event.target.id == 'schoolfind') {
+    //                 $('.company').hide(delay);
+    //                 $('.schoolfind').show(delay);
+    //                 $('.contactUs').hide(delay);
+    //                 $('.recruitment').hide(delay);
+    //                 $('.cv').hide(delay);
+
+    //             } else if ($(this).prop('id') == 'newsAndActivity') {
+    //                 var href = "/portal/list/news.html";
+    //                 if($(this).prop('type') == 'lib'){
+    //                     href = "/portal/list/weekly.html";
+    //                 }else if($(this).prop('type') == 'down'){
+    //                     href = "/portal/list/down.html";
+    //                 }else if($(this).prop('type') == 'up'){
+    //                     href = "/portal/list/up.html";
+    //                 }
+    //                 window.location.href = href;
+    //                 return false;
+    //                 $news_content.show(delay);
+
+    //                 $('.company').hide(delay);
+    //                 $('.recruitment').hide(delay);
+    //                 $('.contactUs').hide(delay);
+    //                 $('.schoolfind').hide(delay);
+    //                 $('.cv').hide(delay);
+
+    //             } else if (event.target.id == 'cv') {
+    //                 $('.company').hide(delay);
+    //                 $('.schoolfind').hide(delay);
+    //                 $('.contactUs').hide(delay);
+    //                 $('.recruitment').hide(delay);
+    //                 $('.cv').show(delay);
+
+    //             } else {
+    //                 $('.company').hide(delay);
+    //                 $('.recruitment').hide(delay);
+    //                 $('.contactUs').show(delay);
+    //                 $('.schoolfind').hide(delay);
+    //                  $('.cv').hide(delay);
+                   
+    //             }
+
+    //             // addClassOfA();
+
+    //         })
+
+    //     });
+
+    //     var addClassOfA = function () {
+    //         var time = null
+    //         clearTimeout(time);
+    //         time = setTimeout(function () {
+    //             if ($('.company').is(':hidden')) {
+    //                 $('#companyProfile').removeClass('active');
+    //             } else {
+    //                 $('#companyProfile').addClass('active');
+    //             }
+
+    //             if ($('.recruitment').is(':hidden')) {
+    //                 $('#recruitment').removeClass('active');
+    //             } else {
+    //                 $('#recruitment').addClass('active');
+    //             }
+
+    //             if ($('.schoolfind').is(':hidden')) {
+    //                 $('#schoolfind').removeClass('active');
+    //             } else {
+    //                 $('#schoolfind').addClass('active');
+    //             }
+
+    //             if ($('.contactUs').is(':hidden')) {
+    //                 $('#contactUs').removeClass('active');
+    //             } else {
+    //                 $('#contactUs').addClass('active');
+    //             }
+
+    //             if ($('.cv').is(':hidden')) {
+    //                 $('#cv').removeClass('active');
+    //             } else {
+    //                 $('#cv').addClass('active');
+    //             }
+    //         }, 400)
+    //     }
+
+    // };
+
+    // var addClickCareerNav = function () {
+    //     $('.careerNav').on('click', function (event) {
+
+    //         if ($(event.target).hasClass('career1')) {
+
+    //             $('#career1').show(delay);
+    //             $('#career2').hide(delay);
+    //             $('#career3').hide(delay);
+    //             $('#career4').hide(delay);
+    //             $('#career5').hide(delay);
+    //             $('#career6').hide(delay);
+
+    //         } else if ($(event.target).hasClass('career2')) {
+
+    //             $('#career1').hide(delay);
+    //             $('#career2').show(delay);
+    //             $('#career3').hide(delay);
+    //             $('#career4').hide(delay);
+    //             $('#career5').hide(delay);
+    //             $('#career6').hide(delay);
+
+    //         } else if ($(event.target).hasClass('career3')) {
+
+    //             $('#career1').hide(delay);
+    //             $('#career2').hide(delay);
+    //             $('#career3').show(delay);
+    //             $('#career4').hide(delay);
+    //             $('#career5').hide(delay);
+    //             $('#career6').hide(delay);
+
+    //         } else if ($(event.target).hasClass('career4')) {
+
+    //             $('#career1').hide(delay);
+    //             $('#career2').hide(delay);
+    //             $('#career3').hide(delay);
+    //             $('#career4').show(delay);
+    //             $('#career5').hide(delay);
+    //             $('#career6').hide(delay);
+
+    //         } else if ($(event.target).hasClass('career5')) {
+
+    //             $('#career1').hide(delay);
+    //             $('#career2').hide(delay);
+    //             $('#career3').hide(delay);
+    //             $('#career4').hide(delay);
+    //             $('#career5').show(delay);
+    //             $('#career6').hide(delay);
+
+    //         } else if ($(event.target).hasClass('career6')) {
+    //             $('#career1').hide(delay);
+    //             $('#career2').hide(delay);
+    //             $('#career3').hide(delay);
+    //             $('#career4').hide(delay);
+    //             $('#career5').hide(delay);
+    //             $('#career6').show(delay);
+    //         }
+
+    //         addActiveTitleClass();
+    //     });
+
+    //     var addActiveTitleClass = function () {
+    //         var timer = null;
+    //         clearTimeout(timer);
+    //         timer = setTimeout(function () {
+
+    //             if ($('#career1').is(':hidden')) {
+    //                 $('.career1').removeClass('activeTitle');
+    //             } else {
+    //                 $('.career1').addClass('activeTitle');
+    //             }
+
+    //             if ($('#career2').is(':hidden')) {
+    //                 $('.career2').removeClass('activeTitle');
+    //             } else {
+    //                 $('.career2').addClass('activeTitle');
+    //             }
+
+    //             if ($('#career3').is(':hidden')) {
+    //                 $('.career3').removeClass('activeTitle');
+    //             } else {
+    //                 $('.career3').addClass('activeTitle');
+    //             }
+
+    //             if ($('#career4').is(':hidden')) {
+    //                 $('.career4').removeClass('activeTitle');
+    //             } else {
+    //                 $('.career4').addClass('activeTitle');
+    //             }
+
+    //             if ($('#career5').is(':hidden')) {
+    //                 $('.career5').removeClass('activeTitle');
+    //             } else {
+    //                 $('.career5').addClass('activeTitle');
+    //             }
+
+    //             if ($('#career6').is(':hidden')) {
+    //                 $('.career6').removeClass('activeTitle');
+    //             } else {
+    //                 $('.career6').addClass('activeTitle');
+    //             }
+
+    //         }, 400);
+    //     }
+    // }
+
+    // var addClickSchoolNav = function () {
+    //     $('.schoolNav').on('click', function (event) {
+
+    //         if ($(event.target).hasClass('school1')) {
+
+    //             $('#school1').show(delay);
+    //             $('#school2').hide(delay);
+    //             $('#school3').hide(delay);
+    //             $('#school4').hide(delay);
+    //             $('#school5').hide(delay);
+    //             $('#school6').hide(delay);
+    //             $('#school7').hide(delay);
+    //             $('#school8').hide(delay);
+
+    //         } else if ($(event.target).hasClass('school2')) {
+
+    //             $('#school1').hide(delay);
+    //             $('#school2').show(delay);
+    //             $('#school3').hide(delay);
+    //             $('#school4').hide(delay);
+    //             $('#school5').hide(delay);
+    //             $('#school6').hide(delay);
+    //             $('#school7').hide(delay);
+    //             $('#school8').hide(delay);
+
+    //         } else if ($(event.target).hasClass('school3')) {
+
+    //             $('#school1').hide(delay);
+    //             $('#school2').hide(delay);
+    //             $('#school3').show(delay);
+    //             $('#school4').hide(delay);
+    //             $('#school5').hide(delay);
+    //             $('#school6').hide(delay);
+    //             $('#school7').hide(delay);
+    //             $('#school8').hide(delay);
+
+    //         } else if ($(event.target).hasClass('school4')) {
+
+    //             $('#school1').hide(delay);
+    //             $('#school2').hide(delay);
+    //             $('#school3').hide(delay);
+    //             $('#school4').show(delay);
+    //             $('#school5').hide(delay);
+    //             $('#school6').hide(delay);
+    //             $('#school7').hide(delay);
+    //             $('#school8').hide(delay);
+
+    //         } else if ($(event.target).hasClass('school5')) {
+
+    //             $('#school1').hide(delay);
+    //             $('#school2').hide(delay);
+    //             $('#school3').hide(delay);
+    //             $('#school4').hide(delay);
+    //             $('#school5').show(delay);
+    //             $('#school6').hide(delay);
+    //             $('#school7').hide(delay);
+    //             $('#school8').hide(delay);
+
+    //         } else if ($(event.target).hasClass('school6')) {
+
+    //             $('#school1').hide(delay);
+    //             $('#school2').hide(delay);
+    //             $('#school3').hide(delay);
+    //             $('#school4').hide(delay);
+    //             $('#school5').hide(delay);
+    //             $('#school6').show(delay);
+    //             $('#school7').hide(delay);
+    //             $('#school8').hide(delay);
+
+    //         } else if ($(event.target).hasClass('school7')) {
+
+    //             $('#school1').hide(delay);
+    //             $('#school2').hide(delay);
+    //             $('#school3').hide(delay);
+    //             $('#school4').hide(delay);
+    //             $('#school5').hide(delay);
+    //             $('#school6').hide(delay);
+    //             $('#school7').show(delay);
+    //             $('#school8').hide(delay);
+
+    //         } else if ($(event.target).hasClass('school8')) {
+    //             $('#school1').hide(delay);
+    //             $('#school2').hide(delay);
+    //             $('#school3').hide(delay);
+    //             $('#school4').hide(delay);
+    //             $('#school5').hide(delay);
+    //             $('#school6').hide(delay);
+    //             $('#school7').hide(delay);
+    //             $('#school8').show(delay);
+    //         }
+
+    //         addActiveTitleClassSchool();
+    //     });
+
+    //     var addActiveTitleClassSchool = function () {
+    //         var timer = null;
+    //         clearTimeout(timer);
+    //         timer = setTimeout(function () {
+
+    //             if ($('#school1').is(':hidden')) {
+    //                 $('.school1').removeClass('activeTitle');
+    //             } else {
+    //                 $('.school1').addClass('activeTitle');
+    //             }
+
+    //             if ($('#school2').is(':hidden')) {
+    //                 $('.school2').removeClass('activeTitle');
+    //             } else {
+    //                 $('.school2').addClass('activeTitle');
+    //             }
+
+    //             if ($('#school3').is(':hidden')) {
+    //                 $('.school3').removeClass('activeTitle');
+    //             } else {
+    //                 $('.school3').addClass('activeTitle');
+    //             }
+
+    //             if ($('#school4').is(':hidden')) {
+    //                 $('.school4').removeClass('activeTitle');
+    //             } else {
+    //                 $('.school4').addClass('activeTitle');
+    //             }
+
+    //             if ($('#school5').is(':hidden')) {
+    //                 $('.school5').removeClass('activeTitle');
+    //             } else {
+    //                 $('.school5').addClass('activeTitle');
+    //             }
+
+    //             if ($('#school6').is(':hidden')) {
+    //                 $('.school6').removeClass('activeTitle');
+    //             } else {
+    //                 $('.school6').addClass('activeTitle');
+    //             }
+
+    //             if ($('#school7').is(':hidden')) {
+    //                 $('.school7').removeClass('activeTitle');
+    //             } else {
+    //                 $('.school7').addClass('activeTitle');
+    //             }
+
+    //             if ($('#school8').is(':hidden')) {
+    //                 $('.school8').removeClass('activeTitle');
+    //             } else {
+    //                 $('.school8').addClass('activeTitle');
+    //             }
+
+    //         }, 400);
+    //     }
+    // }
+   
+   
 
 
     // 新闻与活动按钮
@@ -514,7 +440,8 @@
     var flagupload = false;
     var uploadname = "";
     $('#fileupload').fileupload({
-        url: 'upload.php',
+        url: '/jianli/upload.php',
+       
         dataType: 'json',
         autoUpload: false,
         acceptFileTypes: /(\.|\/)(doc|docx|pdf)$/i,
@@ -548,6 +475,8 @@
             node
                 .prepend('<br>')
                 .prepend(file.preview);
+
+
         }
         if (file.error) {
             node
@@ -568,7 +497,7 @@
     }).on('fileuploaddone', function (e, data) {
         $.each(data.result.files, function (index, file) {
             if (file.url) {
-                var success = $('<span class="text-success"/>').text('文件上传成功，请点击提交完成投递！');
+                var success = $('<span class="text-success"/>').text('上传成功，点击提交完成投递！');
                 //可以上传
                 flagupload = true;
                 uploadname = file.name;
@@ -622,7 +551,8 @@
 
     $("#cvForm").submit(function (e) {
         e.preventDefault();
-        // console.log(123);
+  
+      
         // return false;
         //招聘类型
         var jobtype = $("#jobtype").val(); // 1：校园招聘 2：社会招聘
@@ -646,6 +576,7 @@
 
         //检查合法性
         if (email != "") {
+          
             if (!checkEmail(email)) {
                 alert("请输入正确的邮箱。");
                 return false;
@@ -661,14 +592,23 @@
         if (email == "") {
             email = "暂无"
         }
-
+      
+        
+       
+       
         if(!flagupload){
             alert("请上传简历附件。");
                 return false;
         }
+        
+         //发送简历弹出框内容隐藏
+        $('#delivery').hide()
+        // loading显示
+        $('.loading').show();
+
         $.ajax({
             type: "POST",
-            url: "send.php",
+            url: "/jianli/send.php",
             data: {
                 "jobtype":jobtype,
                 "xzjob": xzjob,
@@ -681,7 +621,13 @@
                 "uploadname":uploadname
             },
             success: function (result) {
-                alert(result);
+              console.log(result)
+              if(result==="投递成功!"){
+                  $('.loading').removeClass("active");
+                  $('.loading>.loading_text').html("投递成功!")
+              }else{
+                $('.loading>.loading_text').html("投递失败").css("color","red")
+              }
             }, error: function (jqXHR, textStatus, errorThrown) {
                 /*错误信息处理*/
                 console.log(jqXHR.responseText);
@@ -690,81 +636,84 @@
         return false;
     }); 
 
-    $("#companyProfileForm").submit(function (e) {
-        e.preventDefault();
-        console.log(123);
-        //公司名称
-        var companyName = $("#companyName").val();
-        //产品意向
-        var intention = $("#intention").val();
-        //联系人
-        var name = $("#name").val();
-        //职务
-        var career = $("#career").val();
-        //手机号码
-        var phone = $("#phone").val();
-        //联系电话
-        var telPhone = $("#telPhone").val();
-        //邮箱地址
-        var email = $("#email").val();
-        //抄送邮箱地址
-        var cc = $("#ccemail").val();
-        //检查合法性
-        if (email != "") {
-            if (!checkEmail(email)) {
-                alert("请输入正确的邮箱。");
-                return false;
-            }
-        }
-        //检查合法性
-        if (cc != "") {
-            if (!checkEmail(cc)) {
-                alert("请输入正确的抄送邮箱。");
-                return false;
-            }
-        }
-        if (phone != "") {
-            if (!checkCellMobile(phone)) {
-                alert("请输入正确的手机号码。");
-                return false;
-            }
-        }
-        if (email == "") {
-            email = "暂无"
-        }
-        if (career == "") {
-            career = "暂无"
-        }
-        if (telPhone == "") {
-            telPhone = "暂无"
-        }
-        $.ajax({
-            type: "POST",
-            url: "cooperation.php",
-            data: {
-                "companyName": companyName,
-                "intention": intention,
-                "name": name,
-                "career": career,
-                "phone": phone,
-                "telPhone": telPhone,
-                "email": email,
-                "cc": cc
-            },
-            success: function (result) {
-                alert(result);
-            }, error: function (jqXHR, textStatus, errorThrown) {
-                /*错误信息处理*/
-                console.log(jqXHR.responseText);
-            }
-        });
-        return false;
-    });
+    // $("#companyProfileForm").submit(function (e) {
+    //     e.preventDefault();
+    //     console.log(123);
+    //     //公司名称
+    //     var companyName = $("#companyName").val();
+    //     //产品意向
+    //     var intention = $("#intention").val();
+    //     //联系人
+    //     var name = $("#name").val();
+    //     //职务
+    //     var career = $("#career").val();
+    //     //手机号码
+    //     var phone = $("#phone").val();
+    //     //联系电话
+    //     var telPhone = $("#telPhone").val();
+    //     //邮箱地址
+    //     var email = $("#email").val();
+    //     //抄送邮箱地址
+    //     var cc = $("#ccemail").val();
+    //     //检查合法性
+    //     if (email != "") {
+    //         if (!checkEmail(email)) {
+    //             alert("请输入正确的邮箱。");
+    //             return false;
+    //         }
+    //     }
+    //     //检查合法性
+    //     if (cc != "") {
+    //         if (!checkEmail(cc)) {
+    //             alert("请输入正确的抄送邮箱。");
+    //             return false;
+    //         }
+    //     }
+    //     if (phone != "") {
+    //         if (!checkCellMobile(phone)) {
+    //             alert("请输入正确的手机号码。");
+    //             return false;
+    //         }
+    //     }
+    //     if (email == "") {
+    //         email = "暂无"
+    //     }
+    //     if (career == "") {
+    //         career = "暂无"
+    //     }
+    //     if (telPhone == "") {
+    //         telPhone = "暂无"
+    //     }
+        
+        
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "/jianli/cooperation.php",
+    //         data: {
+    //             "companyName": companyName,
+    //             "intention": intention,
+    //             "name": name,
+    //             "career": career,
+    //             "phone": phone,
+    //             "telPhone": telPhone,
+    //             "email": email,
+    //             "cc": cc
+    //         },
+    //         success: function (result) {
+    //             alert(result);
+    //         }, error: function (jqXHR, textStatus, errorThrown) {
+    //             /*错误信息处理*/
+    //             console.log(jqXHR.responseText);
+    //         }
+    //     });
+    //     return false;
+    // });
 
 
     // 新闻与活动 相关
 
     // 默认注册
+    
     $news_btn.click(function () {
 
         return false;

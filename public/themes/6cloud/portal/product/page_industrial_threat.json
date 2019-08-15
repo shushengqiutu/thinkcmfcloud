@@ -1,0 +1,151 @@
+{
+    "name": "内网威胁管理系统",
+    "action": "portal/Page/index",
+    "description": "内网威胁管理系统",
+    "order": 10.0,
+    "more": {
+        "widgets": {
+            "bigbanner": {
+                "title": "面包屑导航",
+                "name": "breadcrumb",
+                "display": "1",
+                "vars": {
+                    "bigbanner_id": {
+                        "title": "bannerID",
+                        "value": "23",
+                        "type": "text",
+                        "tip": "请选择产品页面bannerID",
+                        "dataSource": {
+                            "api": "admin/Slide/index",
+                            "multi": true
+                        },
+                        "rule": {
+                            "require": true
+                        },
+                        "message": {
+                            "require": "不能为空"
+                        }
+                    },
+                    "breadcrumb_id": {
+                        "title": "面包屑导航",
+                        "value": "4",
+                        "type": "text",
+                        "tip": "请选择产品页面面包屑导航",
+                        "dataSource": {
+                            "api": "admin/Slide/index",
+                            "multi": true
+                        },
+                        "rule": {
+                            "require": true
+                        },
+                        "message": {
+                            "require": "不能为空"
+                        }
+                    }
+                }
+            },
+            "product_highlights": {
+                "title": "产品亮点",
+                "name": "highlights",
+                "display": "1",
+                "vars": {
+                    "tit": {
+                        "title": "中文标题",
+                        "value": "产品亮点",
+                        "type": "text",
+                        "tip": "请输入产品亮点模块标题",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "tit_english": {
+                        "title": "英文标题",
+                        "value": "PRODUCT HIGHLIGHTS",
+                        "type": "text",
+                        "tip": "请输入产品亮点英文标题",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "commtents_id": {
+                        "title": "工业审计产品亮点id",
+                        "value": "14",
+                        "type": "text",
+                        "tip": "工业审计产品亮点id",
+                        "dataSource": {
+                            "api": "portal/Category/index",
+                            "multi": true
+                        },
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            },
+            "product_function": {
+                "title": "产品功能",
+                "name": "function",
+                "display": "1",
+                "vars": {
+                    "tit": {
+                        "title": "中文标题",
+                        "value": "产品功能",
+                        "type": "text",
+                        "tip": "请输入产品功能模块标题",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "tit_english": {
+                        "title": "英文标题",
+                        "value": "PRODUCT FEATURES",
+                        "type": "text",
+                        "tip": "请输入产品功能英文标题",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "commtents_id": {
+                        "title": "工业审计产品功能id",
+                        "value": "14",
+                        "type": "text",
+                        "tip": "工业审计产品功能id",
+                        "dataSource": {
+                            "api": "portal/Category/index",
+                            "multi": true
+                        },
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            },
+            "application_scenarios": {
+                "title": "应用场景",
+                "name": "function",
+                "display": "1",
+                "vars": {
+                    "tit": {
+                        "title": "中文标题",
+                        "value": "应用场景",
+                        "type": "text",
+                        "tip": "请输入产品功能模块标题",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "tit_english": {
+                        "title": "英文标题",
+                        "value": "APPLICATION SCENARIO",
+                        "type": "text",
+                        "tip": "请输入应用场景英文标题",
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                   
+                }
+            }
+        }
+    }
+}

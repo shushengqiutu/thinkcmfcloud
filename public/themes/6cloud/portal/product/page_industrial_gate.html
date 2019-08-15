@@ -1,0 +1,167 @@
+<extend name="public/product@productBase" />
+<block name="body">
+	<!-- 产品亮点 -->
+	<widget name="product_highlights">
+		<div id="dowhat" class="section md-padding bg-grey">
+			<!-- Container -->
+			<div class="container">
+				<include file="public@line" />
+				<!-- Row -->
+				<div class="row industrialControl-lights">
+
+					<php>
+						$commtents_id=empty($widget["vars"]["commtents_id"])?4:$widget["vars"]["commtents_id"];
+					</php>
+
+					<slides id="61">
+						<div class="col-md-4 col-xs-12  sub_item">
+							<div class="item">
+								<img class="centerImg" src="{$vo.image|cmf_get_image_url}" alt="">
+								<h3 class="theme"> {$vo.title}</h3>
+
+								<php>
+									$actice_list=explode('；',$vo['content']);
+									$len=count($actice_list);
+								</php>
+
+								<ul class="subList">
+									<volist name="$actice_list" id="item">
+
+										<if condition="$len===$i">
+											<li>{$item}</li>
+											<else>
+												<li>{$item};</li>
+										</if>
+
+									</volist>
+
+
+								</ul>
+
+							</div>
+						</div>
+
+					</slides>
+
+				</div>
+				<!-- /Row -->
+
+
+			</div>
+			<!-- /Container -->
+		</div>
+
+	</widget>
+	<!-- 产品功能 -->
+	<widget name="product_function">
+		<div id="starProducts" class="section md-padding bg-white">
+
+
+			<div class="container">
+				<include file="public@line" />
+
+				<div class="row product-feature">
+
+
+					<div class="panel-group networkSecDefense" id="accordion">
+						<slides id="62">
+							<div class="panel panel-default ">
+								<div class="panel-heading  {$i===1?'collapseActive':''}">
+									<h4 class="panel-title">
+										<div data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+											class="warp_function">
+
+											<div class="sprites bg-industrialAudit{$i}"
+												style="background-image: url('__TMPL__/portal/product/img/css_sprites_gate.png');">
+
+											</div>
+
+											<div class="content_r">
+												<h2>{$vo.title}</h2>
+												<p>{$vo.content}</p>
+											</div>
+
+										</div>
+									</h4>
+								</div>
+
+							</div>
+						</slides>
+					</div>
+
+
+				</div>
+
+			</div>
+			<!-- /Container -->
+
+		</div>
+	</widget>
+	<!-- 应用场景 -->
+	<widget name="application_scenarios">
+			
+				
+	<div id="solution" class="section md-padding">
+
+			<!-- Container -->
+			<div class="container application-scenario">
+				<!-- Row -->
+				<include file="public@line" />
+				<!-- Row -->
+				<div class="row">
+	
+					<div class="col-md-4 col-md-offset-4 col-xs-12 work network">
+						<img src="__TMPL__/portal/product/img/IndustrialGate3-1.png" alt="">
+						<div class="work-font">
+							<span style="color: red">
+								网络物理隔离   
+							</span>
+						</div>
+					</div>
+	
+				</div>
+				<!-- /Row -->
+	
+				
+				<!-- Row2 networkTip-->
+				<div id='networkTip' class="row addWorkTip" style="display: block">
+					<div class="triangle">
+						<span class="glyphicon glyphicon-triangle-top"></span>
+					</div>
+					<div class="col-md-12 col-xs-12 appContent">
+	
+						<div class="col-md-7 col-xs-12">
+							<img class="col-md-12 col-xs-12" src="__TMPL__/portal/product/img/IndustrialGate1.png" />
+						</div>
+						<div class="col-md-5 col-xs-12 detailPadding">
+							<div>
+								<h2>场景描述：</h2>
+								<p>
+									工厂网络可以分为三层：管理协同层、生产管理层、生产制造层。管理协同层MES服务器通过通用网闸与MES客户端同步数据，使用数据库同步模块或文件交换模块。
+									生产管理层的MES客户端通过工业安全隔离网闸访问OPC服务器，进行采集数据，使用OPC应用数据传输功能。<br>
+								</p>
+							</div>
+							<div>
+								<h2>产品作用：</h2>
+								<p>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>
+									部署于工业企业的生产管理网络与生产监控网之间，允许生产管理网通过OPC/Modbus等工控协议采集生产网的实时数据。
+									<br>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>
+									部署于工业企业的生产管理网络与管理协同网之间，保障办公网向生产管理网安全传输数据，防止泄密以及病毒传播。 <br>
+									
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row2 -->
+	
+			</div>
+			<!-- /Container -->
+	
+		</div>
+		<!-- /应用场景 -->
+	</widget>
+
+</block>

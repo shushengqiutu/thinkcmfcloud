@@ -1,0 +1,212 @@
+<extend name="public/product@productBase" />
+<block name="body">
+	<widget name="product_info">
+		<div id="info" class="md-padding bg-white">
+			<div class="container">
+				<include file="public@line" />
+				<slides id="33">
+					<div class="row">
+
+						<div class="col-md-6 col-xs-12 picInfo">
+							<img src="{$vo.image|cmf_get_image_url}" alt="">
+						</div>
+						<div class="col-md-6 col-xs-12 textInfo">
+
+							<p>
+							{$vo.description}
+							</p>
+							<p>
+									{$vo.content}
+							</p>
+						</div>
+
+					</div>
+				</slides>
+			</div>
+		</div>
+	</widget>
+	<!-- 产品亮点 -->
+	<widget name="product_highlights">
+		<div id="dowhat" class="section md-padding bg-grey">
+			<!-- Container -->
+			<div class="container">
+				<include file="public@line" />
+				<!-- Row -->
+				<div class="row industrialControl-lights">
+
+					<php>
+						$commtents_id=empty($widget["vars"]["commtents_id"])?4:$widget["vars"]["commtents_id"];
+					</php>
+
+					<slides id="34">
+						<div class="col-md-4 col-xs-12  sub_item">
+							<div class="item">
+								<img class="centerImg" src="{$vo.image|cmf_get_image_url}" alt="">
+								<h3 class="theme"> {$vo.title}</h3>
+
+								<php>
+									$actice_list=explode('；',$vo['content']);
+									$len=count($actice_list);
+								</php>
+
+								<ul class="subList">
+									<volist name="$actice_list" id="item">
+
+										<if condition="$len===$i">
+											<li>{$item}</li>
+											<else>
+												<li>{$item};</li>
+										</if>
+
+									</volist>
+
+
+								</ul>
+
+							</div>
+						</div>
+
+					</slides>
+
+				</div>
+				<!-- /Row -->
+
+
+			</div>
+			<!-- /Container -->
+		</div>
+
+	</widget>
+	<!-- 产品功能 -->
+	<widget name="product_function">
+		<div id="starProducts" class="section md-padding bg-white">
+
+
+			<div class="container">
+				<include file="public@line" />
+
+				<div class="row product-feature">
+
+
+					<div class="panel-group networkSecDefense" id="accordion">
+						<slides id="35">
+							<div class="panel panel-default ">
+								<div class="panel-heading  {$i===1?'collapseActive':''}">
+									<h4 class="panel-title">
+										<div data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+											class="warp_function">
+
+											<div class="sprites bg-industrialAudit{$i}"
+												style="background-image: url('__TMPL__/portal/product/img/css_sprites_test.png');">
+
+											</div>
+
+											<div class="content_r">
+												<h2>{$vo.title}</h2>
+												<p>{$vo.content}</p>
+											</div>
+
+										</div>
+									</h4>
+								</div>
+
+							</div>
+						</slides>
+					</div>
+
+
+				</div>
+
+			</div>
+			<!-- /Container -->
+
+		</div>
+	</widget>
+	<!-- 应用场景 -->
+	<widget name="application_scenarios">
+		
+		<div id="solution" class="section md-padding">
+
+				<!-- Container -->
+				<div class="container application-scenario">
+		
+					<!-- Row -->
+					<include file="public@line" />
+					<div class="row">
+						<!-- Work -->
+						<div class="col-md-3  col-xs-6 work ">
+							<img src="__TMPL__/portal/product/img/IndustrialTest3-1.png" alt="现场控制层审计">
+							<div class="work-font">
+								 <p>大学／职业学校</p>
+								 <p>自动化相关专业</p>
+							</div>
+						</div>
+						<!-- /Work --
+		
+						<!-- Work -->
+						<div class="col-md-3 col-xs-6 work ">
+							<img src="__TMPL__/portal/product/img/IndustrialTest3-2.png" alt="通讯服务器审计">
+							<div class="work-font">
+									<p>大学／职业学校</p>
+									<p>信息安全相关专业</p>
+							</div>
+						</div>
+						<!-- /Work -->
+						<div class="col-md-3 col-xs-6 work ">
+							<img src="__TMPL__/portal/product/img/IndustrialTest3-3.png" alt="通讯服务器审计">
+							<div class="work-font" style="color: red">
+									<p>科研机构／测评机构</p>
+									<p>政府企业／军工行业</p>
+							</div>
+						</div>
+						<div class="col-md-3 col-xs-6 work ">
+							<img src="__TMPL__/portal/product/img/IndustrialTest3-4.png" alt="通讯服务器审计">
+							<div class="work-font">
+									<p>工业大客户</p>
+								  
+							</div>
+						</div>
+		
+					</div>
+					<!-- /Row -->
+		
+					<!-- Row2 industrialTip-->
+					<div id='industrialTip' class="row addWorkTip">
+		
+						<div class="triangle">
+							<span class="glyphicon glyphicon-triangle-top"></span>
+						</div>
+						<div class="col-md-12 col-xs-12 appContent">
+		
+							<div class="col-md-7 col-xs-12 industrialTipImg">
+								<img class="col-md-12 col-xs-12" src="__TMPL__/portal/product/img/IndustrialTest-4-1.png" />
+							</div>
+							<div class="col-md-5 col-xs-12 detailPadding">
+								<div>
+									<h2>场景描述：</h2>
+									<p>
+											工控安全教育实验箱是一套针对于工控网络安全设计的移动式教学平台。实验箱采用高度集成工业控制系统和安全防护及审计方案，
+											用于工控网络安全教学培训。采用配套的工业控制网络安全教材和课件，将理论教学和实践应用高度融合，实现工控网络安全攻防演练、安全防护方案验证等功能。开放、
+											可开发的工控组态，工控网络攻击实验平台，提高创新能力，满足高校、研究所、职业院校、教育培训机构、企事业单位实验及人才培养的需求。
+									</p>
+								</div>
+								<div>
+									<h2>产品应用：</h2>
+									<p>
+										<font style="font-weight: 700;">&nbsp;·&nbsp;</font>工控安全教育实验箱是一款携带方便、部署简单，拥有丰富工控网络安全教学课件的产品，它将智能工业网络安全理论与实践完美结合，在产与学、学与用间架起桥梁，赋予工控网络安全教育互动实践的更多可能性与扩展
+										性，助推工控网络安全教育内容建设与突破，为符合产业发展需求的高级复合型人才的培养注入新动能。<br>
+									
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Row2 -->
+		
+				</div>
+				<!-- /Container -->
+		
+			</div>
+	</widget>
+
+</block>

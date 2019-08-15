@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <include file="public@head" />
+
+    <link type="text/css" rel="stylesheet" href="__TMPL__/public/assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="__TMPL__/portal/product/css/industrialProductCommon.css">
+
+    <link rel="stylesheet" type="text/css" href="__TMPL__/portal/aboutUs/css/abuoutCommon.css">
+    <block name="css">
+    </block>
+
+</head>
+
+<body>
+
+    <header id="home">
+
+        <!-- 引入轮播图 -->
+
+        <widget name="bigbanner">
+            <include file="public/product@productBanner" />
+
+            <!-- 导航条遮罩层开始 -->
+            <div class="mask container-fluid"> </div>
+            <!-- 导航条遮罩层结束 -->
+
+            <!-- Nav导航开始 -->
+
+            <include file="public@nav" />
+            <!-- /Nav结束 -->
+
+
+            <!-- 轮播图底部锚点导航开始 -->
+            <include file="public/aboutUs@breadcrumb" />
+
+        </widget>
+        <!-- 轮播图底部锚点导航结束 -->
+    </header>
+
+
+    <block name="body">
+    </block>
+
+
+
+    <!-- 让万物安全互联 开始-->
+    <include file="public@link" />
+    <!-- 让万物安全互联 结束 -->
+
+
+    <!-- footer 开始-->
+    <include file="public@footer" />
+    <!-- footer 结束 -->
+
+    <!-- 微信开始 -->
+    <include file="public@weixin" />
+    <!-- 微信结束 -->
+
+    <!-- 返回首页开始 -->
+    <div id="back-to-top">
+        <i class="glyphicon glyphicon-chevron-up"></i>
+    </div>
+    <!-- 返回首页结束 -->
+
+    <!-- Preloader -->
+    <include file="public@Preloader" />
+    <!-- /Preloader -->
+
+
+    <include file="public@scripts" />
+
+  
+    <script src="__TMPL__/portal/product/js/IndustrialProduct.js"></script>
+    <block name="script">
+    </block>
+</body>
+
+</html>

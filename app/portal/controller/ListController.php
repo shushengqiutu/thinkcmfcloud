@@ -24,6 +24,7 @@ class ListController extends HomeBaseController
      */
     public function index()
     {
+       
         $id                  = $this->request->param('id', 0, 'intval');
         $portalCategoryModel = new PortalCategoryModel();
 

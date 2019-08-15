@@ -1,0 +1,24 @@
+<php>
+    $breadcrumb_id=empty($widget["vars"]["breadcrumb_id"])?4:$widget["vars"]["breadcrumb_id"];
+    $active=empty($widget["vars"]["isActive"])?4:$widget["vars"]["isActive"];
+   
+
+</php>
+<div class="footer-wrapper md_pc aboutus" >
+    <slides id="$breadcrumb_id" >
+        <span>
+                <php>
+                        $url_arry=explode('/',$vo['url']);
+                        $len=count($url_arry);
+                      
+                </php>
+            <a href="{:url('portal/Index/'.$url_arry[0],array('pagename'=>$len>1?$url_arry[1]:''))}"
+                 class="{$active==$i?'active':''}">
+
+                {$vo.title}
+            </a>
+        </span>
+        <span>{$vo.description} </span>
+    </slides>
+
+</div>

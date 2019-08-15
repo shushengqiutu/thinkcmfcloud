@@ -15,31 +15,55 @@ use cmf\controller\HomeBaseController;
 
 class IndexController extends HomeBaseController
 {
+    //首页跳转控制器
     public function index()
     {
          
-        //  $pageCid      = $this->request->param('cid', 0, 'intval');
-        //  echo $pageId;
-       
-        // return $this->fetch('/index2');
-        return $this->fetch('/index');
+        return $this->fetch('/index'); 
+
     }
 
-    public function aboutUs()
+   
+    //产品子页面跳转控制器
+    public function  product()
     {  
 
+        
+        
+
+        $fillName="product";
+        //获取跳转页面参数
+        $pagename = $this->request->param('pagename');
+        //拼接跳转地址
+        $url=$fillName . "/" . $pagename;
+         //跳转地址为空回到首页
+        if(empty($pagename )){
+         
+            return $this->fetch('/index');
+        }else{
+         
+         //跳转页面不为空，跳转对应页面
+            return $this->fetch($url);
+        }
+    }
+
+    public function  aboutUs()
+    {  
+        
         $fillName="aboutUs";
+        //获取跳转页面参数
         $pagename = $this->request->param('pagename');
+        //拼接跳转地址
         $url=$fillName . "/" . $pagename;
-        return $this->fetch($url);
-    }
-    public function  productIndustrial()
-    {  
-
-        $fillName="productIndustrial";
-        $pagename = $this->request->param('pagename');
-        $url=$fillName . "/" . $pagename;
-        return $this->fetch($url);
+         //跳转地址为空回到首页
+        if(empty($pagename )){
+         
+            return $this->fetch('/index');
+        }else{
+         //跳转页面不为空，跳转对应页面
+            return $this->fetch($url);
+        }
+    
     }
    
     

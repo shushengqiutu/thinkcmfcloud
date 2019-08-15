@@ -1,0 +1,63 @@
+{
+    "name": "关于我们——最佳实践",
+    "action": "portal/Page/index",
+    "description": "关于我们——最佳实践",
+    "order": 10.0,
+    "more": {
+        "widgets": {
+            "bigbanner": {
+                "title": "bannerID",
+                "name": "breadcrumb",
+                "display": "32",
+                "vars": {
+                    "bigbanner_id": {
+                        "title": "bannerID",
+                        "value": " ",
+                        "type": "text",
+                        "tip": "请选择产品页面bannerID",
+                        "dataSource": {
+                            "api": "admin/Slide/index",
+                            "multi": true
+                        },
+                        "rule": {
+                            "require": true
+                        },
+                        "message": {
+                            "require": "不能为空"
+                        }
+                    },
+                    "breadcrumb_id": {
+                        "title": "面包屑导航",
+                        "value": "4",
+                        "type": "text",
+                        "tip": "请选择产品页面面包屑导航",
+                        "class": "active",
+                        "dataSource": {
+                            "api": "admin/Slide/index",
+                            "multi": true
+                        },
+                        "rule": {
+                            "require": true
+                        },
+                        "message": {
+                            "require": "不能为空"
+                        }
+                    },
+                    "isActive": {
+                        "title": "是否高亮",
+                        "value": "3",
+                        "type": "text",
+                        "tip": "高亮为active",
+                        "rule": {
+                            "require": true
+                        },
+                        "message": {
+                            "require": "不能为空"
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}

@@ -1,0 +1,161 @@
+<extend name="public/aboutUs@abuoutBase" />
+<block name="css">
+    <link rel="stylesheet" href="__TMPL__/portal/aboutUs/css/jquery.fileupload.css">
+
+</block>
+<block name="body">
+    <div id="talent" class="section  bg-grey">
+
+        <!-- Container -->
+        <div class="container">
+                <h1 class="talent_h1">联系我们</h1>
+                <div class="hr_line"></div>
+
+               <!-- 联系我们-->
+               <div class="contactUs col-md-12">
+                   
+                    <div class="row blog-content">
+                        <div class="col-md-12 col-xs-12">
+							<span class="col-md-2 col-xs-12">
+								地址
+							</span>
+                            <span class="col-md-6 col-xs-12" >
+								北京市海淀区信息路12号中关村发展大厦C座2层
+							</span>
+                        </div>
+                        <div class="col-md-12">
+							<span class="col-md-2 col-xs-12">
+								电话
+							</span>
+                            <span class="col-md-6 col-xs-12">
+                                <span class="col-md-6 phone_company" id="call">
+                                        400-6060-270
+                                </span>
+                                <span class="col-md-6 phone_company">
+                                        010-86469302
+                                </span>
+								
+							</span>
+                        </div>
+                       
+                        <div class="col-md-12">
+							<span class="col-md-2 col-xs-12">
+								邮箱
+							</span>
+                            <span class="col-md-6 col-xs-12">
+								<a href="mailto:mkt@6cloudtech.com">mkt@6cloudtech.com</a>
+							</span>
+                        </div>
+                        <div class="col-md-12">
+							<span class="col-md-1  col-xs-0">
+								<!-- 地址 -->
+							</span>
+                            <span class="col-md-10  col-xs-12">
+								<!--百度地图容器-->
+								<div id="map"></div>
+							</span>
+                        </div>
+                        <!--form-->
+                        <div class="col-md-12">
+                            <form id="companyProfileForm" class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="companyName" class="col-md-2 col-xs-12 control-label">公司名称</label>
+                                    <div class="col-md-3 col-xs-11 divPadding">
+                                        <input type="text" class="form-control" id="companyName" placeholder="请输入公司名称"
+                                               required>
+                                    </div>
+                                    <div class="col-md-1 col-xs-1 starClass">*</div>
+
+                                    <label for="intention" class="col-md-2 col-xs-12 control-label">产品意向</label>
+                                    <div class="col-md-3 col-xs-11 pad">
+                                        <input type="text" class="form-control" id="intention" placeholder="请输入产品或行业应用"
+                                               required>
+                                    </div>
+                                    <div class="col-md-1  col-xs-1 starClass">*</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="name" class="col-md-2 col-xs-12 control-label">联系人</label>
+                                    <div class="col-md-3  col-xs-11 divPadding">
+                                        <input type="text" class="form-control" id="name" placeholder="请输入姓名" required>
+                                    </div>
+                                    <div class="col-md-1 col-xs-1 starClass">*</div>
+                                    <label for="career" class="col-md-2 col-xs-12 control-label">职务</label>
+                                    <div class="col-md-3 col-xs-11 pad">
+                                        <input type="text" class="form-control" id="career" placeholder="请输入职务">
+                                    </div>
+                                    <div class="col-md-1 col-xs-1 starClass"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone" class="col-md-2 col-xs-12 control-label">手机</label>
+                                    <div class="col-md-3 col-xs-11 divPadding">
+                                        <input type="text" class="form-control" id="phone" placeholder="请输入手机号码"
+                                               required>
+                                    </div>
+                                    <div class="col-md-1 col-xs-1 starClass">*</div>
+                                    <label for="telPhone" class="col-md-2 col-xs-12 control-label">联系电话</label>
+                                    <div class="col-md-3 col-xs-11 pad">
+                                        <input type="text" class="form-control" id="telPhone" placeholder="请输入联系电话">
+                                    </div>
+                                    <div class="col-md-1  col-xs-1 starClass"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="col-md-2 col-xs-12 control-label">邮箱</label>
+                                    <div class="col-md-3 col-xs-11 divPadding">
+                                        <input type="text" class="form-control" id="email" placeholder="请输入邮箱">
+                                    </div>
+                                    <div class="col-md-1 col-xs-1 starClass"></div>
+                                
+        
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 col-xs-12">
+                                        <button type="submit" class="btn btn-default col-md-offset-5 col-md-2 col-xs-12 in">提交</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--/form-->
+                    </div>
+                </div>
+                <!-- /联系我们 -->
+
+        </div>
+    </div>
+      <div class="all_mask" style="display:none"></div>
+
+    <div id="loading" class="loading active" >
+       <h4>邮件发送</h4>
+      <i class="my_close"></i>
+      <img class="sending" src="__TMPL__/portal/aboutUs/img/loading.gif" width="180" alt="">
+      <img class="sended" src="__TMPL__/portal/aboutUs/img/succ.png" width="100" alt="">
+       <p class="loading_text">发送中...</p>
+    </div> 
+
+
+    <script>
+
+        $('.loading>.my_close').click(function () {
+      
+        $(".loading").hide().addClass("active")
+      
+      })
+
+
+
+    </script>
+   
+</block>
+<block name="script">
+    <script src="__TMPL__/portal/aboutUs/js/jquery.ui.widget.js"></script>
+    <script src="__TMPL__/portal/aboutUs/js/jquery.fileupload.js"></script>
+    <script src="__TMPL__/portal/aboutUs/js/jquery.fileupload-process.js"></script>
+    <script src="__TMPL__/portal/aboutUs/js/jquery.fileupload-validate.js"></script>
+    
+    <script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=ptHIPtqRNKWATLgkBSI3iDpz0yhVUM60"></script>
+    <!-- <script src="__TMPL__/portal/aboutUs/js/companyProfile.js"></script> -->
+    <script src="__TMPL__/portal/aboutUs/js/my_map.js"></script>
+    <script src="__TMPL__/portal/aboutUs/js/cooperation.js"></script>
+
+</block>

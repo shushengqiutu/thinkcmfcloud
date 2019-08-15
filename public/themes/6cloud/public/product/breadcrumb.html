@@ -1,0 +1,18 @@
+<php>
+    $breadcrumb_id=empty($widget["vars"]["breadcrumb_id"])?4:$widget["vars"]["breadcrumb_id"];
+    $active=empty($widget["vars"]["isActive"])?4:$widget["vars"]["isActive"];
+   
+
+</php>
+<div class="footer-wrapper md_pc">
+    <slides id="$breadcrumb_id">
+        <span>
+            <a href="{$vo.url}">
+             
+                {$vo.title}
+            </a>
+        </span>
+        <span>{$vo.description} </span>
+    </slides>
+
+</div>

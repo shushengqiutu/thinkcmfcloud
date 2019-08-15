@@ -1,0 +1,106 @@
+<extend name="public/aboutUs@abuoutBase" />
+<block name="css">
+  
+
+</block>
+<block name="body">
+    <div id="talent" class="section  bg-grey">
+
+            <div class="container">
+                    <!-- Row -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- 新闻与活动 -->
+                            <div class="newsAndActivity-container" style="display: block;">
+                                <!-- 左侧导航 -->
+                                <div class="clearfix newsAndActivity-tab hidden">
+                                    <span class="NAA-nav-item active">
+                                        公司新闻
+                                    </span>
+                                </div>
+                                <!-- 右侧切换视图 -->
+            
+                                <!-- 新闻详情页 -->
+                                <div class="news-detail-container" style="display: block;">
+            
+                                    <!-- 标题 -->
+                                    <div class="news-detail-title">
+                                        <div class="col-md-3 title-breadcrumb">
+                                            <a href="{:cmf_url('portal/list/news')}"> << 公司新闻</a>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <h1>{$article.post_title}</h1>
+                                        </div>
+                                        <div class="col-md-2 title-time">
+                                            <span>{:date('Y-m-d H:i',$article.published_time)}</span>
+                                        </div>
+                                    </div>
+                                    <!-- 内容 -->
+                                    <div class="news-detail-content">
+                                        {$article.post_content}
+                                    </div>
+                                    <!-- end -->
+                                    <div class="news-detail-end">
+                                        <span>End</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Row -->
+                </div>
+
+
+
+
+
+    </div>
+
+
+</block>
+<block name="script">
+    <script src="__TMPL__/portal/aboutUs/js/jquery.ui.widget.js"></script>
+
+</block>
+
+  <!-- Row -->
+  <div class="row">
+        <div class="col-md-12">
+            <!-- 新闻与活动 -->
+            <div class="newsAndActivity-container" style="display: block;">
+                <!-- 左侧导航 -->
+                <div class="clearfix newsAndActivity-tab hidden">
+                    <span class="NAA-nav-item active">
+                        公司新闻
+                    </span>
+                </div>
+                <!-- 右侧切换视图 -->
+
+                <!-- 新闻详情页 -->
+                <div class="news-detail-container" style="display: block;">
+
+                    <!-- 标题 -->
+                    <div class="news-detail-title">
+                        <div class="col-md-3 title-breadcrumb">
+                            <a href="{:cmf_url('portal/list/news')}"> << 公司新闻</a>
+                        </div>
+                        <div class="col-md-7">
+                            <h1>{$article.post_title}</h1>
+                        </div>
+                        <div class="col-md-2 title-time">
+                            <span>{:date('Y-m-d H:i',$article.published_time)}</span>
+                        </div>
+                    </div>
+                    <!-- 内容 -->
+                    <div class="news-detail-content">
+                        {$article.post_content}
+                    </div>
+                    <!-- end -->
+                    <div class="news-detail-end">
+                        <span>End</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Row -->

@@ -1,0 +1,224 @@
+<extend name="public/product@productBase" />
+<block name="body">
+	<!-- 产品亮点 -->
+	<widget name="product_highlights">
+		<div id="dowhat" class="section md-padding bg-grey">
+			<!-- Container -->
+			<div class="container">
+				<include file="public@line" />
+				<!-- Row -->
+				<div class="row industrialControl-lights">
+
+					<php>
+						$commtents_id=empty($widget["vars"]["commtents_id"])?4:$widget["vars"]["commtents_id"];
+					</php>
+
+					<slides id="55">
+						<div class="col-md-4 col-xs-12  sub_item">
+							<div class="item">
+								<img class="centerImg" src="{$vo.image|cmf_get_image_url}" alt="">
+								<h3 class="theme"> {$vo.title}</h3>
+
+								<php>
+									$actice_list=explode('；',$vo['content']);
+									$len=count($actice_list);
+								</php>
+
+								<ul class="subList">
+									<volist name="$actice_list" id="item">
+
+										<if condition="$len===$i">
+											<li>{$item}</li>
+											<else>
+												<li>{$item};</li>
+										</if>
+
+									</volist>
+
+
+								</ul>
+
+							</div>
+						</div>
+
+					</slides>
+
+				</div>
+				<!-- /Row -->
+
+
+			</div>
+			<!-- /Container -->
+		</div>
+
+	</widget>
+	<!-- 产品功能 -->
+	<widget name="product_function">
+		<div id="starProducts" class="section md-padding bg-white">
+
+
+			<div class="container">
+				<include file="public@line" />
+
+				<div class="row product-feature">
+
+
+					<div class="panel-group networkSecDefense" id="accordion">
+						<slides id="56">
+							<div class="panel panel-default ">
+								<div class="panel-heading  {$i===1?'collapseActive':''}">
+									<h4 class="panel-title">
+										<div data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+											class="warp_function">
+
+											<div class="sprites bg-industrialAudit{$i}"
+												style="background-image: url('__TMPL__/portal/product/img/css_sprites_wsdom.png');">
+
+											</div>
+
+											<div class="content_r">
+												<h2>{$vo.title}</h2>
+												<p>{$vo.content}</p>
+											</div>
+
+										</div>
+									</h4>
+								</div>
+
+							</div>
+						</slides>
+					</div>
+
+
+				</div>
+
+			</div>
+			<!-- /Container -->
+
+		</div>
+	</widget>
+	<!-- 应用场景 -->
+	<widget name="application_scenarios">
+		
+				<div id="solution" class="section md-padding">
+
+					<!-- Container -->
+					<div class="container application-scenario">
+						<!-- Row -->
+						<include file="public@line" />
+						<!-- Row -->
+						<div class="row">
+			
+			
+							<!-- Work -->
+							<div class="col-md-4 col-xs-4  work industrial">
+								<img src="__TMPL__/portal/product/img/sixCloudWsdom3-1-1.png" alt="">
+								<div class="work-font">
+									<span>
+										云端互联态势感知场景
+									</span>
+								</div>
+							</div>
+							<!-- /Work -->
+			
+							<!-- Work -->
+							<div class="col-md-4 col-xs-4 work network">
+								<img src="__TMPL__/portal/product/img/sixWinton3-1-1.png" alt="企业内网态势感知场景">
+								<div class="work-font">
+									<span>
+										企业内网态势感知场景
+									</span>
+								</div>
+							</div>
+							<div class="col-md-4 col-xs-4 work cloud">
+								<img src="__TMPL__/portal/product/img/industrialGuards3-1.png" alt="工控专网态势感知场景">
+								<div class="work-font">
+									<span>
+										工控专网态势感知场景
+									</span>
+								</div>
+							</div>
+			
+			
+						</div>
+						<!-- /Row -->
+						<!-- Row2 industrialTip-->
+						<div id='industrialTip' class="row addWorkTip">
+							<div class="triangle">
+								<span class="glyphicon glyphicon-triangle-top"></span>
+							</div>
+							<div class="col-md-12 col-xs-12 appContent">
+								<div class="col-md-7 col-xs-12">
+									<img class="col-md-12 col-xs-12" src="__TMPL__/portal/product/img/sixCloudWsdom3-1-2.png" />
+								</div>
+								<div class="col-md-5 col-xs-12 detailPadding">
+									<div>
+										<h2>场景描述：</h2>
+										<p>面向广域网多地互联的场景</p>
+									</div>
+									<div>
+										<h2>产品应用：</h2>
+										<p>通过部署云智CiAware可以掌握全网安全态势，分析各地上报的威胁事件，进行数据分析，从而共享各地威胁情报，并从全局视角进行分析研判，预测未来可能发生的威胁攻击事件。</p>
+									</div>
+								</div>
+			
+							</div>
+						</div>
+						<!-- /Row2 -->
+						<!-- Row2 networkTip-->
+						<div id='networkTip' class="row addWorkTip">
+							<div class="triangle">
+								<span class="glyphicon glyphicon-triangle-top"></span>
+							</div>
+			
+							<div class="col-md-12 col-xs-12 appContent">
+								<div class="col-md-7 col-xs-12">
+									<img class="col-md-12 col-xs-12" src="__TMPL__/portal/product/img/sixCloudWsdom3-2-2.png" />
+								</div>
+								<div class="col-md-5 col-xs-12 detailPadding">
+									<div>
+										<h2>场景描述：</h2>
+										<p>针对企业内网上云安全态势的场景</p>
+									</div>
+									<div>
+										<h2>产品应用：</h2>
+										<p>通过部署云智CiAware可以对企业内网资产进行全面检查、及时扫描发现资产漏洞，保护资产安全，并且可以审计业务虚机的东西向流量，填补了目前上云后东西向流量不出物理服务器造成无法审计的空白，面向企业运维人员构建内网资产全方位态势感知画像。
+										</p>
+									</div>
+								</div>
+			
+							</div>
+						</div>
+						<!-- /Row2 -->
+						<!-- Row2 cloudTip-->
+						<div id='cloudTip' class="row addWorkTip">
+							<div class="triangle">
+								<span class="glyphicon glyphicon-triangle-top"></span>
+							</div>
+			
+							<div class="col-md-12 col-xs-12 appContent">
+								<div class="col-md-7 col-xs-12">
+									<img class="col-md-12 col-xs-12" src="__TMPL__/portal/product/img/sixCloudWsdom3-3-2.png" />
+								</div>
+								<div class="col-md-5 col-xs-12 detailPadding">
+									<div>
+										<h2>场景描述：</h2>
+										<p>针对工业控制专网的态势感知场景</p>
+									</div>
+									<div>
+										<h2>产品应用：</h2>
+										<p>通过部署云智CiAware可以对于工业领域的设备进行漏洞挖掘以及威胁分析，从而搭建工业领域的威胁情报库，并支持海量的工业设备的应用协议。</p>
+									</div>
+								</div>
+			
+							</div>
+						</div>
+						<!-- /Row2 -->
+			
+					</div>
+					<!-- /Container -->
+			
+				</div>
+	</widget>
+
+</block>

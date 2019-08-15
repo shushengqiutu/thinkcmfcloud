@@ -1,0 +1,242 @@
+<extend name="public/product@productBase" />
+<block name="body">
+	<!-- 产品亮点 -->
+	<widget name="product_highlights">
+		<div id="dowhat" class="section md-padding bg-grey">
+			<!-- Container -->
+			<div class="container">
+				<include file="public@line" />
+				<!-- Row -->
+				<div class="row industrialControl-lights">
+
+					<php>
+						$commtents_id=empty($widget["vars"]["commtents_id"])?4:$widget["vars"]["commtents_id"];
+					</php>
+
+					<slides id="9">
+						<div class="col-md-4 col-xs-12  sub_item " style="min-height: 310px">
+							<div class="item">
+								<img class="centerImg" src="{$vo.image|cmf_get_image_url}" alt="">
+								<h3 class="theme"> {$vo.title}</h3>
+
+								<php>
+									$actice_list=explode('；',$vo['content']);
+									$len=count($actice_list);
+								</php>
+
+								<ul class="subList">
+									<volist name="$actice_list" id="item">
+
+										<if condition="$len===$i">
+											<li>{$item}</li>
+											<else>
+												<li>{$item};</li>
+										</if>
+
+									</volist>
+
+
+								</ul>
+
+							</div>
+						</div>
+
+					</slides>
+
+				</div>
+				<!-- /Row -->
+
+
+			</div>
+			<!-- /Container -->
+		</div>
+
+	</widget>
+	<!-- 产品功能 -->
+	<widget name="product_function">
+		<div id="starProducts" class="section md-padding bg-white">
+
+
+			<div class="container">
+				<include file="public@line" />
+
+				<div class="row product-feature">
+
+
+					<div class="panel-group networkSecDefense" id="accordion">
+						<slides id="10">
+							<div class="panel panel-default ">
+								<div class="panel-heading  {$i===1?'collapseActive':''}">
+									<h4 class="panel-title">
+										<div data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+											class="warp_function">
+
+											<div class="sprites bg-industrialAudit{$i}"
+												style="background-image: url('__TMPL__/portal/product/img/css_sprites_firewall.png');">
+
+											</div>
+
+											<div class="content_r">
+												<h2>{$vo.title}</h2>
+												<p>{$vo.content}</p>
+											</div>
+
+										</div>
+									</h4>
+								</div>
+
+							</div>
+						</slides>
+					</div>
+
+
+				</div>
+
+			</div>
+			<!-- /Container -->
+
+		</div>
+	</widget>
+	<!-- 应用场景 -->
+	<widget name="application_scenarios">
+		<div id="solution" class="section md-padding">
+
+		
+			<div class="container application-scenario">
+				<!-- Row -->
+				<include file="public@line" />
+				<!-- Row -->
+				<div class="row">
+					<!-- Work -->
+					<!--<div class="col-md-4 col-md-offset-2 col-xs-6  work industrial">-->
+					<div class="col-md-4 col-xs-4  work industrial">
+						<img src="__TMPL__/portal/product/img/industrialAudit3-1.png" alt="现场控制层防护">
+						<div class="work-font">
+							<span>
+								现场控制层防护
+							</span>
+						</div>
+					</div>
+					<!-- /Work -->
+
+					<!-- Work -->
+					<div class="col-md-4 col-xs-4 work network">
+						<img src="__TMPL__/portal/product/img/industrialAudit3-1.png" alt="通讯服务器防护">
+						<div class="work-font">
+							<span>
+								通讯服务器防护
+							</span>
+						</div>
+					</div>
+					<!-- /Work -->
+
+					<!-- Work -->
+					<div class="col-md-4 col-xs-4 work cloud">
+						<img src="__TMPL__/portal/product/img/industrialAudit3-1.png" alt="域间通讯防护">
+						<div class="work-font">
+							<span>
+								域间通讯防护
+							</span>
+						</div>
+					</div>
+					<!-- /Work -->
+
+				</div>
+				<!-- /Row -->
+
+				<!-- Row2 industrialTip-->
+				<div id='industrialTip' class="row addWorkTip">
+
+					<div class="triangle">
+						<span class="glyphicon glyphicon-triangle-top"></span>
+					</div>
+					<div class="col-md-12 col-xs-12 appContent">
+
+						<div class="col-md-7 col-xs-12">
+							<img class="col-md-12 col-xs-12" src="__TMPL__/portal/product/img/industrialFirewall1.png" />
+						</div>
+						<div class="col-md-5 col-xs-12 detailPadding">
+							<div>
+								<h2>场景描述：</h2>
+								<p>现场控制层的控制器直接与传感器、变送器、执行装置相连，实现对现场设备的实时监控并通过通信网络实现与上层机之间的信息交互。控制器即能脱离上位机按预定的程序自动运行，又能接受上位机的操作按需要运行合适的程序。作为工业控制系统的核心大脑，如何防护控制器不受攻击是工业控制系统安全防护的重中之重。
+								</p>
+							</div>
+							<div>
+								<h2>产品应用：</h2>
+								<p>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>保证正常业务主机对控制器的访问与操作；<br>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>阻止异常主机对控制器的访问与操作；<br>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>
+									允许经过验证的工程师站下载、上传、更新控制器组态，保证控制器程序不被侵入、异常篡改。<br>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row2 -->
+
+				<!-- Row2 networkTip-->
+				<div id='networkTip' class="row addWorkTip">
+					<div class="triangle">
+						<span class="glyphicon glyphicon-triangle-top"></span>
+					</div>
+					<div class="col-md-12 col-xs-12 appContent">
+
+						<div class="col-md-7 col-xs-7">
+							<img class="col-md-12 col-xs-12" src="__TMPL__/portal/product/img/industrialFirewall2.png" />
+						</div>
+						<div class="col-md-5 col-xs-5 detailPadding">
+							<div>
+								<h2>场景描述：</h2>
+								<p>通讯服务器在工业控制系统中担当重要的角色，对内连接工业控制系统的过程监控网络层，对外连接生产管理层。生产管理层与过程监控层可能通过通讯服务器实现数据访问，一旦互联网的主机通过生产管理层的主机访问过程监控网络的主机，整个工业控制系统都处理威胁之中，生产装置的运行不再安全，恶意攻击事件有可能导致重大生产事故。
+								</p>
+							</div>
+							<div>
+								<h2>产品应用：</h2>
+								<p>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>隔离异常主机访问过程监控层的主机和数据；<br>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>
+									保证生产管理层与过程监控层主机的正常数据访问，保证业务正常运行；<br>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>保证生产管理层的病毒与针对性攻击不影响工业生产运行。<br>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row2 -->
+
+				<!-- Row2 cloudTip-->
+				<div id='cloudTip' class="row addWorkTip">
+					<div class="triangle">
+						<span class="glyphicon glyphicon-triangle-top"></span>
+					</div>
+					<div class="col-md-12 col-xs-12 appContent">
+
+						<div class="col-md-7 col-xs-7">
+							<img class="col-md-12 col-xs-12" src="__TMPL__/portal/product/img/industrialFirewall3.png" />
+						</div>
+						<div class="col-md-5 col-xs-5 detailPadding">
+							<div>
+								<h2>场景描述：</h2>
+								<p>域间通讯是同一公司的工业控制系统常用的通讯方式，具有通讯快捷，数据库一致，降低通讯成本等多种优点，但方便快捷的同时，也面临网络主机间互相访问的问题，若0号域的主机被攻击或者感染病毒，有可能1号域的设备和主机面临攻击的威胁。
+								</p>
+							</div>
+							<div>
+								<h2>产品应用：</h2>
+								<p>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>隔离多域之间不正常的数据访问与操作；<br>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>保证多域间数据的正常访问与业务运行；<br>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>保证域与域之间不会相互感染病毒，实现域间数据的安全隔离。<br>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row2 -->
+
+			</div>
+		</div>
+
+	</widget>
+
+</block>

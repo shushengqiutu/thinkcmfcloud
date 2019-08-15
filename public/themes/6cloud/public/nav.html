@@ -23,7 +23,7 @@
                 <navigationMenu root="li" class="triangle-con {$menu._level}">
 
 
-                    <span class="glyphicon glyphicon-triangle-top custom-glyphicon triangleTwo"></span>
+                    <span class="glyphicon glyphicon-triangle-top custom-glyphicon triangleOne"></span>
 
                 </navigationMenu>
 
@@ -43,8 +43,13 @@
                     <else />
                     <navigationMenu root="li" class="{$menu._level}">
                         
-                        <!-- <a class="outline-btn red-btn"  href="{:url('portal/Index/aboutUs',array('pagename'=>'cooperation'))}">项目咨询</a> -->
-                        <a href="{:url('portal/Index/'.$menu.icon,array('pagename'=>$menu.href))}" >{$menu.name|default=''}</a>
+                        <php>
+                                $url_arry=explode('/',$menu['href']);
+                                $len=count($url_arry);
+                              
+                        </php>
+                       
+                        <a href="{:url('portal/Index/'.$url_arry[0],array('pagename'=>$len>1?$url_arry[1]:''))}" >{$menu.name|default=''}</a>
 
                         <if condition="$menu['_level'] ===2">
                             <div class="oneline"></div>
@@ -60,7 +65,7 @@
 
                     <navigationFolder root="li" class="triangle-con {$menu._level}">
 
-                        <span class="glyphicon glyphicon-triangle-top custom-glyphicon triangleOne"></span>
+                        <span class="glyphicon glyphicon-triangle-top custom-glyphicon triangleTwo"></span>
 
                     </navigationFolder>
                     <else />

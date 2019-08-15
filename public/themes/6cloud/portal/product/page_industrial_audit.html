@@ -1,0 +1,210 @@
+<extend name="public/product@productBase" />
+<block name="body">
+	<!-- 产品亮点 -->
+	<widget name="product_highlights">
+		<div id="dowhat" class="section md-padding bg-grey">
+			<!-- Container -->
+			<div class="container">
+				<include file="public@line" />
+				<!-- Row -->
+				<div class="row industrialControl-lights">
+
+					<php>
+						$commtents_id=empty($widget["vars"]["commtents_id"])?4:$widget["vars"]["commtents_id"];
+					</php>
+					<!-- 工业审计产品亮点id=5 -->
+					<slides id="5">
+						<div class="col-md-4 col-xs-12  sub_item">
+							<div class="item">
+								<img class="centerImg" src="{$vo.image|cmf_get_image_url}" alt="">
+								<h3 class="theme"> {$vo.title}</h3>
+
+								<php>
+									$actice_list=explode('；',$vo['content']);
+									$len=count($actice_list);
+								</php>
+
+								<ul class="subList">
+									<volist name="$actice_list" id="item">
+
+										<if condition="$len===$i">
+											<li>{$item}</li>
+											<else>
+												<li>{$item};</li>
+										</if>
+
+									</volist>
+
+
+								</ul>
+
+							</div>
+						</div>
+
+					</slides>
+
+				</div>
+				<!-- /Row -->
+
+
+			</div>
+			<!-- /Container -->
+		</div>
+
+	</widget>
+	<!-- 产品功能 -->
+	<widget name="product_function">
+		<div id="starProducts" class="section md-padding bg-white">
+
+
+			<div class="container">
+				<include file="public@line" />
+
+				<div class="row product-feature">
+
+
+					<div class="panel-group networkSecDefense" id="accordion">
+						<!-- 工业审计产品亮点id=6 -->
+						<slides id="6">
+							<div class="panel panel-default ">
+								<div class="panel-heading  {$i===1?'collapseActive':''}">
+									<h4 class="panel-title">
+										<div data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+											class="warp_function">
+
+											<div class="sprites bg-industrialAudit{$i}"
+												style="background-image: url('__TMPL__/portal/product/img/css_sprites.png');">
+
+											</div>
+
+											<div class="content_r">
+												<h2>{$vo.title}</h2>
+												<p>{$vo.content}</p>
+											</div>
+
+										</div>
+									</h4>
+								</div>
+
+							</div>
+						</slides>
+					</div>
+
+
+				</div>
+
+			</div>
+			<!-- /Container -->
+
+		</div>
+	</widget>
+	<!-- 应用场景 -->
+	<widget name="application_scenarios">
+		<div id="solution" class="section md-padding">
+
+			<!-- Container -->
+			<div class="container application-scenario">
+				<!-- Row -->
+				<include file="public@line" />
+				<!-- Row -->
+				<div class="row">
+
+					<!-- Work -->
+					<div class="col-md-4 col-md-offset-2 col-xs-6  work industrial">
+						<img src="__TMPL__/portal/product/img/industrialAudit3-1.png" alt="现场控制层审计">
+						<div class="work-font">
+							<span>
+								现场控制层审计
+							</span>
+						</div>
+					</div>
+					<!-- /Work -->
+
+					<!-- Work -->
+					<div class="col-md-4 col-xs-6 work network">
+						<img src="__TMPL__/portal/product/img/industrialAudit3-2.png" alt="通讯服务器审计">
+						<div class="work-font">
+							<span>
+								通讯服务器审计
+							</span>
+						</div>
+					</div>
+					<!-- /Work -->
+
+				</div>
+				<!-- /Row -->
+
+				<!-- Row2 industrialTip-->
+				<div id='industrialTip' class="row addWorkTip">
+
+					<div class="triangle">
+						<span class="glyphicon glyphicon-triangle-top"></span>
+					</div>
+					<div class="col-md-12 col-xs-12 appContent">
+
+						<div class="col-md-7 col-xs-12">
+							<img class="col-md-12 col-xs-12" src="__TMPL__/portal/product/img/industrialAudit1.png" />
+						</div>
+						<div class="col-md-5 col-xs-12 detailPadding">
+							<div>
+								<h2>场景描述：</h2>
+								<p>现场控制层的控制器直接与传感器、变送器、执行装置相连，实现对现场设备的实时监控并通过通信网络实现与上层机之间的信息交互。控制器即能脱离上位机按预定的程序自动运行，又能接受上位机的操作按需要运行合适的程序。监测上位机与控制器的网络数据，识别访问控制器的异常数据和未知威胁，就显得非常重要。
+								</p>
+							</div>
+							<div>
+								<h2>产品应用：</h2>
+								<p>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>
+									监测上位机与上位机，上位机与控制器，控制器与控制器的通讯数据；<br>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>识别对控制器的异常访问；<br>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>识别上位机的异常行为与操作；<br>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>
+									记录事件、日志，提供报表、报告，为追溯事件原因提供留存证据，包括事件快照、原始数据包等内容。
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row2 -->
+
+				<!-- Row2 networkTip-->
+				<div id='networkTip' class="row addWorkTip">
+					<div class="triangle">
+						<span class="glyphicon glyphicon-triangle-top"></span>
+					</div>
+
+					<!--通讯服务器审计-->
+					<div class="col-md-12 col-xs-12 appContent">
+
+						<div class="col-md-7 col-xs-7">
+							<img class="col-md-12 col-xs-12" src="__TMPL__/portal/product/img/industrialAudit2.png" />
+						</div>
+						<div class="col-md-5 col-xs-5 detailPadding">
+							<div>
+								<h2>场景描述：</h2>
+								<p>通讯服务器在工业控制系统中担当重要的角色，对内连接工业控制系统的过程监控网络层，对外连接生产管理层。生产管理层与过程监控层可能通过通讯服务器实现数据访问，一旦互联网的主机通过生产管理层的主机访问过程监控网络的主机，整个工业控制系统都处理威胁之中，生产装置的运行不再安全，恶意攻击事件有可能导致重大生产事故。
+								</p>
+							</div>
+							<div>
+								<h2>产品应用：</h2>
+								<p>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>
+									监测生产管理层与通讯服务器之间的网络数据，识别恶意攻击与异常行为；<br>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>鉴别生产管理层的网络欺骗；<br>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>检测生产管理层的主机通讯数据是否感染病毒；<br>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>
+									记录事件、日志，提供报表、报告，为追溯事件原因提供留存证据，包括事件快照、原始数据包等内容。
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row2 -->
+
+			</div>
+			<!-- /Container -->
+
+		</div>
+	</widget>
+
+</block>

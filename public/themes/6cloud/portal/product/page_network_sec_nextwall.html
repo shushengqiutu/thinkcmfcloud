@@ -1,0 +1,247 @@
+<extend name="public/product@productBase" />
+<block name="body">
+	<!-- 产品亮点 -->
+	<widget name="product_highlights">
+		<div id="dowhat" class="section md-padding bg-grey">
+			<!-- Container -->
+			<div class="container">
+				<include file="public@line" />
+				<!-- Row -->
+				<div class="row industrialControl-lights">
+
+					<php>
+						$commtents_id=empty($widget["vars"]["commtents_id"])?4:$widget["vars"]["commtents_id"];
+					</php>
+
+					<slides id="37">
+						<div class="col-md-4 col-xs-12  sub_item" style="min-height: 300px">
+							<div class="item">
+								<img class="centerImg" src="{$vo.image|cmf_get_image_url}" alt="">
+								<h3 class="theme"> {$vo.title}</h3>
+
+								<php>
+									$actice_list=explode('；',$vo['content']);
+									$len=count($actice_list);
+								</php>
+
+								<ul class="subList">
+									<volist name="$actice_list" id="item">
+
+										<if condition="$len===$i">
+											<li>{$item}</li>
+											<else>
+												<li>{$item};</li>
+										</if>
+
+									</volist>
+
+
+								</ul>
+
+							</div>
+						</div>
+
+					</slides>
+
+				</div>
+				<!-- /Row -->
+
+
+			</div>
+			<!-- /Container -->
+		</div>
+
+	</widget>
+	<!-- 产品功能 -->
+	<widget name="product_function">
+		<div id="starProducts" class="section md-padding bg-white">
+
+
+			<div class="container">
+				<include file="public@line" />
+
+				<div class="row product-feature">
+
+
+					<div class="panel-group networkSecDefense" id="accordion">
+						<slides id="38">
+							<div class="panel panel-default ">
+								<div class="panel-heading  {$i===1?'collapseActive':''}">
+									<h4 class="panel-title">
+										<div data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+											class="warp_function">
+
+											<div class="sprites bg-industrialAudit{$i}"
+												style="background-image: url('__TMPL__/portal/product/img/css_sprites_nextwall.png');">
+
+											</div>
+
+											<div class="content_r">
+												<h2>{$vo.title}</h2>
+												<p>{$vo.content}</p>
+											</div>
+
+										</div>
+									</h4>
+								</div>
+
+							</div>
+						</slides>
+					</div>
+
+
+				</div>
+
+			</div>
+			<!-- /Container -->
+
+		</div>
+	</widget>
+	<!-- 应用场景 -->
+	<widget name="application_scenarios">
+
+		<div id="solution" class="section md-padding">
+
+			<!-- Container -->
+			<div class="container application-scenario">
+				<!-- Row -->
+				<include file="public@line" />
+				<!-- Row -->
+				<div class="row">
+
+					<!-- Work -->
+					<div class="col-md-4 col-xs-4  work industrial">
+						<img src="__TMPL__/portal/product/img/networkSecNextWall3-1-1.png" alt="">
+						<div class="work-font">
+							<span>
+								互联网边界防护
+							</span>
+						</div>
+					</div>
+					<!-- /Work -->
+
+					<!-- Work -->
+					<div class="col-md-4 col-xs-4 work network">
+						<img src="__TMPL__/portal/product/img/networkSecNextWall3-2-1.png" alt="">
+						<div class="work-font">
+							<span>
+								云数据中心防护
+							</span>
+						</div>
+					</div>
+					<div class="col-md-4 col-xs-4 work cloud">
+						<img src="__TMPL__/portal/product/img/networkSecNextWall3-3-1.png" alt="">
+						<div class="work-font">
+							<span>
+								远程安全互联
+							</span>
+						</div>
+					</div>
+
+
+				</div>
+				<!-- /Row -->
+				<!-- Row2 industrialTip-->
+				<div id='industrialTip' class="row addWorkTip">
+					<div class="triangle">
+						<span class="glyphicon glyphicon-triangle-top"></span>
+					</div>
+					<div class="col-md-12 col-xs-12 appContent">
+
+						<div class="col-md-7 col-xs-12">
+							<img class="col-md-12 col-xs-12"
+								src="__TMPL__/portal/product/img/industrialFirewall3-1-1.png" />
+						</div>
+						<div class="col-md-5 col-xs-12 detailPadding">
+							<div>
+								<h2>场景描述：</h2>
+								<p>
+									放置在企业网络边界的Nsec-NF产品，按照安全程度的不同，将网络逻辑隔离成不同的安全区域，常见安全区域包括互联网区，DMZ
+									区、内网区等。其中，互联网区被视为最危险区，DMZ
+									区是企业对外提供的应用服务区，被视为次危险区，内网区被视为安全区。<br>
+								</p>
+							</div>
+							<div>
+								<h2>产品作用：</h2>
+								<p>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>
+									在内网和互联网区之间可发挥如下作用:基于应用/用户识别的访问控制、流量控制、上网行为管理、SNAT 转发、ISP 链路负载均衡、安全威胁阻断等;<br>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>在互联网与 DMZ 区之间可发挥如下作用:访问控制、DNAT、
+									服务器负载均衡、基于应用/户识别的流量控制、安全威胁阻断等；<br>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>
+									在内网区的用户与服务器群之间可发挥如下作用:访问控制、基于应用和用户识别的流量控制、访问行为记录审计等。<br>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row2 -->
+				<!-- Row2 networkTip-->
+				<div id='networkTip' class="row addWorkTip">
+					<div class="triangle">
+						<span class="glyphicon glyphicon-triangle-top"></span>
+					</div>
+					<div class="col-md-12 col-xs-12 appContent">
+
+						<div class="col-md-7 col-xs-7">
+							<img class="col-md-12 col-xs-12"
+								src="__TMPL__/portal/product/img/industrialFirewall3-1-2.png" />
+						</div>
+						<div class="col-md-5 col-xs-5 detailPadding">
+							<div>
+								<h2>场景描述：</h2>
+								<p>
+									对部署在机构庞大、网络环境复杂、安全要求高的云数据中心的企业用户而言，可将 NSec-NF作为安全防护方案部署到数据中心进行安全防护。<br>
+								</p>
+							</div>
+							<div>
+								<h2>产品作用：</h2>
+								<p>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>
+									NSec-NF可通过更精确细致的访问控制、安全扫描策略以及更精确的流量监控和管理手段，提供对数据中心服务区的贴身安全防护。同时与云平台深度感知联动、形成立体化、有纵深的边界安全防护。<br>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row2 -->
+				<!-- Row2 cloudTip-->
+				<div id='cloudTip' class="row addWorkTip">
+					<div class="triangle">
+						<span class="glyphicon glyphicon-triangle-top"></span>
+					</div>
+					<div class="col-md-12 col-xs-12 appContent">
+
+						<div class="col-md-7 col-xs-7">
+							<img class="col-md-12 col-xs-12"
+								src="__TMPL__/portal/product/img/industrialFirewall3-1-3.png" />
+						</div>
+						<div class="col-md-5 col-xs-5 detailPadding">
+							<div>
+								<h2>场景描述：</h2>
+								<p>
+									远程安全互联场景用于实现公司各分支机制之间、分支与公司总部之间的 VPN 网络互联， 实现业务跨地域共享和交互。<br>
+								</p>
+							</div>
+							<div>
+								<h2>产品作用：</h2>
+								<p>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>NSec-NF支持全面多样的 VPN 接入方式，包括 SSL
+									VPN、
+									IPSec VPN等。实施中可将 NSec-NF 设备部署于各分支机构网络出口处， 其与总部中心部署的另一台 NF设备建立 VPN
+									隧道，或者直接由个人客户通过终端设备与总部中心 NF 建立 VPN 隧道连接。
+									NSec-NF通过对接入客户身份和权限的严格审查、隧道安全加密等方式，提供了对远程访问的接入支持和数据安全保障。 <br>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row2 -->
+
+			</div>
+			<!-- /Container -->
+
+		</div>
+	</widget>
+
+</block>

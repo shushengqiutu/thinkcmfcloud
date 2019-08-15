@@ -1,0 +1,114 @@
+<extend name="public/aboutUs@abuoutBase" />
+<block name="css">
+    <link rel="stylesheet" href="__TMPL__/portal/aboutUs/css/jquery.fileupload.css">
+
+</block>
+<block name="body">
+    <div id="news" class="section  bg-grey">
+
+        <!-- Container -->
+        <div class="container">
+            <h1 class="talent_h1">新闻与活动</h1>
+            <div class="hr_line"></div>
+            <div class="row">
+                <ul class="nav_left col-md-2 col-xs-12">
+                    <li class="subNav active">六方云安全周刊</li>
+                    <li class="subNav">新闻动态</li>
+                    <li class="subNav">安全研究 </li>
+                    <li class="subNav">等保2.0</li>
+
+                </ul>
+                <ul class="item_right col-md-10 col-xs-12">
+                    <li class="item" style="display: block">
+                        <ul>
+                            <!-- 文章分页 -->
+                            <php>
+
+                                if(isset($_GET['page']) && $_GET['page']>0)
+                                {
+                                $now_page= $_GET['page'];
+                                }
+                                else
+                                {
+                                $now_page= 1;
+                                }
+
+                                $where=[
+                                'post.create_time'=>['egt',0]
+                                ];
+                                $page=[
+                                'list_rows'=>5,
+                                'next'=>'下一页',
+                                'prev'=>'上一页' ];
+                            </php>
+                            <portal:articles item="vo" where="$where" order="post.create_time DESC" page="$page"
+                                relation="categories" categoryIds="1" returnVarName="articles_data">
+
+                                <li class="news_sub_item">
+                                    <a href="{:cmf_url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo.category_id))}">
+                                        <div class="new_img col-md-5" >
+                                            <img src="{$vo['thumbnail']|cmf_get_image_url}" alt="">
+                                        </div>
+                                        <div class="new_text col-md-7">
+                                            <h2> {$vo.post_title}</h2>
+                                            <p> {$vo.post_excerpt}</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </portal:articles>
+                        </ul>
+                     
+                        <!--这里的样式要自己控制-->
+                        <ul class="paging">
+                            <page />
+                        </ul>
+
+
+                    </li>
+
+
+
+                </ul>
+
+            </div>
+
+
+
+            </ul>
+        </div>
+
+    </div>
+    </div>
+
+
+    <script>
+        $('#talent .school').click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+            var index = $(this).index();
+            $(".content>.recruit").eq(index).show().siblings().hide();
+
+        })
+        $('.subNav').click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+            var index = $(this).index();
+            console.log(index)
+            $(this).parent().parent().find('.item').siblings().slideUp(600).eq(index).slideDown(600)
+
+
+        })
+
+        $('.get_btn').click(function () {
+            $('.delivery').show()
+
+        })
+    </script>
+  
+</block>
+<block name="script">
+    <script src="__TMPL__/portal/aboutUs/js/jquery.ui.widget.js"></script>
+    <script src="__TMPL__/portal/aboutUs/js/jquery.fileupload.js"></script>
+    <script src="__TMPL__/portal/aboutUs/js/jquery.fileupload-process.js"></script>
+    <script src="__TMPL__/portal/aboutUs/js/jquery.fileupload-validate.js"></script>
+    <script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=ptHIPtqRNKWATLgkBSI3iDpz0yhVUM60"></script>
+    <script src="__TMPL__/portal/aboutUs/js/companyProfile.js"></script>
+</block>

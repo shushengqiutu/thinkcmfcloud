@@ -1,0 +1,208 @@
+<extend name="public/product@productBase" />
+<block name="body">
+	<!-- 产品亮点 -->
+	<widget name="product_highlights">
+		<div id="dowhat" class="section md-padding bg-grey">
+			<!-- Container -->
+			<div class="container">
+				<include file="public@line" />
+				<!-- Row -->
+				<div class="row industrialControl-lights">
+
+					<php>
+						$commtents_id=empty($widget["vars"]["commtents_id"])?4:$widget["vars"]["commtents_id"];
+					</php>
+
+					<slides id="27">
+						<div class="col-md-4 col-xs-12  sub_item" style="min-height: 370px">
+							<div class="item">
+								<img class="centerImg" src="{$vo.image|cmf_get_image_url}" alt="">
+								<h3 class="theme"> {$vo.title}</h3>
+
+								<php>
+									$actice_list=explode('；',$vo['content']);
+									$len=count($actice_list);
+								</php>
+
+								<ul class="subList">
+									<volist name="$actice_list" id="item">
+
+										<if condition="$len===$i">
+											<li>{$item}</li>
+											<else>
+												<li>{$item};</li>
+										</if>
+
+									</volist>
+
+
+								</ul>
+
+							</div>
+						</div>
+
+					</slides>
+
+				</div>
+				<!-- /Row -->
+
+
+			</div>
+			<!-- /Container -->
+		</div>
+
+	</widget>
+	<!-- 产品功能 -->
+	<widget name="product_function">
+		<div id="starProducts" class="section md-padding bg-white">
+
+
+			<div class="container">
+				<include file="public@line" />
+
+				<div class="row product-feature">
+
+
+					<div class="panel-group networkSecDefense" id="accordion">
+						<slides id="28">
+							<div class="panel panel-default ">
+								<div class="panel-heading  {$i===1?'collapseActive':''}">
+									<h4 class="panel-title">
+										<div data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+											class="warp_function">
+
+											<div class="sprites bg-industrialAudit{$i}"
+												style="background-image: url('__TMPL__/portal/product/img/css_sprites_perception.png');">
+
+											</div>
+
+											<div class="content_r">
+												<h2>{$vo.title}</h2>
+												<p>{$vo.content}</p>
+											</div>
+
+										</div>
+									</h4>
+								</div>
+
+							</div>
+						</slides>
+					</div>
+
+
+				</div>
+
+			</div>
+			<!-- /Container -->
+
+		</div>
+	</widget>
+	<!-- 应用场景 -->
+	<widget name="application_scenarios">
+		
+		<div id="solution" class="section md-padding">
+
+			<!-- Container -->
+			<div class="container application-scenario">
+				<!-- Row -->
+				<include file="public@line" />
+				<!-- Row -->
+				<div class="row">
+
+					<!-- Work -->
+					<div class="col-md-4 col-md-offset-2 col-xs-6  work industrial">
+						<img src="__TMPL__/portal/product/img/IndustrialPerception3-1.png" alt="现场控制层审计">
+						<div class="work-font">
+							<span>
+								厂区部署
+							</span>
+						</div>
+					</div>
+					<!-- /Work -->
+
+					<!-- Work -->
+					<div class="col-md-4 col-xs-6 work network">
+						<img src="__TMPL__/portal/product/img/IndustrialPerception3-2.png" alt="通讯服务器审计">
+						<div class="work-font">
+							<span>
+								级联部署
+							</span>
+						</div>
+					</div>
+					<!-- /Work -->
+
+				</div>
+				<!-- /Row -->
+
+				<!-- Row2 industrialTip-->
+				<div id='industrialTip' class="row addWorkTip">
+
+					<div class="triangle">
+						<span class="glyphicon glyphicon-triangle-top"></span>
+					</div>
+					<div class="col-md-12 col-xs-12 appContent">
+
+						<div class="col-md-7 col-xs-12">
+							<img class="col-md-12 col-xs-12" src="__TMPL__/portal/product/img/IndustrialPerception4-1.png" />
+						</div>
+						<div class="col-md-5 col-xs-12 detailPadding">
+							<div>
+								<h2>场景描述：</h2>
+								<p>旁路在厂区内工业互联网网络中，一方面被动采集六方云Linsec工业系列安全设备、
+									NSec系列网络安全设备、工业卫士等设备的日志进行统计分析、关联分析、安全预测和告警。
+									另一方面，主动扫描工业互联网网络中设备信息，进行设备指纹库匹配，对工业设备和工业设备漏洞进行识别和管理。
+								</p>
+							</div>
+							<div>
+								<h2>产品应用：</h2>
+								<p>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>
+									对区域范围内工业应用站点、工业控制系统、物联网系统监测和重点检测，感知区域范围内的安全态势。<br>
+
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row2 -->
+
+				<!-- Row2 networkTip-->
+				<div id='networkTip' class="row addWorkTip">
+					<div class="triangle">
+						<span class="glyphicon glyphicon-triangle-top"></span>
+					</div>
+
+					<!--通讯服务器审计-->
+					<div class="col-md-12 col-xs-12 appContent">
+
+						<div class="col-md-7 col-xs-12">
+							<img class="col-md-12 col-xs-12" src="__TMPL__/portal/product/img/IndustrialPerception4-2.png" />
+						</div>
+						<div class="col-md-5 col-xs-12 detailPadding">
+							<div>
+								<h2>场景描述：</h2>
+								<p> 实时感知多个区域的安全态势，多个区域间的2级态势感知通过级联式部署，
+									使用gRPC进行通信、使用proto3进行数据序列化，将数据汇总至1级态势感知系统。
+								</p>
+							</div>
+							<div>
+								<h2>产品应用：</h2>
+								<p>
+									<font style="font-weight: 700;">&nbsp;·&nbsp;</font>
+									使监管部门有能力掌握区域工业互联网的全局态势以及当前阶段下的安全形势、
+									安全问题以及各区域的安全水平，做到信息安全建设心中有数。<br>
+
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row2 -->
+
+			</div>
+			<!-- /Container -->
+
+		</div>
+	</widget>
+
+</block>

@@ -1,0 +1,168 @@
+<extend name="public/product@productBase" />
+<block name="body">
+	<!-- 产品亮点 -->
+	<widget name="product_highlights">
+		<div id="dowhat" class="section md-padding bg-grey">
+			<!-- Container -->
+			<div class="container">
+				<include file="public@line" />
+				<!-- Row -->
+				<div class="row industrialControl-lights">
+
+					<php>
+						$commtents_id=empty($widget["vars"]["commtents_id"])?4:$widget["vars"]["commtents_id"];
+					</php>
+
+					<slides id="40">
+						<div class="col-md-4 col-xs-12  sub_item">
+							<div class="item">
+								<img class="centerImg" src="{$vo.image|cmf_get_image_url}" alt="">
+								<h3 class="theme"> {$vo.title}</h3>
+
+								<php>
+									$actice_list=explode('；',$vo['content']);
+									$len=count($actice_list);
+								</php>
+
+								<ul class="subList">
+									<volist name="$actice_list" id="item">
+
+										<if condition="$len===$i">
+											<li>{$item}</li>
+											<else>
+												<li>{$item};</li>
+										</if>
+
+									</volist>
+
+
+								</ul>
+
+							</div>
+						</div>
+
+					</slides>
+
+				</div>
+				<!-- /Row -->
+
+
+			</div>
+			<!-- /Container -->
+		</div>
+
+	</widget>
+	<!-- 产品功能 -->
+	<widget name="product_function">
+		<div id="starProducts" class="section md-padding bg-white">
+
+
+			<div class="container">
+				<include file="public@line" />
+
+				<div class="row product-feature">
+
+
+					<div class="panel-group networkSecDefense" id="accordion">
+						<slides id="41">
+							<div class="panel panel-default ">
+								<div class="panel-heading  {$i===1?'collapseActive':''}">
+									<h4 class="panel-title">
+										<div data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+											class="warp_function">
+
+											<div class="sprites bg-industrialAudit{$i}"
+												style="background-image: url('__TMPL__/portal/product/img/css_sprites_defense.png');">
+
+											</div>
+
+											<div class="content_r">
+												<h2>{$vo.title}</h2>
+												<p>{$vo.content}</p>
+											</div>
+
+										</div>
+									</h4>
+								</div>
+
+							</div>
+						</slides>
+					</div>
+
+
+				</div>
+
+			</div>
+			<!-- /Container -->
+
+		</div>
+	</widget>
+	<!-- 应用场景 -->
+	<widget name="application_scenarios">
+		
+				<div id="solution" class="section md-padding">
+
+						<!-- Container -->
+						<div class="container application-scenario">
+				
+							<!-- Row -->
+							<include file="public@line" />
+							<!-- Row -->
+							<div class="row">
+				
+				
+								<!-- Work -->
+								<div class="col-md-4 col-md-offset-4 col-xs-12 work network">
+									<img src="__TMPL__/portal/product/img/industrialAudit3-2.png" alt="全网入侵防护">
+									<div class="work-font">
+										<span style="color: red">
+											全网入侵防护
+										</span>
+									</div>
+								</div>
+								<!-- /Work -->
+				
+							</div>
+							<!-- /Row -->
+				
+							<!-- Row2 networkTip-->
+							<div id='networkTip' class="row addWorkTip" style="display: block">
+								<div class="triangle">
+									<span class="glyphicon glyphicon-triangle-top"></span>
+								</div>
+								<div class="col-md-12 col-xs-12 appContent">
+				
+									<div class="col-md-7 col-xs-12">
+										<img class="col-md-12 col-xs-12" src="__TMPL__/portal/product/img/networkSecDefense1.png" />
+									</div>
+									<div class="col-md-5 col-xs-12 detailPadding">
+										<div>
+											<h2>场景描述：</h2>
+											<p>
+												NSec-IPS可广泛部署于内网边界、核心局域网边界、局域网接入边界等。通过部署NSec-IPS产品可针对应用程序防护、针对网路架构防护、针对QoS进行保护。<br>
+											</p>
+										</div>
+										<div>
+											<h2>产品作用：</h2>
+											<p>
+												<font style="font-weight: 700;">&nbsp;·&nbsp;</font>
+												应用程序：入侵防御系统提供扩展至用户端、服务器、及第二至第七层的网络型攻击防护，如:蠕虫与木马程序。利用深层检测应用层数据包的技术，可以分辨出合法与有害的封包内容。最新型的攻击可以透过伪装成合法应用的技术，轻易的穿透防火墙。而运用重组
+												TCP
+												流量以检视应用层数据包内容的方式，以辨识合法与恶意的数据流。大部分的入侵防御系统都是针对已知的攻击进行防御，然而六方网安入侵防御系统运用漏洞基础的过滤机制，可以防范所有已知与未知形式的攻击；<br>
+												<font style="font-weight: 700;">&nbsp;·&nbsp;</font>网络架构防护：路由器、交换器、DNS
+												服务器以及防火墙都是有可能被攻击的网络设备，如果这些网络设备被攻击导致停机，那么所有企业中的关键应用程序也会随之停摆。而入侵防御系统的网络架构防护机制提供了一系列的网络漏洞过滤器以保护网络
+												设备免于遭受攻击； <br>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /Row2 -->
+				
+						</div>
+						<!-- /Container -->
+				
+					</div>
+	</widget>
+
+</block>
